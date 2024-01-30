@@ -1,0 +1,9 @@
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\bin\Debug\quadratic-equation-solver.exe
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\bin\Debug\quadratic-equation-solver.pdb
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\bin\Debug\quadratic-equation-solver.xml
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\obj\x86\Debug\quadratic_equation_solver.qesolver.resources
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\obj\x86\Debug\quadratic_equation_solver.Resources.resources
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\obj\x86\Debug\quadratic-equation-solver.vbproj.GenerateResource.Cache
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\obj\x86\Debug\quadratic-equation-solver.exe
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\obj\x86\Debug\quadratic-equation-solver.xml
+C:\Users\Gautam\Desktop\quadratic-equation-solver\quadratic-equation-solver\obj\x86\Debug\quadratic-equation-solver.pdb
