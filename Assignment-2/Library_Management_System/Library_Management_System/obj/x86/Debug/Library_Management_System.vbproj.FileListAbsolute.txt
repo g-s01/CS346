@@ -1,0 +1,14 @@
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.exe
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.pdb
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.xml
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminPage.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.facultyPage.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.registerPage.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.loginPage.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.landingPage.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.Resources.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.studentPage.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbproj.GenerateResource.Cache
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.exe
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.xml
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb
