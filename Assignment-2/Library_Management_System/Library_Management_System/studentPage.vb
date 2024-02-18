@@ -152,10 +152,10 @@ Public Class studentPage
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             ' Add radio button for options
-            allBooksTablePanel.Controls.Add(entry.RadioButton, 3, rowIndex)
-            entry.RadioButton.TextAlign = ContentAlignment.MiddleCenter ' Center the radio button
-            entry.RadioButton.Anchor = AnchorStyles.None ' Set Anchor to None
-            entry.RadioButton.Size = New Size(16, 16) ' Set the size of the radio button
+            allBooksTablePanel.Controls.Add(allBooks(rowIndex).RadioButton, 3, rowIndex)
+            entry.RadioButton.TextAlign = ContentAlignment.MiddleCenter ' center the radio button
+            entry.RadioButton.Anchor = AnchorStyles.None ' set anchor to none
+            entry.RadioButton.Size = New Size(16, 16) ' set the size of the radio button
 
         Next
 

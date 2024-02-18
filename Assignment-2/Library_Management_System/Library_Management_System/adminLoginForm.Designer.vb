@@ -34,10 +34,10 @@ Partial Class adminLoginForm
         Me.SubminButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.SubminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SubminButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SubminButton.Location = New System.Drawing.Point(170, 136)
-        Me.SubminButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SubminButton.Location = New System.Drawing.Point(227, 167)
+        Me.SubminButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SubminButton.Name = "SubminButton"
-        Me.SubminButton.Size = New System.Drawing.Size(75, 38)
+        Me.SubminButton.Size = New System.Drawing.Size(100, 47)
         Me.SubminButton.TabIndex = 0
         Me.SubminButton.Text = "Submit"
         Me.SubminButton.UseVisualStyleBackColor = False
@@ -46,10 +46,10 @@ Partial Class adminLoginForm
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Location = New System.Drawing.Point(68, 63)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Location = New System.Drawing.Point(91, 78)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(279, 43)
+        Me.Panel1.Size = New System.Drawing.Size(371, 52)
         Me.Panel1.TabIndex = 1
         '
         'TextBox1
@@ -57,24 +57,24 @@ Partial Class adminLoginForm
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.TextBox1.Location = New System.Drawing.Point(5, 11)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(5, 2, 2, 2)
+        Me.TextBox1.Location = New System.Drawing.Point(7, 14)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(7, 2, 3, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(262, 19)
+        Me.TextBox1.Size = New System.Drawing.Size(349, 23)
         Me.TextBox1.TabIndex = 2
         Me.TextBox1.Text = "Enter admin password here"
         '
         'adminLoginForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(438, 212)
+        Me.ClientSize = New System.Drawing.Size(581, 251)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.SubminButton)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.MaximumSize = New System.Drawing.Size(454, 251)
-        Me.MinimumSize = New System.Drawing.Size(454, 251)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximumSize = New System.Drawing.Size(599, 298)
+        Me.MinimumSize = New System.Drawing.Size(599, 298)
         Me.Name = "adminLoginForm"
         Me.Text = "adminLoginForm"
         Me.Panel1.ResumeLayout(False)
