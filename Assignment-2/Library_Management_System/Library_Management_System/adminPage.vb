@@ -66,7 +66,8 @@
     Private Sub Logout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Logout.Click
         Dim newForm As New landingPage()
         newForm.Show()
-        Me.Hide()
+        Me.BackgroundImage.Dispose()
+        Me.Dispose()
     End Sub
 
 

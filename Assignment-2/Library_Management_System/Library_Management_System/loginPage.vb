@@ -124,12 +124,14 @@ Public Class loginPage
     Private Sub Register_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Register.LinkClicked
         Dim newForm As New registerPage()
         newForm.Show()
-        Me.Hide()
+        Me.BackgroundImage.Dispose()
+        Me.Dispose()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim newForm As New adminLoginForm()
         newForm.Show()
-        Me.Hide()
+        Me.BackgroundImage.Dispose()
+        Me.Dispose()
     End Sub
 End Class

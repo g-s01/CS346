@@ -237,7 +237,8 @@ Public Class studentPage
     Private Sub LogoutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutButton.Click
         Dim newForm As New landingPage()
         newForm.Show()
-        Me.Hide()
+        Me.BackgroundImage.Dispose()
+        Me.Dispose()
     End Sub
 
     ' Backend function for loading the borrowed books of a user

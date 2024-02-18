@@ -98,7 +98,8 @@ Public Class registerPage
     Private Sub Login_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Login.LinkClicked
         Dim newForm As New loginPage()
         newForm.Show()
-        Me.Hide()
+        Me.BackgroundImage.Dispose()
+        Me.Dispose()
     End Sub
 
     ' Backend function for registration
@@ -154,7 +155,8 @@ Public Class registerPage
                                 "Fine: Rs. 0")
                 Dim newForm As New loginPage()
                 newForm.Show()
-                Me.Hide()
+                Me.BackgroundImage.Dispose()
+                Me.Dispose()
             End If
             MySQLConn.Close()
         Else
@@ -182,7 +184,8 @@ Public Class registerPage
                                 "Fine: Rs. 0")
                 Dim newForm As New loginPage()
                 newForm.Show()
-                Me.Hide()
+                Me.BackgroundImage.Dispose()
+                Me.Dispose()
             End If
             MySQLConn.Close()
         End If
