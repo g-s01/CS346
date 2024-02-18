@@ -73,6 +73,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminLoginForm.Designer.vb">
+      <DependentUpon>adminLoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminLoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="adminPage.Designer.vb">
       <DependentUpon>adminPage.vb</DependentUpon>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="adminLoginForm.resx">
+      <DependentUpon>adminLoginForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminPage.resx">
       <DependentUpon>adminPage.vb</DependentUpon>
     </EmbeddedResource>

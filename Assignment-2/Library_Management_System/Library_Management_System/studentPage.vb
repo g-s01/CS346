@@ -161,7 +161,7 @@ Public Class studentPage
 
         Dim adjustLabel3 As New Label()
         adjustLabel3.Text = ""
-        allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count)
+        allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count + 1)
 
     End Sub
 
