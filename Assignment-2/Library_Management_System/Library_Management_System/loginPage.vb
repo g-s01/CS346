@@ -128,7 +128,7 @@ Public Class loginPage
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim newForm As New adminPage()
+        Dim newForm As New adminLoginForm()
         newForm.Show()
         Me.Hide()
     End Sub

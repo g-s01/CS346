@@ -82,6 +82,13 @@ Partial Class adminPage
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Search_panel = New System.Windows.Forms.Panel()
+        Me.Dashboard_panel = New System.Windows.Forms.Panel()
+        Me.searchBar = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.bookQuery = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.srchSelect = New System.Windows.Forms.ComboBox()
+        Me.allBooksTablePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Subdashboard_panel = New System.Windows.Forms.Panel()
         Me.Total_users = New System.Windows.Forms.TextBox()
         Me.Total_books = New System.Windows.Forms.TextBox()
@@ -90,21 +97,16 @@ Partial Class adminPage
         Me.Returned_books = New System.Windows.Forms.TextBox()
         Me.Borrowed_books = New System.Windows.Forms.TextBox()
         Me.Current_date = New System.Windows.Forms.TextBox()
-        Me.searchBar = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.bookQuery = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.srchSelect = New System.Windows.Forms.ComboBox()
-        Me.allBooksTablePanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Dashboard_panel = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.searchTitleTableLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.ManualTransactions_panel.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -115,14 +117,15 @@ Partial Class adminPage
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Search_panel.SuspendLayout()
-        Me.Subdashboard_panel.SuspendLayout()
+        Me.Dashboard_panel.SuspendLayout()
         Me.searchBar.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.allBooksTablePanel.SuspendLayout()
-        Me.Panel12.SuspendLayout()
-        Me.Panel13.SuspendLayout()
-        Me.Panel14.SuspendLayout()
-        Me.Panel15.SuspendLayout()
+        Me.Subdashboard_panel.SuspendLayout()
+        Me.searchTitleTableLayout.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Panel16.SuspendLayout()
         Me.SuspendLayout()
         '
         'Logout
@@ -812,13 +815,110 @@ Partial Class adminPage
         'Search_panel
         '
         Me.Search_panel.BackColor = System.Drawing.Color.White
-        Me.Search_panel.Controls.Add(Me.Dashboard_panel)
         Me.Search_panel.Controls.Add(Me.searchBar)
         Me.Search_panel.Controls.Add(Me.allBooksTablePanel)
+        Me.Search_panel.Controls.Add(Me.Dashboard_panel)
         Me.Search_panel.Location = New System.Drawing.Point(257, 118)
         Me.Search_panel.Name = "Search_panel"
         Me.Search_panel.Size = New System.Drawing.Size(909, 569)
         Me.Search_panel.TabIndex = 29
+        '
+        'Dashboard_panel
+        '
+        Me.Dashboard_panel.Controls.Add(Me.searchTitleTableLayout)
+        Me.Dashboard_panel.Controls.Add(Me.Button1)
+        Me.Dashboard_panel.Location = New System.Drawing.Point(3, 0)
+        Me.Dashboard_panel.Name = "Dashboard_panel"
+        Me.Dashboard_panel.Size = New System.Drawing.Size(906, 566)
+        Me.Dashboard_panel.TabIndex = 38
+        '
+        'searchBar
+        '
+        Me.searchBar.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
+        Me.searchBar.BackColor = System.Drawing.Color.White
+        Me.searchBar.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.searchBar.ColumnCount = 3
+        Me.searchBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.0!))
+        Me.searchBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.0!))
+        Me.searchBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.0!))
+        Me.searchBar.Controls.Add(Me.btnSearch, 2, 0)
+        Me.searchBar.Controls.Add(Me.bookQuery, 1, 0)
+        Me.searchBar.Controls.Add(Me.Panel1, 0, 0)
+        Me.searchBar.Location = New System.Drawing.Point(45, 43)
+        Me.searchBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.searchBar.Name = "searchBar"
+        Me.searchBar.RowCount = 1
+        Me.searchBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.searchBar.Size = New System.Drawing.Size(819, 43)
+        Me.searchBar.TabIndex = 37
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(662, 1)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(156, 41)
+        Me.btnSearch.TabIndex = 8
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
+        'bookQuery
+        '
+        Me.bookQuery.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.bookQuery.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.bookQuery.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bookQuery.Location = New System.Drawing.Point(209, 9)
+        Me.bookQuery.Margin = New System.Windows.Forms.Padding(0)
+        Me.bookQuery.Name = "bookQuery"
+        Me.bookQuery.Size = New System.Drawing.Size(423, 24)
+        Me.bookQuery.TabIndex = 8
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.srchSelect)
+        Me.Panel1.Location = New System.Drawing.Point(1, 1)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(179, 41)
+        Me.Panel1.TabIndex = 9
+        '
+        'srchSelect
+        '
+        Me.srchSelect.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.srchSelect.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.srchSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.srchSelect.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.srchSelect.FormattingEnabled = True
+        Me.srchSelect.Items.AddRange(New Object() {"Book ID", "Author", "Title", "Category"})
+        Me.srchSelect.Location = New System.Drawing.Point(8, 4)
+        Me.srchSelect.Margin = New System.Windows.Forms.Padding(0)
+        Me.srchSelect.Name = "srchSelect"
+        Me.srchSelect.Size = New System.Drawing.Size(165, 29)
+        Me.srchSelect.TabIndex = 9
+        Me.srchSelect.Text = "Select"
+        '
+        'allBooksTablePanel
+        '
+        Me.allBooksTablePanel.BackColor = System.Drawing.Color.White
+        Me.allBooksTablePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.allBooksTablePanel.ColumnCount = 4
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201.0!))
+        Me.allBooksTablePanel.Location = New System.Drawing.Point(46, 191)
+        Me.allBooksTablePanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.allBooksTablePanel.Name = "allBooksTablePanel"
+        Me.allBooksTablePanel.RowCount = 1
+        Me.allBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.allBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.allBooksTablePanel.Size = New System.Drawing.Size(818, 271)
+        Me.allBooksTablePanel.TabIndex = 36
         '
         'Subdashboard_panel
         '
@@ -929,184 +1029,119 @@ Partial Class adminPage
         Me.Current_date.TabIndex = 24
         Me.Current_date.Text = "Date:"
         '
-        'searchBar
+        'Button1
         '
-        Me.searchBar.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
-        Me.searchBar.BackColor = System.Drawing.Color.White
-        Me.searchBar.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.searchBar.ColumnCount = 3
-        Me.searchBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.0!))
-        Me.searchBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.0!))
-        Me.searchBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.0!))
-        Me.searchBar.Controls.Add(Me.btnSearch, 2, 0)
-        Me.searchBar.Controls.Add(Me.bookQuery, 1, 0)
-        Me.searchBar.Controls.Add(Me.Panel1, 0, 0)
-        Me.searchBar.Location = New System.Drawing.Point(45, 43)
-        Me.searchBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.searchBar.Name = "searchBar"
-        Me.searchBar.RowCount = 1
-        Me.searchBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.searchBar.Size = New System.Drawing.Size(819, 43)
-        Me.searchBar.TabIndex = 37
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(374, 477)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(152, 45)
+        Me.Button1.TabIndex = 48
+        Me.Button1.Text = "Renew"
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'btnSearch
+        'searchTitleTableLayout
         '
-        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearch.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(662, 1)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(156, 41)
-        Me.btnSearch.TabIndex = 8
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = False
+        Me.searchTitleTableLayout.BackColor = System.Drawing.Color.White
+        Me.searchTitleTableLayout.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.searchTitleTableLayout.ColumnCount = 4
+        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
+        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150.0!))
+        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350.0!))
+        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201.0!))
+        Me.searchTitleTableLayout.Controls.Add(Me.Panel9, 0, 0)
+        Me.searchTitleTableLayout.Controls.Add(Me.Panel10, 1, 0)
+        Me.searchTitleTableLayout.Controls.Add(Me.Panel11, 2, 0)
+        Me.searchTitleTableLayout.Controls.Add(Me.Panel16, 3, 0)
+        Me.searchTitleTableLayout.Location = New System.Drawing.Point(44, 140)
+        Me.searchTitleTableLayout.Margin = New System.Windows.Forms.Padding(0)
+        Me.searchTitleTableLayout.Name = "searchTitleTableLayout"
+        Me.searchTitleTableLayout.RowCount = 1
+        Me.searchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.searchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.searchTitleTableLayout.Size = New System.Drawing.Size(818, 52)
+        Me.searchTitleTableLayout.TabIndex = 49
         '
-        'bookQuery
+        'Panel9
         '
-        Me.bookQuery.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.bookQuery.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.bookQuery.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bookQuery.Location = New System.Drawing.Point(209, 9)
-        Me.bookQuery.Margin = New System.Windows.Forms.Padding(0)
-        Me.bookQuery.Name = "bookQuery"
-        Me.bookQuery.Size = New System.Drawing.Size(423, 24)
-        Me.bookQuery.TabIndex = 8
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.Label27)
+        Me.Panel9.Location = New System.Drawing.Point(1, 1)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(120, 50)
+        Me.Panel9.TabIndex = 32
         '
-        'Panel1
+        'Label27
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.srchSelect)
-        Me.Panel1.Location = New System.Drawing.Point(1, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(179, 41)
-        Me.Panel1.TabIndex = 9
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(22, 14)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(77, 20)
+        Me.Label27.TabIndex = 0
+        Me.Label27.Text = "Book ID"
         '
-        'srchSelect
+        'Panel10
         '
-        Me.srchSelect.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.srchSelect.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.srchSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.srchSelect.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.srchSelect.FormattingEnabled = True
-        Me.srchSelect.Items.AddRange(New Object() {"Book ID", "Author", "Title", "Category"})
-        Me.srchSelect.Location = New System.Drawing.Point(8, 4)
-        Me.srchSelect.Margin = New System.Windows.Forms.Padding(0)
-        Me.srchSelect.Name = "srchSelect"
-        Me.srchSelect.Size = New System.Drawing.Size(165, 29)
-        Me.srchSelect.TabIndex = 9
-        Me.srchSelect.Text = "Select"
+        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel10.Controls.Add(Me.Label28)
+        Me.Panel10.Location = New System.Drawing.Point(122, 1)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(150, 50)
+        Me.Panel10.TabIndex = 33
         '
-        'allBooksTablePanel
+        'Label28
         '
-        Me.allBooksTablePanel.BackColor = System.Drawing.Color.White
-        Me.allBooksTablePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.allBooksTablePanel.ColumnCount = 4
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
-        Me.allBooksTablePanel.Controls.Add(Me.Panel12, 0, 0)
-        Me.allBooksTablePanel.Controls.Add(Me.Panel13, 1, 0)
-        Me.allBooksTablePanel.Controls.Add(Me.Panel14, 2, 0)
-        Me.allBooksTablePanel.Controls.Add(Me.Panel15, 3, 0)
-        Me.allBooksTablePanel.Location = New System.Drawing.Point(46, 141)
-        Me.allBooksTablePanel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.allBooksTablePanel.Name = "allBooksTablePanel"
-        Me.allBooksTablePanel.RowCount = 2
-        Me.allBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.allBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.allBooksTablePanel.Size = New System.Drawing.Size(818, 385)
-        Me.allBooksTablePanel.TabIndex = 36
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(42, 14)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(64, 20)
+        Me.Label28.TabIndex = 0
+        Me.Label28.Text = "Author"
         '
-        'Panel12
+        'Panel11
         '
-        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel12.Controls.Add(Me.Label23)
-        Me.Panel12.Location = New System.Drawing.Point(1, 1)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(120, 50)
-        Me.Panel12.TabIndex = 32
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel11.Controls.Add(Me.Label29)
+        Me.Panel11.Location = New System.Drawing.Point(273, 1)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(350, 50)
+        Me.Panel11.TabIndex = 34
         '
-        'Label23
+        'Label29
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(22, 14)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(77, 20)
-        Me.Label23.TabIndex = 0
-        Me.Label23.Text = "Book ID"
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(150, 14)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(44, 20)
+        Me.Label29.TabIndex = 0
+        Me.Label29.Text = "Title"
         '
-        'Panel13
+        'Panel16
         '
-        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel13.Controls.Add(Me.Label24)
-        Me.Panel13.Location = New System.Drawing.Point(122, 1)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(150, 50)
-        Me.Panel13.TabIndex = 33
+        Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel16.Controls.Add(Me.Label30)
+        Me.Panel16.Location = New System.Drawing.Point(624, 1)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(194, 50)
+        Me.Panel16.TabIndex = 35
         '
-        'Label24
+        'Label30
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(42, 14)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(64, 20)
-        Me.Label24.TabIndex = 0
-        Me.Label24.Text = "Author"
-        '
-        'Panel14
-        '
-        Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel14.Controls.Add(Me.Label25)
-        Me.Panel14.Location = New System.Drawing.Point(273, 1)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(350, 50)
-        Me.Panel14.TabIndex = 34
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(150, 14)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(44, 20)
-        Me.Label25.TabIndex = 0
-        Me.Label25.Text = "Title"
-        '
-        'Panel15
-        '
-        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel15.Controls.Add(Me.Label26)
-        Me.Panel15.Location = New System.Drawing.Point(624, 1)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(194, 50)
-        Me.Panel15.TabIndex = 35
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(59, 14)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(70, 20)
-        Me.Label26.TabIndex = 0
-        Me.Label26.Text = "Options"
-        '
-        'Dashboard_panel
-        '
-        Me.Dashboard_panel.Location = New System.Drawing.Point(3, 0)
-        Me.Dashboard_panel.Name = "Dashboard_panel"
-        Me.Dashboard_panel.Size = New System.Drawing.Size(906, 566)
-        Me.Dashboard_panel.TabIndex = 38
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(77, 10)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(54, 20)
+        Me.Label30.TabIndex = 0
+        Me.Label30.Text = "Select"
         '
         'adminPage
         '
@@ -1115,7 +1150,6 @@ Partial Class adminPage
         Me.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.adminBg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1182, 703)
-        Me.Controls.Add(Me.Subdashboard_panel)
         Me.Controls.Add(Me.Search_panel)
         Me.Controls.Add(Me.Logout)
         Me.Controls.Add(Me.Manual_transactions)
@@ -1124,6 +1158,7 @@ Partial Class adminPage
         Me.Controls.Add(Me.Dashboard)
         Me.Controls.Add(Me.BookManagement_panel)
         Me.Controls.Add(Me.ManualTransactions_panel)
+        Me.Controls.Add(Me.Subdashboard_panel)
         Me.DoubleBuffered = True
         Me.MaximumSize = New System.Drawing.Size(1200, 750)
         Me.MinimumSize = New System.Drawing.Size(1200, 750)
@@ -1146,20 +1181,21 @@ Partial Class adminPage
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Search_panel.ResumeLayout(False)
-        Me.Subdashboard_panel.ResumeLayout(False)
-        Me.Subdashboard_panel.PerformLayout()
+        Me.Dashboard_panel.ResumeLayout(False)
         Me.searchBar.ResumeLayout(False)
         Me.searchBar.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.allBooksTablePanel.ResumeLayout(False)
-        Me.Panel12.ResumeLayout(False)
-        Me.Panel12.PerformLayout()
-        Me.Panel13.ResumeLayout(False)
-        Me.Panel13.PerformLayout()
-        Me.Panel14.ResumeLayout(False)
-        Me.Panel14.PerformLayout()
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel15.PerformLayout()
+        Me.Subdashboard_panel.ResumeLayout(False)
+        Me.Subdashboard_panel.PerformLayout()
+        Me.searchTitleTableLayout.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel16.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1238,13 +1274,15 @@ Partial Class adminPage
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents srchSelect As System.Windows.Forms.ComboBox
     Friend WithEvents allBooksTablePanel As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents Panel12 As System.Windows.Forms.Panel
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Panel13 As System.Windows.Forms.Panel
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents Panel14 As System.Windows.Forms.Panel
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents Panel15 As System.Windows.Forms.Panel
-    Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents Dashboard_panel As System.Windows.Forms.Panel
+    Friend WithEvents searchTitleTableLayout As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents Panel9 As System.Windows.Forms.Panel
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Panel10 As System.Windows.Forms.Panel
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Panel11 As System.Windows.Forms.Panel
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Panel16 As System.Windows.Forms.Panel
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

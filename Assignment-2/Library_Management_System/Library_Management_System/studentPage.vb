@@ -28,6 +28,9 @@ Public Class studentPage
     End Structure
 
     Private Sub studentPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dashboard_panel.Visible = True
+        Search_panel.Visible = False
+        BookManagement_panel.Visible = False
         Label12.Text = "Hello, " & ID
         ' function to load the borrowed books of a user
         LoadBorrowedBooks()
@@ -52,30 +55,30 @@ Public Class studentPage
             ' Add book details
             Dim bookIdLabel As New Label()
             bookIdLabel.Text = entry.BookID.ToString()
-            borrowedBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex + 1)
+            borrowedBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex)
             bookIdLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             bookIdLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim authorLabel As New Label()
             authorLabel.Text = entry.Author
-            borrowedBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex + 1)
+            borrowedBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex)
             authorLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             authorLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim titleLabel As New Label()
             titleLabel.Text = entry.Title
-            borrowedBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex + 1)
+            borrowedBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim dueDateLabel As New Label()
             dueDateLabel.Text = entry.DueDate
-            borrowedBooksTablePanel.Controls.Add(dueDateLabel, 3, rowIndex + 1)
+            borrowedBooksTablePanel.Controls.Add(dueDateLabel, 3, rowIndex)
             dueDateLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             dueDateLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             ' Add radio button for options
-            borrowedBooksTablePanel.Controls.Add(entry.RadioButton, 4, rowIndex + 1)
+            borrowedBooksTablePanel.Controls.Add(entry.RadioButton, 4, rowIndex)
             entry.RadioButton.TextAlign = ContentAlignment.MiddleCenter ' Center the radio button
             entry.RadioButton.Anchor = AnchorStyles.None ' Set Anchor to None
             entry.RadioButton.Size = New Size(16, 16) ' Set the size of the radio button
@@ -84,7 +87,7 @@ Public Class studentPage
 
         Dim adjustLabel As New Label()
         adjustLabel.Text = ""
-        borrowedBooksTablePanel.Controls.Add(adjustLabel, 1, borrowedBooks.Count + 1)
+        borrowedBooksTablePanel.Controls.Add(adjustLabel, 1, borrowedBooks.Count)
 
 
 
@@ -95,25 +98,25 @@ Public Class studentPage
             ' Add book details
             Dim bookIdLabel As New Label()
             bookIdLabel.Text = entry.BookID.ToString()
-            overdueBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex + 1)
+            overdueBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex)
             bookIdLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             bookIdLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim authorLabel As New Label()
             authorLabel.Text = entry.Author
-            overdueBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex + 1)
+            overdueBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex)
             authorLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             authorLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim titleLabel As New Label()
             titleLabel.Text = entry.Title
-            overdueBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex + 1)
+            overdueBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim dueDateLabel As New Label()
             dueDateLabel.Text = entry.DueDate
-            overdueBooksTablePanel.Controls.Add(dueDateLabel, 3, rowIndex + 1)
+            overdueBooksTablePanel.Controls.Add(dueDateLabel, 3, rowIndex)
             dueDateLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             dueDateLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
@@ -121,7 +124,7 @@ Public Class studentPage
 
         Dim adjustLabel2 As New Label()
         adjustLabel2.Text = ""
-        overdueBooksTablePanel.Controls.Add(adjustLabel2, 1, overdueBooks.Count + 1)
+        overdueBooksTablePanel.Controls.Add(adjustLabel2, 1, overdueBooks.Count)
 
 
 
@@ -132,27 +135,33 @@ Public Class studentPage
             ' Add book details
             Dim bookIdLabel As New Label()
             bookIdLabel.Text = entry.BookID.ToString()
-            allBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex + 1)
+            allBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex)
             bookIdLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             bookIdLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim authorLabel As New Label()
             authorLabel.Text = entry.Author
-            allBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex + 1)
+            allBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex)
             authorLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             authorLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim titleLabel As New Label()
             titleLabel.Text = entry.Title
-            allBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex + 1)
+            allBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
+
+            ' Add radio button for options
+            allBooksTablePanel.Controls.Add(entry.RadioButton, 3, rowIndex)
+            entry.RadioButton.TextAlign = ContentAlignment.MiddleCenter ' Center the radio button
+            entry.RadioButton.Anchor = AnchorStyles.None ' Set Anchor to None
+            entry.RadioButton.Size = New Size(16, 16) ' Set the size of the radio button
 
         Next
 
         Dim adjustLabel3 As New Label()
         adjustLabel3.Text = ""
-        allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count + 1)
+        allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count)
 
     End Sub
 
@@ -406,4 +415,5 @@ Public Class studentPage
         End If
         PopulateTable()
     End Sub
+
 End Class

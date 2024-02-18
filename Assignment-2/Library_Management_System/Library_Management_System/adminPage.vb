@@ -7,6 +7,7 @@
         Public BookID As Integer
         Public Author As String
         Public Title As String
+        Public RadioButton As RadioButton ' Added RadioButton field
     End Structure
 
     Private Sub Dashboard_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Dashboard.Click
@@ -251,13 +252,13 @@
         BookManagement_panel.Visible = False
         ManualTransactions_panel.Visible = False
 
-        allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1"})
-        allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
+        allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
 
         ' Populate the table with the borrowedBooks
         PopulateTable()
@@ -272,27 +273,33 @@
             ' Add book details
             Dim bookIdLabel As New Label()
             bookIdLabel.Text = entry.BookID.ToString()
-            allBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex + 1)
+            allBooksTablePanel.Controls.Add(bookIdLabel, 0, rowIndex)
             bookIdLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             bookIdLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim authorLabel As New Label()
             authorLabel.Text = entry.Author
-            allBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex + 1)
+            allBooksTablePanel.Controls.Add(authorLabel, 1, rowIndex)
             authorLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             authorLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim titleLabel As New Label()
             titleLabel.Text = entry.Title
-            allBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex + 1)
+            allBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
+
+            ' Add radio button for options
+            allBooksTablePanel.Controls.Add(entry.RadioButton, 3, rowIndex)
+            entry.RadioButton.TextAlign = ContentAlignment.MiddleCenter ' Center the radio button
+            entry.RadioButton.Anchor = AnchorStyles.None ' Set Anchor to None
+            entry.RadioButton.Size = New Size(16, 16) ' Set the size of the radio button
 
         Next
 
         Dim adjustLabel3 As New Label()
         adjustLabel3.Text = ""
-        allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count + 1)
+        allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count)
 
     End Sub
 End Class
