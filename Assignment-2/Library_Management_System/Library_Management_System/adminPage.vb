@@ -7,11 +7,9 @@
         Public BookID As Integer
         Public Author As String
         Public Title As String
-        Public RadioButton As RadioButton ' Added RadioButton field
     End Structure
 
     Private Sub Dashboard_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Dashboard.Click
-        Subdashboard_panel.Visible = True
         Dashboard_panel.Visible = True
         Search_panel.Visible = False
         BookManagement_panel.Visible = False
@@ -25,7 +23,6 @@
     End Sub
 
     Private Sub Search_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Search.Click
-        Subdashboard_panel.Visible = False
         Dashboard_panel.Visible = False
         Search_panel.Visible = True
         BookManagement_panel.Visible = False
@@ -38,7 +35,6 @@
     End Sub
 
     Private Sub Book_management_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Book_management.Click
-        Subdashboard_panel.Visible = False
         Dashboard_panel.Visible = False
         Search_panel.Visible = False
         BookManagement_panel.Visible = True
@@ -51,7 +47,6 @@
     End Sub
 
     Private Sub Manual_transactions_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Manual_transactions.Click
-        Subdashboard_panel.Visible = False
         Dashboard_panel.Visible = False
         Search_panel.Visible = False
         BookManagement_panel.Visible = False
@@ -78,7 +73,7 @@
     End Sub
 
     Private Sub Add_button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Add_button.Click
-        If BookID_tb.Text = "" Or BookName_tb.Text = "" Or ISBN_tb.Text = "" Or Author_tb.Text = "" Or Publisher_tb.Text = "" Then
+        If BookID_tb.Text = "" Or BookName_tb.Text = "" Or Author_tb.Text = "" Or Publisher_tb.Text = "" Then
             MsgBox("Missing Information", 0 + 0, "Error")
         Else
             '
@@ -91,7 +86,6 @@
             MsgBox("Book Added Successfully")
             BookID_tb.Text = ""
             BookName_tb.Text = ""
-            ISBN_tb.Text = ""
             Author_tb.Text = ""
             Publisher_tb.Text = ""
             Reserved_tb.Text = ""
@@ -102,7 +96,7 @@
 
 
     Private Sub Update_button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Update_button.Click
-        If BookID_tb.Text = "" Or BookName_tb.Text = "" Or ISBN_tb.Text = "" Or Author_tb.Text = "" Or Publisher_tb.Text = "" Then
+        If BookID_tb.Text = "" Or BookName_tb.Text = "" Or Author_tb.Text = "" Or Publisher_tb.Text = "" Then
             MsgBox("Missing Information", 0 + 0, "Error")
         Else
             '
@@ -115,7 +109,6 @@
             MsgBox("Book Updated Successfully")
             BookID_tb.Text = ""
             BookName_tb.Text = ""
-            ISBN_tb.Text = ""
             Author_tb.Text = ""
             Publisher_tb.Text = ""
             Reserved_tb.Text = ""
@@ -247,19 +240,19 @@
     End Sub
 
     Private Sub adminPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Subdashboard_panel.Visible = True
+        Dashboard_panel.Visible = True
         Dashboard_panel.Visible = True
         Search_panel.Visible = False
         BookManagement_panel.Visible = False
         ManualTransactions_panel.Visible = False
 
-        allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1", .RadioButton = New RadioButton()})
-        allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2", .RadioButton = New RadioButton()})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .RadioButton = New RadioButton()})
+        allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1"})
+        allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2"})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
+        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
 
         ' Populate the table with the borrowedBooks
         PopulateTable()
@@ -290,11 +283,11 @@
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
-            ' Add radio button for options
-            allBooksTablePanel.Controls.Add(entry.RadioButton, 3, rowIndex)
-            entry.RadioButton.TextAlign = ContentAlignment.MiddleCenter ' Center the radio button
-            entry.RadioButton.Anchor = AnchorStyles.None ' Set Anchor to None
-            entry.RadioButton.Size = New Size(16, 16) ' Set the size of the radio button
+            Dim issueStatusLabel As New Label()
+            issueStatusLabel.Text = entry.Title
+            allBooksTablePanel.Controls.Add(issueStatusLabel, 3, rowIndex)
+            issueStatusLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
+            issueStatusLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
         Next
 
