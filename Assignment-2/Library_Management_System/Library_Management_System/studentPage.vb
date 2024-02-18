@@ -1,10 +1,23 @@
-﻿Public Class studentPage
+﻿Imports MySql.Data.MySqlClient
 
+Public Class studentPage
+    Dim connectionString As String = "server=localhost;user=root;database=LMS;pwd="
+    Dim connection As MySqlConnection
     ' Define a global array to store borrowedBooks
     Dim borrowedBooks As New List(Of Entry)
+    ' Define a global array to store overdueBooks
     Dim overdueBooks As New List(Of Entry)
+    ' Define a global array to store all unborrowed books
     Dim allBooks As New List(Of Entry)
-
+    ' Define a global identifiers of the user
+    Dim ID As String = loginPage.ID
+    Dim studentOrFaculty = loginPage.studentOrFaculty
+    ' fine accumulated by the user
+    Dim fine As Integer = 0
+    ' to see through which mode does the user wants to search books
+    Dim selectedSearchMode As String = "Empty"
+    ' maximum number of books a student can issue
+    Dim maxIssue = 7
     ' Define a structure to hold book details
     Structure Entry
         Public BookID As Integer
@@ -15,41 +28,27 @@
     End Structure
 
     Private Sub studentPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ' Add some sample data to the array (you can load from a database or file)
-        borrowedBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-        borrowedBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-        borrowedBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-        borrowedBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-        borrowedBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-        borrowedBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-        borrowedBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024", .RadioButton = New RadioButton()})
-
-        overdueBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1", .DueDate = "31/12/2024"})
-        overdueBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2", .DueDate = "31/12/2024"})
-        overdueBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024"})
-        overdueBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024"})
-        overdueBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024"})
-        overdueBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024"})
-        overdueBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3", .DueDate = "31/12/2024"})
-
-        allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1"})
-        allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-
+        Label12.Text = "Hello, " & ID
+        ' function to load the borrowed books of a user
+        LoadBorrowedBooks()
+        ' function to load all the overdue books of a user
+        LoadOverdueBooks()
+        ' function to load all the un-borrowed books
+        LoadAllBooks()
         ' Populate the table with the borrowedBooks
         PopulateTable()
     End Sub
 
     Private Sub PopulateTable()
+        UpdateFine()
+        borrowedBooksTablePanel.Controls.Clear()
+        overdueBooksTablePanel.Controls.Clear()
+        allBooksTablePanel.Controls.Clear()
+
 
         ' Add borrowedBooks to the table
         For rowIndex As Integer = 0 To borrowedBooks.Count - 1
             Dim entry As Entry = borrowedBooks(rowIndex)
-
             ' Add book details
             Dim bookIdLabel As New Label()
             bookIdLabel.Text = entry.BookID.ToString()
@@ -230,5 +229,181 @@
         Dim newForm As New landingPage()
         newForm.Show()
         Me.Hide()
+    End Sub
+
+    ' Backend function for loading the borrowed books of a user
+    ' Author: g-s01
+    Private Sub LoadBorrowedBooks()
+        Dim query As String = "SELECT * FROM borrowed_books WHERE (issuedToID = '" & ID & "')"
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                Try
+                    connection.Open()
+                    Dim reader As MySqlDataReader = command.ExecuteReader()
+                    While reader.Read()
+                        Dim bookQuery = "SELECT * FROM books WHERE ID = '" & reader("BookID").ToString() & "'"
+                        Using newConnection As New MySqlConnection(connectionString)
+                            Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                                Try
+                                    newConnection.Open()
+                                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                                    While newReader.Read()
+                                        borrowedBooks.Add(New Entry With {.BookID = reader("BookID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .DueDate = reader("dueDate").ToString(), .RadioButton = New RadioButton()})
+                                    End While
+                                Catch ex As Exception
+                                    MessageBox.Show("Error: " & ex.Message)
+                                End Try
+                            End Using
+                        End Using
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    ' Backend function for loading the overdue books of a user
+    ' Author: g-s01
+    Private Sub LoadOverdueBooks()
+        Dim query As String = "SELECT *, DATEDIFF(CURRENT_DATE, dueDate) AS daysPassed FROM borrowed_books WHERE (issuedToID = '" & ID & "' AND dueDate < CURRENT_DATE)"
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(query, connection)
+                Try
+                    connection.Open()
+                    Dim reader As MySqlDataReader = command.ExecuteReader()
+                    While reader.Read()
+                        Dim bookQuery = "SELECT * FROM books WHERE ID = '" & reader("BookID").ToString() & "'"
+                        Using newConnection As New MySqlConnection(connectionString)
+                            Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                                Try
+                                    newConnection.Open()
+                                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                                    While newReader.Read()
+                                        overdueBooks.Add(New Entry With {.BookID = reader("BookID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .DueDate = reader("dueDate").ToString(), .RadioButton = New RadioButton()})
+                                    End While
+                                Catch ex As Exception
+                                    MessageBox.Show("Error: " & ex.Message)
+                                End Try
+                            End Using
+                        End Using
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    ' Backend function for loading the all un-borrowed books in the system 
+    ' Author: g-s01
+    Private Sub LoadAllBooks()
+        Dim bookQuery = "SELECT * FROM books WHERE NOT isIssued"
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    While newReader.Read()
+                        allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .RadioButton = New RadioButton()})
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    ' Backend function for showing the updated fine
+    ' Author: g-s01
+    Private Sub UpdateFine()
+        Label9.Text = fine.ToString()
+    End Sub
+
+    ' Backend function for paying fine
+    ' Author: g-s01
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        fine = 0
+        MessageBox.Show("Fine payment successful!")
+    End Sub
+
+    ' Backend function for selecting the search mode
+    ' Author: g-s01
+    Private Sub srchSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles srchSelect.SelectedIndexChanged
+        selectedSearchMode = srchSelect.SelectedItem.ToString()
+    End Sub
+
+    ' Backend function for searching for a book
+    ' Author: g-s01
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If selectedSearchMode = "Empty" Then
+            MessageBox.Show("Select a search mode first")
+            Return
+        ElseIf selectedSearchMode = "Book ID" Then
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND ID = '" & queryBook.Text & "')"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks = New List(Of Entry)
+                        While newReader.Read()
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .RadioButton = New RadioButton()})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Author" Then
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND authorName = '" & queryBook.Text & "')"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks = New List(Of Entry)
+                        While newReader.Read()
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .RadioButton = New RadioButton()})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Title" Then
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND Title = '" & queryBook.Text & "')"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks = New List(Of Entry)
+                        While newReader.Read()
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .RadioButton = New RadioButton()})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Category" Then
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND Subject = '" & queryBook.Text & "')"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks = New List(Of Entry)
+                        While newReader.Read()
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .RadioButton = New RadioButton()})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        End If
+        PopulateTable()
     End Sub
 End Class

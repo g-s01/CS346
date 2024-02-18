@@ -1,5 +1,11 @@
-﻿Public Class loginPage
+﻿Imports MySql.Data.MySqlClient
 
+Public Class loginPage
+    ' Publicly shared variables between forms
+    Public Shared ID As String
+    Public Shared studentOrFaculty As String
+    Dim MySQLConn As MySqlConnection
+    Dim COMMAND As MySqlCommand
     Dim isStudent As Boolean = True ' Initializing with True
 
     Private Sub Username_GotFocus(ByVal sender As Object, ByVal e As EventArgs) Handles Username.GotFocus
@@ -53,16 +59,66 @@
     End Sub
 
     Private Sub Loginbtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Loginbtn.Click
-        If isStudent = True Then
-            Dim newForm As New studentPage()
-            newForm.Show()
-            Me.Hide()
-        Else
-            Dim newForm As New facultyPage()
-            newForm.Show()
-            Me.Hide()
-        End If
+        MySQLConn = New MySqlConnection
+        MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
+        Dim READER As MySqlDataReader
 
+        Try
+            'connection.Open()
+            MySQLConn.Open()
+            Dim Query As String
+            If isStudent = True Then
+
+                Query = "SELECT * FROM students where ID='" & Username.Text & "' and Password= '" & Password.Text & "'"
+                COMMAND = New MySqlCommand(Query, MySQLConn)
+                READER = COMMAND.ExecuteReader
+                Dim count As Integer
+                count = 0
+                While READER.Read
+                    count = count + 1
+                End While
+                If count = 1 Then
+                    ID = Username.Text
+                    studentOrFaculty = "students"
+                    Dim newForm As New studentPage()
+                    newForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Username and Password are incorrect")
+                    Return
+                End If
+
+            Else
+                Query = "SELECT * FROM faculty where ID='" & Username.Text & "' and Password= '" & Password.Text & "'"
+                COMMAND = New MySqlCommand(Query, MySQLConn)
+                READER = COMMAND.ExecuteReader
+                Dim count As Integer
+                count = 0
+                While READER.Read
+                    count = count + 1
+                End While
+                If count = 1 Then
+                    ID = Username.Text
+                    studentOrFaculty = "faculty"
+                    Dim newForm As New facultyPage()
+                    newForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Username and Password are incorrect")
+                    Return
+                End If
+            End If
+
+            MySQLConn.Close()
+
+            Console.WriteLine("Connection successful!")
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            Console.WriteLine("Connection failed: " & ex.Message)
+        Finally
+            MySQLConn.Dispose()
+
+        End Try
     End Sub
 
     Private Sub Register_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles Register.LinkClicked

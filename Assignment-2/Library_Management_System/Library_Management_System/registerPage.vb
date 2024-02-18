@@ -1,5 +1,10 @@
-﻿Public Class registerPage
-
+﻿Imports MySql.Data.MySqlClient
+Public Class registerPage
+    
+    ' Variables whose scope is within the form only
+    Dim MySQLConn As MySqlConnection
+    Dim COMMAND As MySqlCommand
+    Dim READER As MySqlDataReader
     Dim isStudent As Boolean = True
 
     Private Sub Student_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Student.Click
@@ -96,15 +101,90 @@
         Me.Hide()
     End Sub
 
+    ' Backend function for registration
+    ' Author: g-s01
     Private Sub Registerbtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Registerbtn.Click
+        ' Check whether any field is empty or not
+        If Uname.Text = "Name" Then
+            MessageBox.Show("Please write your name")
+            Return
+        End If
+        If Username.Text = "Username" Then
+            MessageBox.Show("Please write your username")
+            Return
+        End If
+        If Password.Text = "Password" Then
+            MessageBox.Show("Please write your password")
+            Return
+        End If
+        ' Checking equality of `Password` and `CPassword`
+        If Password.Text <> CPassword.Text Then
+            MessageBox.Show("Confirm password doesn't match password")
+            Return
+        End If
+        ' Creating a SQL connection
+        MySQLConn = New MySqlConnection
+        MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
+        ' This query is to see if the user has already registered into the system or not
+        Dim selectQuery As String
+        ' This query is to insert the new user entry in the database
+        Dim insertQuery As String
         If isStudent = True Then
-            Dim newForm As New studentPage()
-            newForm.Show()
-            Me.Hide()
+            MySQLConn.Open()
+            selectQuery = "SELECT * FROM students WHERE EXISTS (SELECT * FROM students WHERE ID = '" & Username.Text & "')"
+            COMMAND = New MySqlCommand(selectQuery, MySQLConn)
+            READER = COMMAND.ExecuteReader
+            Dim count As Integer
+            count = 0
+            While READER.Read
+                count = count + 1
+            End While
+            If count = 1 Then
+                MessageBox.Show("You have already registered into the system!")
+                READER.Close()
+            Else
+                READER.Close()
+                insertQuery = "INSERT INTO " + "students" + " (ID, Password, Name, Fine) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0')"
+                COMMAND = New MySqlCommand(insertQuery, MySQLConn)
+                READER = COMMAND.ExecuteReader
+                MessageBox.Show("Data Saved with:" + vbCrLf +
+                                "ID: ('" & Username.Text & "')" + vbCrLf +
+                                "Name: ('" & Uname.Text & "')" + vbCrLf +
+                                "Password: ('" & Password.Text & "')" + vbCrLf +
+                                "Fine: Rs. 0")
+                Dim newForm As New loginPage()
+                newForm.Show()
+                Me.Hide()
+            End If
+            MySQLConn.Close()
         Else
-            Dim newForm As New facultyPage()
-            newForm.Show()
-            Me.Hide()
+            MySQLConn.Open()
+            selectQuery = "SELECT * FROM faculty WHERE EXISTS (SELECT * FROM students WHERE ID = '" & Username.Text & "')"
+            COMMAND = New MySqlCommand(selectQuery, MySQLConn)
+            READER = COMMAND.ExecuteReader
+            Dim count As Integer
+            count = 0
+            While READER.Read
+                count = count + 1
+            End While
+            If count = 1 Then
+                MessageBox.Show("You have already registered into the system!")
+                READER.Close()
+            Else
+                READER.Close()
+                insertQuery = "INSERT INTO " + "faculty" + " (ID, Password, Name, Fine) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0')"
+                COMMAND = New MySqlCommand(insertQuery, MySQLConn)
+                READER = COMMAND.ExecuteReader
+                MessageBox.Show("Data Saved with:" +
+                                "ID: ('" & Username.Text & "')" +
+                                "Name: ('" & Uname.Text & "')" +
+                                "Password: ('" & Password.Text & "')" +
+                                "Fine: Rs. 0")
+                Dim newForm As New loginPage()
+                newForm.Show()
+                Me.Hide()
+            End If
+            MySQLConn.Close()
         End If
     End Sub
 End Class
