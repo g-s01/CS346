@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class studentPage
-    Dim connectionString As String = "server=localhost;user=root;database=LMS;pwd="
+    Dim connectionString As String = "server=localhost;user=root;database=LMS;pwd=;convert zero datetime=True"
     Dim connection As MySqlConnection
     ' Define a global array to store borrowedBooks
     Dim borrowedBooks As New List(Of Entry)
@@ -181,14 +181,57 @@ Public Class studentPage
         End If
     End Sub
 
+    ' button to renew books
+    ' author: g-s01 & sarg19
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RenewButton.Click
         For Each entry As Entry In borrowedBooks
             If entry.RadioButton.Checked Then
-                MessageBox.Show(entry.BookID.ToString() + " has been renewed.")
-                Exit Sub
+                Dim query = "SELECT * FROM borrowed_books WHERE (BookID = '" & entry.BookID & "')"
+                Using connection As New MySqlConnection(connectionString)
+                    Using command As New MySqlCommand(query, connection)
+                        Try
+                            connection.Open()
+                            Dim reader As MySqlDataReader = command.ExecuteReader()
+                            Dim currentDate As DateTime = DateTime.Now.Date
+                            Dim futureDate As DateTime = DateAdd("d", 14, currentDate)
+                            While reader.Read()
+                                If reader("dueDate") < currentDate Then
+                                    MessageBox.Show("Book can't be renewed as it is past it's due date. Please pay fine and re-issue.")
+                                    Return
+                                Else
+                                    Dim updateQueryInBooks = "UPDATE books SET dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE ID = '" & entry.BookID & "'"
+                                    Dim updateQueryInBorrowed_Books = "UPDATE borrowed_books SET dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE BookID = '" & entry.BookID & "'"
+                                    Using newConnection As New MySqlConnection(connectionString)
+                                        Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)
+                                            Try
+                                                newConnection.Open()
+                                                newCommand.ExecuteNonQuery()
+                                                MessageBox.Show("Your book with BookID: " + entry.BookID.ToString + " has been renewed till: " + futureDate.Date.ToString)
+                                            Catch ex As Exception
+                                                MessageBox.Show("Error: " & ex.Message)
+                                            End Try
+                                        End Using
+                                    End Using
+                                    Using newConnection As New MySqlConnection(connectionString)
+                                        Using newCommand As New MySqlCommand(updateQueryInBorrowed_Books, newConnection)
+                                            Try
+                                                newConnection.Open()
+                                                newCommand.ExecuteNonQuery()
+                                            Catch ex As Exception
+                                                MessageBox.Show("Error: " & ex.Message)
+                                            End Try
+                                        End Using
+                                    End Using
+                                End If
+                            End While
+                        Catch ex As Exception
+                            MessageBox.Show("Error: yoyo" & ex.Message)
+                        End Try
+                    End Using
+                End Using
+                Return
             End If
         Next
-
         MessageBox.Show("No book selected.")
     End Sub
 
@@ -308,7 +351,7 @@ Public Class studentPage
     ' Backend function for loading the all un-borrowed books in the system 
     ' Author: g-s01
     Private Sub LoadAllBooks()
-        Dim bookQuery = "SELECT * FROM books WHERE NOT isIssued"
+        Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved)"
         Using newConnection As New MySqlConnection(connectionString)
             Using newCommand As New MySqlCommand(bookQuery, newConnection)
                 Try
@@ -350,7 +393,7 @@ Public Class studentPage
             MessageBox.Show("Select a search mode first")
             Return
         ElseIf selectedSearchMode = "Book ID" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND ID = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND ID = '" & queryBook.Text & "')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -366,7 +409,7 @@ Public Class studentPage
                 End Using
             End Using
         ElseIf selectedSearchMode = "Author" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND authorName = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND authorName = '" & queryBook.Text & "')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -382,7 +425,7 @@ Public Class studentPage
                 End Using
             End Using
         ElseIf selectedSearchMode = "Title" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND Title = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND Title = '" & queryBook.Text & "')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -398,7 +441,7 @@ Public Class studentPage
                 End Using
             End Using
         ElseIf selectedSearchMode = "Category" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND Subject = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND Subject = '" & queryBook.Text & "')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
