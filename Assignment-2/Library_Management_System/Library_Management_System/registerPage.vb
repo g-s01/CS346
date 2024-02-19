@@ -177,10 +177,10 @@ Public Class registerPage
                 insertQuery = "INSERT INTO " + "faculty" + " (ID, Password, Name, Fine) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0')"
                 COMMAND = New MySqlCommand(insertQuery, MySQLConn)
                 READER = COMMAND.ExecuteReader
-                MessageBox.Show("Data Saved with:" +
-                                "ID: ('" & Username.Text & "')" +
-                                "Name: ('" & Uname.Text & "')" +
-                                "Password: ('" & Password.Text & "')" +
+                MessageBox.Show("Data Saved with:" + vbCrLf +
+                                "ID: ('" & Username.Text & "')" + vbCrLf +
+                                "Name: ('" & Uname.Text & "')" + vbCrLf +
+                                "Password: ('" & Password.Text & "')" + vbCrLf +
                                 "Fine: Rs. 0")
                 Dim newForm As New loginPage()
                 newForm.Show()

@@ -223,7 +223,7 @@ Public Class studentPage
                                 End If
                             End While
                         Catch ex As Exception
-                            MessageBox.Show("Error: yoyo" & ex.Message)
+                            MessageBox.Show("Error: " & ex.Message)
                         End Try
                     End Using
                 End Using
@@ -302,7 +302,7 @@ Public Class studentPage
                                 End Using
                             End While
                         Catch ex As Exception
-                            MessageBox.Show("Error: yoyo" & ex.Message)
+                            MessageBox.Show("Error: " & ex.Message)
                         End Try
                     End Using
                 End Using
