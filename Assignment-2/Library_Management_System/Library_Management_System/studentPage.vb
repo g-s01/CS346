@@ -12,8 +12,6 @@ Public Class studentPage
     ' Define a global identifiers of the user
     Dim ID As String = loginPage.ID
     Dim studentOrFaculty = loginPage.studentOrFaculty
-    ' fine accumulated by the user
-    Dim fine As Integer = 0
     ' to see through which mode does the user wants to search books
     Dim selectedSearchMode As String = "Empty"
     ' maximum number of books a student can issue
@@ -235,10 +233,80 @@ Public Class studentPage
         MessageBox.Show("No book selected.")
     End Sub
 
+    ' function to return book
+    ' author: g-s01 & sarg19
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReturnButton.Click
         For Each entry As Entry In borrowedBooks
             If entry.RadioButton.Checked Then
-                MessageBox.Show(entry.BookID.ToString() + " has been returned.")
+                Dim query = "SELECT * FROM borrowed_books WHERE (BookID = '" & entry.BookID & "')"
+                Using connection As New MySqlConnection(connectionString)
+                    Using command As New MySqlCommand(query, connection)
+                        Try
+                            connection.Open()
+                            Dim reader As MySqlDataReader = command.ExecuteReader()
+                            Dim currentDate As DateTime = DateTime.Now.Date
+                            While reader.Read()
+                                Dim updateQueryInBooks = "UPDATE books SET isIssued = 0, issuedTo = '', dueDate = '0000-00-00 00:00:00' WHERE ID = '" & entry.BookID & "'"
+                                Dim updateQueryInBorrowed_Books = "DELETE FROM borrowed_books WHERE BookID = '" & entry.BookID & "'"
+                                Using newConnection As New MySqlConnection(connectionString)
+                                    Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)
+                                        Try
+                                            newConnection.Open()
+                                            newCommand.ExecuteNonQuery()
+                                            If reader("dueDate") < currentDate Then
+                                                Dim fine As Integer = DateDiff(DateInterval.Day, reader("dueDate"), currentDate)
+                                                Dim fineUpdateQuery = "SELECT * FROM students WHERE ID = '" & ID.ToString & "'"
+                                                Using newNewConnection As New MySqlConnection(connectionString)
+                                                    Using newNewCommand As New MySqlCommand(fineUpdateQuery, newNewConnection)
+                                                        Try
+                                                            newNewConnection.Open()
+                                                            Dim newNewReader As MySqlDataReader = newNewCommand.ExecuteReader
+                                                            While newNewReader.Read()
+                                                                Dim value As Integer
+                                                                Integer.TryParse(newNewReader("Fine").ToString, value)
+                                                                fine = fine + value
+                                                            End While
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
+                                                fineUpdateQuery = "UPDATE students SET Fine = '" & fine & "' WHERE ID = '" & ID.ToString & "'"
+                                                Using newNewConnection As New MySqlConnection(connectionString)
+                                                    Using newNewCommand As New MySqlCommand(fineUpdateQuery, newNewConnection)
+                                                        Try
+                                                            newNewConnection.Open()
+                                                            newNewCommand.ExecuteNonQuery()
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
+                                                MessageBox.Show("Since you are returning the book late, some fine has been added to your account. New fine is " + fine.ToString)
+                                            End If
+                                            MessageBox.Show("Your book with BookID: " + entry.BookID.ToString + " has been returned to the library.")
+                                        Catch ex As Exception
+                                            MessageBox.Show("Error: " & ex.Message)
+                                        End Try
+                                    End Using
+                                End Using
+                                Using newConnection As New MySqlConnection(connectionString)
+                                    Using newCommand As New MySqlCommand(updateQueryInBorrowed_Books, newConnection)
+                                        Try
+                                            newConnection.Open()
+                                            newCommand.ExecuteNonQuery()
+                                        Catch ex As Exception
+                                            MessageBox.Show("Error: " & ex.Message)
+                                        End Try
+                                    End Using
+                                End Using
+                            End While
+                        Catch ex As Exception
+                            MessageBox.Show("Error: yoyo" & ex.Message)
+                        End Try
+                    End Using
+                End Using
+                Return
                 Exit Sub
             End If
         Next
@@ -370,13 +438,36 @@ Public Class studentPage
     ' Backend function for showing the updated fine
     ' Author: g-s01
     Private Sub UpdateFine()
-        Label9.Text = fine.ToString()
+        Dim fineUpdateQuery = "SELECT * FROM students WHERE ID = '" & ID & "'"
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(fineUpdateQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    While newReader.Read()
+                        Label9.Text = newReader("Fine").ToString
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
     End Sub
 
     ' Backend function for paying fine
     ' Author: g-s01
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        fine = 0
+        Dim fineUpdateQuery = "UPDATE students SET Fine = '" & 0 & "' WHERE ID = '" & ID & "'"
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(fineUpdateQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    newCommand.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
         MessageBox.Show("Fine payment successful!")
     End Sub
 
@@ -459,5 +550,4 @@ Public Class studentPage
         End If
         PopulateTable()
     End Sub
-
 End Class
