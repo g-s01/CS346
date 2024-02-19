@@ -550,4 +550,63 @@ Public Class studentPage
         End If
         PopulateTable()
     End Sub
+
+    ' backend function to issue a book
+    ' author: g-s01
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        For Each entry As Entry In allBooks
+            If entry.RadioButton.Checked Then
+                Dim quotaExceed As Integer = 0
+                Dim userQuery = "SELECT * FROM borrowed_books WHERE issuedToID = '" & ID & "'"
+                Using connection As New MySqlConnection(connectionString)
+                    Using command As New MySqlCommand(userQuery, connection)
+                        Try
+                            connection.Open()
+                            Dim reader As MySqlDataReader = command.ExecuteReader()
+                            Dim count As Integer = 0
+                            While reader.Read()
+                                count = count + 1
+                            End While
+                            If count = 7 Then
+                                quotaExceed = 1
+                            End If
+                        Catch ex As Exception
+                            MessageBox.Show("Error: " & ex.Message)
+                        End Try
+                    End Using
+                End Using
+                If quotaExceed = 1 Then
+                    MessageBox.Show("Your quota to issue books is exhausted, return some books to issue new books.")
+                    Return
+                Else
+                    Dim currentDate As DateTime = DateTime.Now.Date
+                    Dim futureDate As DateTime = DateAdd("d", 7, currentDate)
+                    Dim updateQueryInBooks = "UPDATE books SET isIssued = '1', dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "', issuedTo = '" & ID & "', lastIssue = '" & currentDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE ID = '" & entry.BookID & "'"
+                    Dim updateQueryInBorrowed_Books = "INSERT INTO borrowed_books (BookID, issuedToID, issueDate, dueDate) VALUES ('" & entry.BookID & "', '" & ID & "', '" & currentDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "','" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                    Using newConnection As New MySqlConnection(connectionString)
+                        Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)
+                            Try
+                                newConnection.Open()
+                                newCommand.ExecuteNonQuery()
+                                MessageBox.Show("Your book with BookID: " + entry.BookID.ToString + " has been issued till: " + futureDate.Date.ToString)
+                            Catch ex As Exception
+                                MessageBox.Show("Error: " & ex.Message)
+                            End Try
+                        End Using
+                    End Using
+                    Using newConnection As New MySqlConnection(connectionString)
+                        Using newCommand As New MySqlCommand(updateQueryInBorrowed_Books, newConnection)
+                            Try
+                                newConnection.Open()
+                                newCommand.ExecuteNonQuery()
+                            Catch ex As Exception
+                                MessageBox.Show("Error: " & ex.Message)
+                            End Try
+                        End Using
+                    End Using
+                End If
+                Exit Sub
+            End If
+        Next
+    End Sub
 End Class

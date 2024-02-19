@@ -114,7 +114,7 @@ Partial Class studentPage
         Me.DashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DashboardButton.Font = New System.Drawing.Font("Mongolian Baiti", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DashboardButton.Location = New System.Drawing.Point(40, 98)
-        Me.DashboardButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DashboardButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DashboardButton.Name = "DashboardButton"
         Me.DashboardButton.Size = New System.Drawing.Size(112, 31)
         Me.DashboardButton.TabIndex = 18
@@ -130,7 +130,7 @@ Partial Class studentPage
         Me.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LogoutButton.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogoutButton.Location = New System.Drawing.Point(60, 518)
-        Me.LogoutButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LogoutButton.Margin = New System.Windows.Forms.Padding(2)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(74, 31)
         Me.LogoutButton.TabIndex = 21
@@ -146,7 +146,7 @@ Partial Class studentPage
         Me.BookMgmtButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BookMgmtButton.Font = New System.Drawing.Font("Mongolian Baiti", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BookMgmtButton.Location = New System.Drawing.Point(26, 199)
-        Me.BookMgmtButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BookMgmtButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BookMgmtButton.Name = "BookMgmtButton"
         Me.BookMgmtButton.Size = New System.Drawing.Size(145, 31)
         Me.BookMgmtButton.TabIndex = 20
@@ -162,7 +162,7 @@ Partial Class studentPage
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Mongolian Baiti", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.Location = New System.Drawing.Point(40, 150)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(112, 31)
         Me.SearchButton.TabIndex = 19
@@ -181,7 +181,7 @@ Partial Class studentPage
         Me.Dashboard_panel.Controls.Add(Me.Button2)
         Me.Dashboard_panel.Controls.Add(Me.overdueBooksTablePanel)
         Me.Dashboard_panel.Location = New System.Drawing.Point(191, 87)
-        Me.Dashboard_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Dashboard_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.Dashboard_panel.Name = "Dashboard_panel"
         Me.Dashboard_panel.Size = New System.Drawing.Size(686, 474)
         Me.Dashboard_panel.TabIndex = 28
@@ -204,7 +204,7 @@ Partial Class studentPage
         Me.overdueBooksTitleTable.Margin = New System.Windows.Forms.Padding(0)
         Me.overdueBooksTitleTable.Name = "overdueBooksTitleTable"
         Me.overdueBooksTitleTable.RowCount = 1
-        Me.overdueBooksTitleTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45.0!))
+        Me.overdueBooksTitleTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46.0!))
         Me.overdueBooksTitleTable.Size = New System.Drawing.Size(614, 41)
         Me.overdueBooksTitleTable.TabIndex = 35
         '
@@ -362,7 +362,7 @@ Partial Class studentPage
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(560, 387)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(92, 35)
         Me.Button2.TabIndex = 33
@@ -396,7 +396,7 @@ Partial Class studentPage
         Me.Search_panel.Controls.Add(Me.serchTitleTableLayout)
         Me.Search_panel.Controls.Add(Me.searchBar)
         Me.Search_panel.Location = New System.Drawing.Point(191, 87)
-        Me.Search_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Search_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.Search_panel.Name = "Search_panel"
         Me.Search_panel.Size = New System.Drawing.Size(686, 474)
         Me.Search_panel.TabIndex = 35
@@ -407,7 +407,7 @@ Partial Class studentPage
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(277, 431)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 33)
         Me.Button1.TabIndex = 35
@@ -449,7 +449,7 @@ Partial Class studentPage
         Me.serchTitleTableLayout.Margin = New System.Windows.Forms.Padding(0)
         Me.serchTitleTableLayout.Name = "serchTitleTableLayout"
         Me.serchTitleTableLayout.RowCount = 1
-        Me.serchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46.0!))
+        Me.serchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
         Me.serchTitleTableLayout.Size = New System.Drawing.Size(623, 45)
         Me.serchTitleTableLayout.TabIndex = 36
         '
@@ -550,7 +550,7 @@ Partial Class studentPage
         Me.searchBar.Controls.Add(Me.queryBook, 1, 0)
         Me.searchBar.Controls.Add(Me.Panel1, 0, 0)
         Me.searchBar.Location = New System.Drawing.Point(38, 44)
-        Me.searchBar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.searchBar.Margin = New System.Windows.Forms.Padding(2)
         Me.searchBar.Name = "searchBar"
         Me.searchBar.RowCount = 1
         Me.searchBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -619,7 +619,7 @@ Partial Class studentPage
         Me.BookManagement_panel.Controls.Add(Me.Button6)
         Me.BookManagement_panel.Controls.Add(Me.IssueButton)
         Me.BookManagement_panel.Location = New System.Drawing.Point(191, 87)
-        Me.BookManagement_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BookManagement_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.BookManagement_panel.Name = "BookManagement_panel"
         Me.BookManagement_panel.Size = New System.Drawing.Size(686, 474)
         Me.BookManagement_panel.TabIndex = 34
@@ -641,10 +641,10 @@ Partial Class studentPage
         Me.borrowedTableLayout.Controls.Add(Me.Panel15, 0, 0)
         Me.borrowedTableLayout.Controls.Add(Me.Panel20, 3, 0)
         Me.borrowedTableLayout.Location = New System.Drawing.Point(20, 112)
-        Me.borrowedTableLayout.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.borrowedTableLayout.Margin = New System.Windows.Forms.Padding(2)
         Me.borrowedTableLayout.Name = "borrowedTableLayout"
         Me.borrowedTableLayout.RowCount = 1
-        Me.borrowedTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45.0!))
+        Me.borrowedTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46.0!))
         Me.borrowedTableLayout.Size = New System.Drawing.Size(640, 41)
         Me.borrowedTableLayout.TabIndex = 22
         '
@@ -775,7 +775,7 @@ Partial Class studentPage
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90.0!))
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.borrowedBooksTablePanel.Location = New System.Drawing.Point(20, 157)
-        Me.borrowedBooksTablePanel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.borrowedBooksTablePanel.Margin = New System.Windows.Forms.Padding(2)
         Me.borrowedBooksTablePanel.Name = "borrowedBooksTablePanel"
         Me.borrowedBooksTablePanel.RowCount = 1
         Me.borrowedBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -788,7 +788,7 @@ Partial Class studentPage
         Me.RenewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RenewButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RenewButton.Location = New System.Drawing.Point(224, 414)
-        Me.RenewButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RenewButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RenewButton.Name = "RenewButton"
         Me.RenewButton.Size = New System.Drawing.Size(114, 37)
         Me.RenewButton.TabIndex = 21
@@ -801,7 +801,7 @@ Partial Class studentPage
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnButton.Location = New System.Drawing.Point(374, 414)
-        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ReturnButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(114, 37)
         Me.ReturnButton.TabIndex = 20
@@ -814,7 +814,7 @@ Partial Class studentPage
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Location = New System.Drawing.Point(140, 25)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(409, 37)
         Me.Panel2.TabIndex = 19
@@ -825,7 +825,7 @@ Partial Class studentPage
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.SystemColors.GrayText
         Me.TextBox1.Location = New System.Drawing.Point(7, 6)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(395, 19)
         Me.TextBox1.TabIndex = 0
@@ -851,7 +851,7 @@ Partial Class studentPage
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.Location = New System.Drawing.Point(20, 25)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(2)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(123, 37)
         Me.Button6.TabIndex = 16
@@ -864,7 +864,7 @@ Partial Class studentPage
         Me.IssueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IssueButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IssueButton.Location = New System.Drawing.Point(547, 25)
-        Me.IssueButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.IssueButton.Margin = New System.Windows.Forms.Padding(2)
         Me.IssueButton.Name = "IssueButton"
         Me.IssueButton.Size = New System.Drawing.Size(114, 37)
         Me.IssueButton.TabIndex = 15
@@ -886,7 +886,7 @@ Partial Class studentPage
         Me.Controls.Add(Me.BookManagement_panel)
         Me.Controls.Add(Me.Dashboard_panel)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximumSize = New System.Drawing.Size(902, 614)
         Me.MinimumSize = New System.Drawing.Size(902, 614)
         Me.Name = "studentPage"
