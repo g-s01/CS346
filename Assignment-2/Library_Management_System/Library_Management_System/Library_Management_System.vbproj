@@ -91,6 +91,12 @@
     <Compile Include="facultyPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InputPromptForm.Designer.vb">
+      <DependentUpon>InputPromptForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InputPromptForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="facultyPage.resx">
       <DependentUpon>facultyPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputPromptForm.resx">
+      <DependentUpon>InputPromptForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registerPage.resx">
       <DependentUpon>registerPage.vb</DependentUpon>

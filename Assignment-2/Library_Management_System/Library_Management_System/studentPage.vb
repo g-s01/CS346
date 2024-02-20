@@ -42,6 +42,7 @@ Public Class studentPage
 
     Private Sub PopulateTable()
         UpdateFine()
+        UpdateBalance()
         borrowedBooksTablePanel.Controls.Clear()
         overdueBooksTablePanel.Controls.Clear()
         allBooksTablePanel.Controls.Clear()
@@ -445,7 +446,27 @@ Public Class studentPage
                     newConnection.Open()
                     Dim newReader As MySqlDataReader = newCommand.ExecuteReader
                     While newReader.Read()
-                        Label9.Text = newReader("Fine").ToString
+                        Label9.Text = "Rs. " + newReader("Fine").ToString
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+
+    ' Backend function for showing the updated balance
+    ' Author: g-s01
+    Private Sub UpdateBalance()
+        Dim balanceUpdateQuery = "SELECT * FROM students WHERE ID = '" & ID & "'"
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    While newReader.Read()
+                        Label13.Text = "Rs. " + newReader("Balance").ToString
                     End While
                 Catch ex As Exception
                     MessageBox.Show("Error: " & ex.Message)
@@ -456,19 +477,72 @@ Public Class studentPage
 
     ' Backend function for paying fine
     ' Author: g-s01
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim fineUpdateQuery = "UPDATE students SET Fine = '" & 0 & "' WHERE ID = '" & ID & "'"
+    Private Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
+
+        Dim iFine As Integer
+        Dim successful As Boolean
+        successful = False
+
+        ' Create and show the input prompt form
+        Dim inputPromptForm As New InputPromptForm()
+        If inputPromptForm.ShowDialog() = DialogResult.OK Then
+            ' Retrieve the input value
+            If Integer.TryParse(inputPromptForm.InputValue, iFine) Then
+                ' Input value is valid
+            Else
+                ' Input value is not a valid integer
+                MessageBox.Show("Invalid input. Please enter a valid integer.")
+            End If
+        End If
+
+        Dim searchQuery = "SELECT * FROM students WHERE ID = '" & ID & "'"
         Using newConnection As New MySqlConnection(connectionString)
-            Using newCommand As New MySqlCommand(fineUpdateQuery, newConnection)
+            Using newCommand As New MySqlCommand(searchQuery, newConnection)
                 Try
                     newConnection.Open()
-                    newCommand.ExecuteNonQuery()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    Dim fine As Integer
+                    Dim balance As Integer
+                    While newReader.Read()
+                        fine = newReader("Fine")
+                        balance = newReader("Balance")
+                    End While
+
+                    ' Close the DataReader before executing UPDATE queries
+                    newReader.Close()
+
+                    If iFine > fine Then
+                        MessageBox.Show("Invalid amount entered!.")
+                    ElseIf iFine > balance Then
+                        MessageBox.Show("Insufficient Balance!.")
+                    Else
+                        fine = fine - iFine
+                        balance = balance - iFine
+                        successful = True
+
+
+                    End If
+                    Dim fineUpdateQuery = "UPDATE students SET Fine = '" & fine & "' WHERE ID = '" & ID & "'"
+                    Dim balanceUpdateQuery = "UPDATE students SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
+
+                    ' Execute the UPDATE queries
+                    Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
+                        fineUpdateCommand.ExecuteNonQuery()
+                    End Using
+
+                    Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
+                        balanceUpdateCommand.ExecuteNonQuery()
+                    End Using
                 Catch ex As Exception
                     MessageBox.Show("Error: " & ex.Message)
                 End Try
             End Using
         End Using
-        MessageBox.Show("Fine payment successful!")
+        If successful Then
+            MessageBox.Show("Fine payment of Rs." + iFine.ToString + " successful!")
+        End If
+        UpdateBalance()
+        UpdateFine()
     End Sub
 
     ' Backend function for selecting the search mode

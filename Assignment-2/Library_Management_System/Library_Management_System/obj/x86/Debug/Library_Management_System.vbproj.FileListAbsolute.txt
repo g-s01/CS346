@@ -44,3 +44,20 @@ C:\Users\Gautam\Desktop\CS346\Assignment-2\Library_Management_System\Library_Man
 C:\Users\Gautam\Desktop\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb
 F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbprojResolveAssemblyReference.cache
 F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminLoginForm.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.exe
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.xml
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.exe
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.pdb
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.xml
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbprojResolveAssemblyReference.cache
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminLoginForm.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminPage.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.facultyPage.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.registerPage.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.loginPage.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.landingPage.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.Resources.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.studentPage.resources
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbproj.GenerateResource.Cache
+C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
