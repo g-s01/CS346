@@ -8,7 +8,25 @@ It must also offer facilities to students and faculty to issue, return, and rene
 Use MS- Access or MySQL for your database requirements.
 
 ## UNDER-CONSTRUCTION
-- [ ] Frontend
+- [X] Design
+  - [X] Admin side (@`Ajay`)
+  - [X] Student and Faculty side (@`Sarvesh`)
+  - [X] Landing page (@`Gaurav`)
+  - [X] Registration page (@`Gaurav`)
+  - [X] Login page (@`Gaurav`)
+  - [X] Search page (@`Faizan Amir`)
+  - [X] Database Design (@`g-s01` and @`Gautam Juneja`) 
+- [X] Frontend
+  - [X] Admin side (@`Ajay`)
+  - [X] Student and Faculty side (@`Sarvesh`)
+  - [X] Landing page (@`Gaurav`)
+  - [X] Registration page (@`Gaurav`)
+  - [X] Login page (@`Gaurav`)
+  - [X] Search page (@`Faizan Amir`)
+  - [X] Routing (@`Sarvesh`)
+  - [X] Stack usage (@`Ajay`)
+  - [ ] Refresh button (@`Ajay`)
+  - [ ] Increase balance button 
 - [ ] Backend
   - [X] Login Page
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
@@ -45,6 +63,8 @@ Use MS- Access or MySQL for your database requirements.
       - [ ] Send email for 2fa
 - [ ] Documentation
   - [ ] ER Diagram (@`Faizan Amir`)
+  - [X] DFD (@`Faizan Amir` and @`Gautam Juneja`)
+  - [X] Userflow diagram (@`Faizan Amir` and @`Gautam Juneja`)
 ## Running the project
 
 ### Setting up the database
