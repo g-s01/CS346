@@ -24,6 +24,7 @@ Use MS- Access or MySQL for your database requirements.
     - [ ] Admin Dashboard (@`Ajay` and @`Sarvesh`)
     - [ ] Admin Search (@`Faizan Amir`)
     - [ ] Manual Transactions (@`Ajay` and @`Sarvesh`)
+    - [ ] Book Management (@`Ajay` and @`Sarvesh`)
   - [ ] Student & Faculty Page
     - [X] Showing borrowed book list (@`g-s01`)
     - [X] Showing overdue book list (@`g-s01`)
