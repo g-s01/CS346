@@ -8,39 +8,42 @@ It must also offer facilities to students and faculty to issue, return, and rene
 Use MS- Access or MySQL for your database requirements.
 
 ## UNDER-CONSTRUCTION
-
+- [ ] Frontend
 - [ ] Backend
   - [X] Login Page
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
   - [ ] Registration Page
     - [X] Taking input from the user and storing it in the database (@`Gautam Juneja`) 
-    - [ ] Password Strength Checker
-    - [ ] Regex for only emails ending with `@iitg.ac.in`
-    - [ ] Checking whether an account is already made or not
-  - [ ] Admin Login
+    - [ ] Password Strength Checker (@`Gaurav`)
+    - [ ] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
+    - [ ] Checking whether an account is already made or not (@`Gautam Juneja`) 
+    - [ ] OTP (@`Gautam Juneja`) 
+  - [ ] Admin Login (@`Ajay` and @`Sarvesh`)
     - [ ] Check the admin password and then only open the admin dashboard
   - [ ] Admin
-    - [ ] Admin Dashboard
-    - [ ] Admin Search
-    - [ ] Manual Transactions
+    - [ ] Admin Dashboard (@`Ajay` and @`Sarvesh`)
+    - [ ] Admin Search (@`Faizan Amir`)
+    - [ ] Manual Transactions (@`Ajay` and @`Sarvesh`)
   - [ ] Student & Faculty Page
     - [X] Showing borrowed book list (@`g-s01`)
     - [X] Showing overdue book list (@`g-s01`)
     - [X] Showing all unborrowed book list (@`g-s01`)
     - [X] Showing fine from all overdue books (@`g-s01`)
-    - [ ] Payment of fine
+    - [ ] Payment of fine (@`Gaurav`)
         - [ ] Taking a fine amount as input
         - [ ] Maintaining the balance of user
         - [ ] Checking that the user has enough balance to pay input amount
         - [ ] Send email to user a random code for 2fa
-    - [X] Searching of books (@`g-s01`)
+        - [ ] Send confirmation for email
+    - [X] Searching of books (@`g-s01` and @`Faizan Amir`)
     - [X] Renew of books (@`g-s01`)
     - [X] Return of books (@`g-s01`)
     - [X] Issue of books (@`g-s01`)
-    - [ ] Refresh button
-    - [ ] Increase balance
+    - [ ] Refresh button (@`Ajay` and @`Sarvesh`)
+    - [ ] Increase balance (@`g-s01`)
       - [ ] Send email for 2fa
-     
+- [ ] Documentation
+  - [ ] ER Diagram (@`Faizan Amir`)
 ## Running the project
 
 ### Setting up the database
