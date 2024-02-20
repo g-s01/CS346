@@ -15,6 +15,7 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Registration page (@`Gaurav`)
   - [X] Login page (@`Gaurav`)
   - [X] Search page (@`Faizan Amir`)
+  - [X] Database Design (@`g-s01` and @`Gautam Juneja`) 
 - [X] Frontend
   - [X] Admin side (@`Ajay`)
   - [X] Student and Faculty side (@`Sarvesh`)
