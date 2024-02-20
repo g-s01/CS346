@@ -22,6 +22,10 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Registration page (@`Gaurav`)
   - [X] Login page (@`Gaurav`)
   - [X] Search page (@`Faizan Amir`)
+  - [X] Routing (@`Sarvesh`)
+  - [X] Stack usage (@`Ajay`)
+  - [ ] Refresh button
+  - [ ] Increase balance button 
 - [ ] Backend
   - [X] Login Page
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
