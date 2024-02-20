@@ -1,11 +1,17 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Net.Mail
+Imports System.Text.RegularExpressions
+Imports System
+
 Public Class registerPage
-    
+
     ' Variables whose scope is within the form only
     Dim MySQLConn As MySqlConnection
     Dim COMMAND As MySqlCommand
     Dim READER As MySqlDataReader
     Dim isStudent As Boolean = True
+    Dim code As Integer
+    Dim isConfirmed As Boolean = False
 
     Private Sub Student_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Student.Click
         Student.Font = New Font(Student.Font, FontStyle.Bold)
@@ -128,8 +134,6 @@ Public Class registerPage
         MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
         ' This query is to see if the user has already registered into the system or not
         Dim selectQuery As String
-        ' This query is to insert the new user entry in the database
-        Dim insertQuery As String
         If isStudent = True Then
             MySQLConn.Open()
             selectQuery = "SELECT * FROM students WHERE EXISTS (SELECT * FROM students WHERE ID = '" & Username.Text & "')"
@@ -145,18 +149,16 @@ Public Class registerPage
                 READER.Close()
             Else
                 READER.Close()
-                insertQuery = "INSERT INTO " + "students" + " (ID, Password, Name, Fine) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0')"
-                COMMAND = New MySqlCommand(insertQuery, MySQLConn)
-                READER = COMMAND.ExecuteReader
-                MessageBox.Show("Data Saved with:" + vbCrLf +
-                                "ID: ('" & Username.Text & "')" + vbCrLf +
-                                "Name: ('" & Uname.Text & "')" + vbCrLf +
-                                "Password: ('" & Password.Text & "')" + vbCrLf +
-                                "Fine: Rs. 0")
-                Dim newForm As New loginPage()
-                newForm.Show()
-                Me.BackgroundImage.Dispose()
-                Me.Dispose()
+                Dim pattern As String = "^[a-zA-Z0-9._%+-]+@iitg\.ac\.in$"
+                If Not Regex.IsMatch(Username.Text, pattern) Then
+                    MessageBox.Show("Enter a valid email ending with @iitg.ac.in for successful registration!")
+                    Return
+                End If
+                Dim random As New Random()
+                Dim randomNumber As Integer = random.Next(100000, 999999)
+                code = randomNumber
+                sendEmail(randomNumber)
+                MessageBox.Show("Check your inbox, enter OTP on the right hand textbox for confirmation")
             End If
             MySQLConn.Close()
         Else
@@ -174,20 +176,74 @@ Public Class registerPage
                 READER.Close()
             Else
                 READER.Close()
-                insertQuery = "INSERT INTO " + "faculty" + " (ID, Password, Name, Fine) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0')"
-                COMMAND = New MySqlCommand(insertQuery, MySQLConn)
-                READER = COMMAND.ExecuteReader
-                MessageBox.Show("Data Saved with:" + vbCrLf +
-                                "ID: ('" & Username.Text & "')" + vbCrLf +
-                                "Name: ('" & Uname.Text & "')" + vbCrLf +
-                                "Password: ('" & Password.Text & "')" + vbCrLf +
-                                "Fine: Rs. 0")
-                Dim newForm As New loginPage()
-                newForm.Show()
-                Me.BackgroundImage.Dispose()
-                Me.Dispose()
+                Dim pattern As String = "^[a-zA-Z0-9._%+-]+@iitg\.ac\.in$"
+                If Not Regex.IsMatch(Username.Text, pattern) Then
+                    MessageBox.Show("Enter a valid email ending with @iitg.ac.in for successful registration!")
+                    Return
+                End If
+                Dim random As New Random()
+                Dim randomNumber As Integer = random.Next(100000, 999999)
+                code = randomNumber
+                sendEmail(randomNumber)
+                MessageBox.Show("Check your inbox, enter OTP on the right hand textbox for confirmation")
             End If
             MySQLConn.Close()
+        End If
+    End Sub
+
+    Private Sub sendEmail(randomNumber As Integer)
+        Dim smtpServer As String = "smtp-mail.outlook.com"
+        Dim port As Integer = 587
+
+        Dim message As New MailMessage("lms-cs346@outlook.com", Username.Text)
+        message.Subject = "Registration confirmation"
+        message.Body = "Welcome to the LMS-CS346! Your OTP is " + randomNumber.ToString
+
+        Dim smtpClient As New SmtpClient(smtpServer)
+        smtpClient.Port = port
+        smtpClient.Credentials = New System.Net.NetworkCredential("lms-cs346@outlook.com", "SaviourSarvesh")
+        smtpClient.EnableSsl = True
+
+        Try
+            smtpClient.Send(message)
+        Catch ex As SmtpException
+            ' Handle specific SMTP exceptions
+            MessageBox.Show("SMTP error: " & ex.Message)
+        Catch ex As Exception
+            ' Handle other exceptions
+            MessageBox.Show("Error sending email: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim insertQuery As String
+        Dim db As String
+        If isStudent = True Then
+            db = "students"
+        Else
+            db = "faculty"
+        End If
+        If code.ToString = TextBox1.Text Then
+            isConfirmed = True
+            MessageBox.Show("Confirmation Successful")
+            MySQLConn = New MySqlConnection
+            MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
+            MySQLConn.Open()
+            insertQuery = "INSERT INTO " + db + " (ID, Password, Name, Fine, Balance, Code) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0', '0', '')"
+            COMMAND = New MySqlCommand(insertQuery, MySQLConn)
+            READER = COMMAND.ExecuteReader
+            MessageBox.Show("Data Saved with:" + vbCrLf +
+                            "ID: ('" & Username.Text & "')" + vbCrLf +
+                            "Name: ('" & Uname.Text & "')" + vbCrLf +
+                            "Password: ('" & Password.Text & "')" + vbCrLf +
+                            "Fine: Rs. 0")
+            MySQLConn.Close()
+            Dim newForm As New loginPage()
+            newForm.Show()
+            Me.BackgroundImage.Dispose()
+            Me.Dispose()
+        Else
+            MessageBox.Show("Incorrect OTP")
         End If
     End Sub
 End Class

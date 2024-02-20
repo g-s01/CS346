@@ -16,7 +16,7 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Login page (@`Gaurav`)
   - [X] Search page (@`Faizan Amir`)
   - [X] Database Design (@`g-s01` and @`Gautam Juneja`) 
-- [X] Frontend
+- [ ] Frontend
   - [X] Admin side (@`Ajay`)
   - [X] Student and Faculty side (@`Sarvesh`)
   - [X] Landing page (@`Gaurav`)
@@ -33,9 +33,9 @@ Use MS- Access or MySQL for your database requirements.
   - [ ] Registration Page
     - [X] Taking input from the user and storing it in the database (@`Gautam Juneja`) 
     - [ ] Password Strength Checker (@`Gaurav`)
-    - [ ] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
-    - [ ] Checking whether an account is already made or not (@`Gautam Juneja`) 
-    - [ ] OTP (@`Gautam Juneja`) 
+    - [X] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
+    - [X] Checking whether an account is already made or not (@`Gautam Juneja`) 
+    - [X] OTP (@`Gautam Juneja`) 
   - [ ] Admin Login (@`Ajay` and @`Sarvesh`)
     - [ ] Check the admin password and then only open the admin dashboard
   - [ ] Admin
