@@ -48,9 +48,13 @@ Use MS- Access or MySQL for your database requirements.
 1. Download `XAMPP` from [here](https://www.apachefriends.org/)
 2. Install `XAMPP`
 3. Start the `Apache` and `MySQL` server
+ 
    <img width="670" alt="image" src="https://github.com/g-s01/CS346/assets/95131287/a976a5f0-814e-411d-ad93-6990996d0c59">
+   
 4. Make a database named `LMS` from the admin panel of the MySQL server
+   
    <img width="843" alt="image" src="https://github.com/g-s01/CS346/assets/95131287/d43992d9-3e1f-4c6b-9b0d-3e4be5fd7100">
+   
 5. Make five tables in `LMS`:
    
    * **admin**
@@ -113,18 +117,23 @@ Use MS- Access or MySQL for your database requirements.
      | Fine        | INT(11)     | Stores the current fine in the name of student     |
      | Balance     | INT(11)     | Stores the current balance in the student's wallet |
 
-6. Download MySQL version `6.9.9` from [here](https://downloads.mysql.com/archives/c-net/?fbclid=IwAR0sQZdA3D-Xo_-Y85CcT7JtOEc7vT3ygnH04clvTmOZoLKmITruUJ03iFQ)
+8. Download MySQL version `6.9.9` from [here](https://downloads.mysql.com/archives/c-net/?fbclid=IwAR0sQZdA3D-Xo_-Y85CcT7JtOEc7vT3ygnH04clvTmOZoLKmITruUJ03iFQ)
 6. Open the project in `Visual Studio 2010/13`
 7. In the properties of the project, add `MySQL.data` in the `References`
+   
    <img width="637" alt="image" src="https://github.com/g-s01/CS346/assets/95131287/c99085a0-d3cf-4d2e-8b21-72278c208f98">
+   
 8. The database is now setup for use!
 
 ### Building the project
 
 1. Open the project in `Visual Studio 2010/13`
 2. Click on `Start`
+   
    <img width="1038" alt="image" src="https://github.com/g-s01/CS346/assets/95131287/96501739-721d-42c9-80b4-c85bc4ec76a2">
+   
 3. The application starts!
+   
    <img width="903" alt="image" src="https://github.com/g-s01/CS346/assets/95131287/176bee4e-d5b2-4413-8a20-0914bee1b90e">
 
 # Credits
