@@ -163,7 +163,7 @@ Public Class registerPage
             MySQLConn.Close()
         Else
             MySQLConn.Open()
-            selectQuery = "SELECT * FROM faculty WHERE EXISTS (SELECT * FROM students WHERE ID = '" & Username.Text & "')"
+            selectQuery = "SELECT * FROM faculty WHERE EXISTS (SELECT * FROM faculty WHERE ID = '" & Username.Text & "')"
             COMMAND = New MySqlCommand(selectQuery, MySQLConn)
             READER = COMMAND.ExecuteReader
             Dim count As Integer
