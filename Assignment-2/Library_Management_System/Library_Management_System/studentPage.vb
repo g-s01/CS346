@@ -558,7 +558,7 @@ Public Class studentPage
             MessageBox.Show("Select a search mode first")
             Return
         ElseIf selectedSearchMode = "Book ID" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND ID = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND ID like '%" & queryBook.Text & "%')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -574,7 +574,8 @@ Public Class studentPage
                 End Using
             End Using
         ElseIf selectedSearchMode = "Author" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND authorName = '" & queryBook.Text & "')"
+            'Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND authorName = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND authorName like '%" & queryBook.Text & "%')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -590,7 +591,7 @@ Public Class studentPage
                 End Using
             End Using
         ElseIf selectedSearchMode = "Title" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND Title = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND Title like '%" & queryBook.Text & "%')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -606,7 +607,7 @@ Public Class studentPage
                 End Using
             End Using
         ElseIf selectedSearchMode = "Category" Then
-            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND Subject = '" & queryBook.Text & "')"
+            Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved AND Subject like '%" & queryBook.Text & "%')"
             Using newConnection As New MySqlConnection(connectionString)
                 Using newCommand As New MySqlCommand(bookQuery, newConnection)
                     Try
@@ -683,4 +684,22 @@ Public Class studentPage
             End If
         Next
     End Sub
+
+    Private Sub btnAddBalance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddBalance.Click
+
+        Dim addBlc As Integer
+
+        ' Create and show the input prompt form
+        Dim addBlcForm As New AddBalanceForm()
+        If addBlcForm.ShowDialog() = DialogResult.OK Then
+            ' Retrieve the input value
+            If Integer.TryParse(addBlcForm.InputValue, addBlc) Then
+                ' Input value is valid
+            Else
+                ' Input value is not a valid integer
+                MessageBox.Show("Invalid input. Please enter a valid integer.")
+            End If
+        End If
+    End Sub
+
 End Class

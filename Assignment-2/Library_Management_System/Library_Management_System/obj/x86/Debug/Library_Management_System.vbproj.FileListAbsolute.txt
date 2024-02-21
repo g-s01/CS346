@@ -62,3 +62,21 @@ C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Manageme
 C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbproj.GenerateResource.Cache
 C:\Users\gaura\OneDrive\Documents\sw project\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
 C:\Users\Gautam\Desktop\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.exe
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.xml
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.exe
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.pdb
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.xml
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbprojResolveAssemblyReference.cache
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminLoginForm.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminPage.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.facultyPage.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.registerPage.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.loginPage.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.landingPage.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.Resources.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.studentPage.resources
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbproj.GenerateResource.Cache
+D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
