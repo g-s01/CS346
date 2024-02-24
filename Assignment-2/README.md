@@ -36,13 +36,13 @@ Use MS- Access or MySQL for your database requirements.
     - [X] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
     - [X] Checking whether an account is already made or not (@`Gautam Juneja`) 
     - [X] OTP (@`Gautam Juneja`) 
-  - [ ] Admin Login (@`Ajay` and @`Sarvesh`)
+  - [ ] Admin Login (@`Sarvesh`)
     - [ ] Check the admin password and then only open the admin dashboard
   - [ ] Admin
-    - [ ] Admin Dashboard (@`Ajay` and @`Sarvesh`)
+    - [ ] Admin Dashboard (@`Ajay`)
     - [ ] Admin Search (@`Faizan Amir`)
-    - [ ] Manual Transactions (@`Ajay` and @`Sarvesh`)
-    - [ ] Book Management (@`Ajay` and @`Sarvesh`)
+    - [ ] Manual Transactions (@`Sarvesh`)
+    - [ ] Book Management (@`Ajay`)
   - [ ] Student & Faculty Page
     - [X] Showing borrowed book list (@`g-s01`)
     - [X] Showing overdue book list (@`g-s01`)
