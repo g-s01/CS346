@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Net.Mail
 
 Public Class studentPage
     Dim connectionString As String = "server=localhost;user=root;database=LMS;pwd=;convert zero datetime=True"
@@ -228,6 +229,14 @@ Public Class studentPage
                         End Try
                     End Using
                 End Using
+                ' function to load the borrowed books of a user
+                LoadBorrowedBooks()
+                ' function to load all the overdue books of a user
+                LoadOverdueBooks()
+                ' function to load all the un-borrowed books
+                LoadAllBooks()
+                ' Populate the table with the borrowedBooks
+                PopulateTable()
                 Return
             End If
         Next
@@ -278,6 +287,7 @@ Public Class studentPage
                                                         Try
                                                             newNewConnection.Open()
                                                             newNewCommand.ExecuteNonQuery()
+                                                            'MessageBox.Show("Fine updated to " + fine.ToString)
                                                         Catch ex As Exception
                                                             MessageBox.Show("Error: " & ex.Message)
                                                         End Try
@@ -307,11 +317,18 @@ Public Class studentPage
                         End Try
                     End Using
                 End Using
+                ' function to load the borrowed books of a user
+                LoadBorrowedBooks()
+                ' function to load all the overdue books of a user
+                LoadOverdueBooks()
+                ' function to load all the un-borrowed books
+                LoadAllBooks()
+                ' Populate the table with the borrowedBooks
+                PopulateTable()
                 Return
                 Exit Sub
             End If
         Next
-
         MessageBox.Show("No book selected.")
     End Sub
 
@@ -356,6 +373,7 @@ Public Class studentPage
     ' Backend function for loading the borrowed books of a user
     ' Author: g-s01
     Private Sub LoadBorrowedBooks()
+        borrowedBooks.Clear()
         Dim query As String = "SELECT * FROM borrowed_books WHERE (issuedToID = '" & ID & "')"
         Using connection As New MySqlConnection(connectionString)
             Using command As New MySqlCommand(query, connection)
@@ -388,6 +406,7 @@ Public Class studentPage
     ' Backend function for loading the overdue books of a user
     ' Author: g-s01
     Private Sub LoadOverdueBooks()
+        overdueBooks.Clear()
         Dim query As String = "SELECT *, DATEDIFF(CURRENT_DATE, dueDate) AS daysPassed FROM borrowed_books WHERE (issuedToID = '" & ID & "' AND dueDate < CURRENT_DATE)"
         Using connection As New MySqlConnection(connectionString)
             Using command As New MySqlCommand(query, connection)
@@ -420,6 +439,7 @@ Public Class studentPage
     ' Backend function for loading the all un-borrowed books in the system 
     ' Author: g-s01
     Private Sub LoadAllBooks()
+        allBooks.Clear()
         Dim bookQuery = "SELECT * FROM books WHERE (NOT isIssued AND NOT isReserved)"
         Using newConnection As New MySqlConnection(connectionString)
             Using newCommand As New MySqlCommand(bookQuery, newConnection)
@@ -478,7 +498,6 @@ Public Class studentPage
     ' Backend function for paying fine
     ' Author: g-s01
     Private Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
-
         Dim iFine As Integer
         Dim successful As Boolean
         successful = False
@@ -510,9 +529,10 @@ Public Class studentPage
 
                     ' Close the DataReader before executing UPDATE queries
                     newReader.Close()
-
-                    If iFine > fine Then
-                        MessageBox.Show("Invalid amount entered!.")
+                    If iFine <= 0 Then
+                        MessageBox.Show("Enter a positive integer!")
+                    ElseIf iFine > fine Then
+                        MessageBox.Show("Don't pay more than the fine!.")
                     ElseIf iFine > balance Then
                         MessageBox.Show("Insufficient Balance!.")
                     Else
@@ -679,6 +699,14 @@ Public Class studentPage
                             End Try
                         End Using
                     End Using
+                    ' function to load the borrowed books of a user
+                    LoadBorrowedBooks()
+                    ' function to load all the overdue books of a user
+                    LoadOverdueBooks()
+                    ' function to load all the un-borrowed books
+                    LoadAllBooks()
+                    ' Populate the table with the borrowedBooks
+                    PopulateTable()
                 End If
                 Exit Sub
             End If
@@ -686,15 +714,50 @@ Public Class studentPage
     End Sub
 
     Private Sub btnAddBalance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddBalance.Click
-
         Dim addBlc As Integer
-
+        Dim successful As Boolean
+        successful = False
         ' Create and show the input prompt form
         Dim addBlcForm As New AddBalanceForm()
         If addBlcForm.ShowDialog() = DialogResult.OK Then
             ' Retrieve the input value
             If Integer.TryParse(addBlcForm.InputValue, addBlc) Then
                 ' Input value is valid
+                Dim searchQuery = "SELECT * FROM students WHERE ID = '" & ID & "'"
+                Using newConnection As New MySqlConnection(connectionString)
+                    Using newCommand As New MySqlCommand(searchQuery, newConnection)
+                        Try
+                            newConnection.Open()
+                            Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                            Dim balance As Integer
+                            While newReader.Read()
+                                balance = newReader("Balance")
+                            End While
+                            ' Close the DataReader before executing UPDATE queries
+                            newReader.Close()
+                            If addBlc <= 0 Then
+                                MessageBox.Show("Enter a positive integer!")
+                            ElseIf balance + addBlc > 1000 Then
+                                MessageBox.Show("You can't have more than Rs. 1000 in your account.")
+                            Else
+                                balance = balance + addBlc
+                                successful = True
+                            End If
+
+                            Dim balanceUpdateQuery = "UPDATE students SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
+
+                            Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
+                                balanceUpdateCommand.ExecuteNonQuery()
+                            End Using
+                        Catch ex As Exception
+                            MessageBox.Show("Error: " & ex.Message)
+                        End Try
+                    End Using
+                End Using
+                If successful Then
+                    MessageBox.Show(addBlc.ToString + " successfully added to your balance!")
+                End If
+                UpdateBalance()
             Else
                 ' Input value is not a valid integer
                 MessageBox.Show("Invalid input. Please enter a valid integer.")
@@ -702,4 +765,27 @@ Public Class studentPage
         End If
     End Sub
 
+    Private Sub sendEmail(randomNumber As Integer, subject As String, body As String)
+        Dim smtpServer As String = "smtp-mail.outlook.com"
+        Dim port As Integer = 587
+
+        Dim message As New MailMessage("lms-cs346@outlook.com", ID)
+        message.Subject = subject
+        message.Body = body + "\nYour OTP is " + randomNumber.ToString
+
+        Dim smtpClient As New SmtpClient(smtpServer)
+        smtpClient.Port = port
+        smtpClient.Credentials = New System.Net.NetworkCredential("lms-cs346@outlook.com", "SaviourSarvesh")
+        smtpClient.EnableSsl = True
+
+        Try
+            smtpClient.Send(message)
+        Catch ex As SmtpException
+            ' Handle specific SMTP exceptions
+            MessageBox.Show("SMTP error: " & ex.Message)
+        Catch ex As Exception
+            ' Handle other exceptions
+            MessageBox.Show("Error sending email: " & ex.Message)
+        End Try
+    End Sub
 End Class

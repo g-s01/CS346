@@ -236,7 +236,8 @@ Public Class registerPage
                             "ID: ('" & Username.Text & "')" + vbCrLf +
                             "Name: ('" & Uname.Text & "')" + vbCrLf +
                             "Password: ('" & Password.Text & "')" + vbCrLf +
-                            "Fine: Rs. 0")
+                            "Fine: Rs. 0" + vbCrLf +
+                            "Balance: Rs. 0")
             MySQLConn.Close()
             Dim newForm As New loginPage()
             newForm.Show()

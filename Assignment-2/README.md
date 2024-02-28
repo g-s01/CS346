@@ -16,7 +16,7 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Login page (@`Gaurav`)
   - [X] Search page (@`Faizan Amir`)
   - [X] Database Design (@`g-s01` and @`Gautam Juneja`) 
-- [ ] Frontend
+- [X] Frontend
   - [X] Admin side (@`Ajay`)
   - [X] Student and Faculty side (@`Sarvesh`)
   - [X] Landing page (@`Gaurav`)
@@ -25,8 +25,7 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Search page (@`Faizan Amir`)
   - [X] Routing (@`Sarvesh`)
   - [X] Stack usage (@`Ajay`)
-  - [ ] Refresh button (@`Ajay`)
-  - [ ] Increase balance button 
+  - [X] Increase balance button 
 - [ ] Backend
   - [X] Login Page
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
@@ -49,18 +48,18 @@ Use MS- Access or MySQL for your database requirements.
     - [X] Showing all unborrowed book list (@`g-s01`)
     - [X] Showing fine from all overdue books (@`g-s01`)
     - [ ] Payment of fine (@`Gaurav`)
-        - [ ] Taking a fine amount as input
-        - [ ] Maintaining the balance of user
-        - [ ] Checking that the user has enough balance to pay input amount
+        - [X] Taking a fine amount as input
+        - [X] Maintaining the balance of user
+        - [X] Checking that the user has enough balance to pay input amount
         - [ ] Send email to user a random code for 2fa
         - [ ] Send confirmation for email
     - [X] Searching of books (@`g-s01` and @`Faizan Amir`)
     - [X] Renew of books (@`g-s01`)
     - [X] Return of books (@`g-s01`)
     - [X] Issue of books (@`g-s01`)
-    - [ ] Refresh button (@`Ajay` and @`Sarvesh`)
     - [ ] Increase balance (@`g-s01`)
       - [ ] Send email for 2fa
+    - [ ] Writing all the transactions to the admin
 - [ ] Documentation
   - [ ] ER Diagram (@`Faizan Amir`)
   - [X] DFD (@`Faizan Amir` and @`Gautam Juneja`)
