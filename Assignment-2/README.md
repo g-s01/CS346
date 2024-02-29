@@ -59,7 +59,7 @@ Use MS- Access or MySQL for your database requirements.
     - [X] Issue of books (@`g-s01`)
     - [ ] Increase balance (@`g-s01`)
       - [ ] Send email for 2fa
-    - [X] Writing all the transactions to the admin
+    - [X] Writing all the transactions to the admin (@`g-s01`)
 - [ ] Documentation
   - [ ] ER Diagram (@`Faizan Amir`)
   - [X] DFD (@`Faizan Amir` and @`Gautam Juneja`)
@@ -139,6 +139,14 @@ Use MS- Access or MySQL for your database requirements.
      | Name        | VARCHAR(50) | Stores the name of the student                     |
      | Fine        | INT(11)     | Stores the current fine in the name of student     |
      | Balance     | INT(11)     | Stores the current balance in the student's wallet |
+
+   * **transactions**
+
+     This table stores all the transactions that are performed in the database, like issue of books, return of books, renew of books, payment of fine, increasing balance etc.
+
+     | Column Name   | Data-Type    | Work                                                  |
+     |---------------|--------------|-------------------------------------------------------|
+     | transaction   | VARCHAR(1000)| Stores all the transactions that happen on the system |	
 
 8. Download MySQL version `6.9.9` from [here](https://downloads.mysql.com/archives/c-net/?fbclid=IwAR0sQZdA3D-Xo_-Y85CcT7JtOEc7vT3ygnH04clvTmOZoLKmITruUJ03iFQ)
 6. Open the project in `Visual Studio 2010/13`
