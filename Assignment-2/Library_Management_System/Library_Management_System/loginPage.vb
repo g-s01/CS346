@@ -69,7 +69,7 @@ Public Class loginPage
             Dim Query As String
             If isStudent = True Then
 
-                Query = "SELECT * FROM students where ID='" & Username.Text & "' and Password= '" & Password.Text & "'"
+                Query = "SELECT * FROM students where BINARY ID='" & Username.Text & "' and BINARY Password= '" & Password.Text & "'"
                 COMMAND = New MySqlCommand(Query, MySQLConn)
                 READER = COMMAND.ExecuteReader
                 Dim count As Integer
@@ -89,7 +89,7 @@ Public Class loginPage
                 End If
 
             Else
-                Query = "SELECT * FROM faculty where ID='" & Username.Text & "' and Password= '" & Password.Text & "'"
+                Query = "SELECT * FROM faculty where BINARY ID='" & Username.Text & "' and BINARY Password= '" & Password.Text & "'"
                 COMMAND = New MySqlCommand(Query, MySQLConn)
                 READER = COMMAND.ExecuteReader
                 Dim count As Integer

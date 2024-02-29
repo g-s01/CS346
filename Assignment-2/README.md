@@ -59,7 +59,7 @@ Use MS- Access or MySQL for your database requirements.
     - [X] Issue of books (@`g-s01`)
     - [ ] Increase balance (@`g-s01`)
       - [ ] Send email for 2fa
-    - [ ] Writing all the transactions to the admin
+    - [X] Writing all the transactions to the admin
 - [ ] Documentation
   - [ ] ER Diagram (@`Faizan Amir`)
   - [X] DFD (@`Faizan Amir` and @`Gautam Juneja`)

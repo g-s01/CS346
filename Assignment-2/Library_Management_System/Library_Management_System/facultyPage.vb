@@ -223,6 +223,17 @@ Public Class facultyPage
                                             End Try
                                         End Using
                                     End Using
+                                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " renewed the book with book ID " & entry.BookID & " till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                                    Using newConnection As New MySqlConnection(connectionString)
+                                        Using newCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
+                                            Try
+                                                newConnection.Open()
+                                                newCommand.ExecuteNonQuery()
+                                            Catch ex As Exception
+                                                MessageBox.Show("Error: " & ex.Message)
+                                            End Try
+                                        End Using
+                                    End Using
                                 End If
                             End While
                         Catch ex As Exception
@@ -293,7 +304,30 @@ Public Class facultyPage
                                                         End Try
                                                     End Using
                                                 End Using
+                                                Dim addTransactionToAdminWithFine = "INSERT INTO transactions (transaction) VALUES (' " & ID & " returned the book with book ID " & entry.BookID & ", and incurred a fine of " & fine.ToString & "')"
+                                                Using newNewConnection As New MySqlConnection(connectionString)
+                                                    Using newNewCommand As New MySqlCommand(addTransactionToAdminWithFine, newNewConnection)
+                                                        Try
+                                                            newNewConnection.Open()
+                                                            newNewCommand.ExecuteNonQuery()
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
                                                 MessageBox.Show("Since you are returning the book late, some fine has been added to your account. New fine is " + fine.ToString)
+                                            Else
+                                                Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " returned the book with book ID " & entry.BookID & "')"
+                                                Using newNewConnection As New MySqlConnection(connectionString)
+                                                    Using newNewCommand As New MySqlCommand(addTransactionToAdmin, newNewConnection)
+                                                        Try
+                                                            newNewConnection.Open()
+                                                            newNewCommand.ExecuteNonQuery()
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
                                             End If
                                             MessageBox.Show("Your book with BookID: " + entry.BookID.ToString + " has been returned to the library.")
                                         Catch ex As Exception
@@ -544,6 +578,7 @@ Public Class facultyPage
                     End If
                     Dim fineUpdateQuery = "UPDATE faculty SET Fine = '" & fine & "' WHERE ID = '" & ID & "'"
                     Dim balanceUpdateQuery = "UPDATE faculty SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
+                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as paid a fine of Rs. " & iFine.ToString & "')"
 
                     ' Execute the UPDATE queries
                     Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
@@ -553,6 +588,12 @@ Public Class facultyPage
                     Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
                         balanceUpdateCommand.ExecuteNonQuery()
                     End Using
+
+                    Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
+                        addTransactionToAdminCommand.ExecuteNonQuery()
+                    End Using
+
+
                 Catch ex As Exception
                     MessageBox.Show("Error: " & ex.Message)
                 End Try
@@ -698,6 +739,17 @@ Public Class facultyPage
                             End Try
                         End Using
                     End Using
+                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as issued the book with book ID " & entry.BookID & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                    Using newNewConnection As New MySqlConnection(connectionString)
+                        Using newNewCommand As New MySqlCommand(addTransactionToAdmin, newNewConnection)
+                            Try
+                                newNewConnection.Open()
+                                newNewCommand.ExecuteNonQuery()
+                            Catch ex As Exception
+                                MessageBox.Show("Error: " & ex.Message)
+                            End Try
+                        End Using
+                    End Using
                     ' function to load the borrowed books of a user
                     LoadBorrowedBooks()
                     ' function to load all the overdue books of a user
@@ -744,9 +796,14 @@ Public Class facultyPage
                             End If
 
                             Dim balanceUpdateQuery = "UPDATE faculty SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
+                            Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as updated is balance to Rs. " & balance.ToString & "')"
 
                             Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
                                 balanceUpdateCommand.ExecuteNonQuery()
+                            End Using
+
+                            Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
+                                addTransactionToAdminCommand.ExecuteNonQuery()
                             End Using
                         Catch ex As Exception
                             MessageBox.Show("Error: " & ex.Message)
