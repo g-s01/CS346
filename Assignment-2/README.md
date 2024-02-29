@@ -88,7 +88,6 @@ Use MS- Access or MySQL for your database requirements.
      |---------------|-------------|-------------------------------------------------------|
      | Password      | VARCHAR(50) | Stores the password for admin login                   |
      | fineCollected | INT(11)     | Stores the total fine collected by the admin          |
-     | Transactions  | VARCHAR(100)| Stores all the transactions that happen on the system |
 
    * **books**
 
