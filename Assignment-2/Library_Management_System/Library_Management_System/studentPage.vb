@@ -201,38 +201,53 @@ Public Class studentPage
                                 Else
                                     Dim updateQueryInBooks = "UPDATE books SET dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE ID = '" & entry.BookID & "'"
                                     Dim updateQueryInBorrowed_Books = "UPDATE borrowed_books SET dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE BookID = '" & entry.BookID & "'"
-                                    Using newConnection As New MySqlConnection(connectionString)
-                                        Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)
-                                            Try
-                                                newConnection.Open()
-                                                newCommand.ExecuteNonQuery()
-                                                MessageBox.Show("Your book with BookID: " + entry.BookID.ToString + " has been renewed till: " + futureDate.Date.ToString)
-                                            Catch ex As Exception
-                                                MessageBox.Show("Error: " & ex.Message)
-                                            End Try
-                                        End Using
-                                    End Using
-                                    Using newConnection As New MySqlConnection(connectionString)
-                                        Using newCommand As New MySqlCommand(updateQueryInBorrowed_Books, newConnection)
-                                            Try
-                                                newConnection.Open()
-                                                newCommand.ExecuteNonQuery()
-                                            Catch ex As Exception
-                                                MessageBox.Show("Error: " & ex.Message)
-                                            End Try
-                                        End Using
-                                    End Using
-                                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " renewed the book with book ID " & entry.BookID & " till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
-                                    Using newConnection As New MySqlConnection(connectionString)
-                                        Using newCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
-                                            Try
-                                                newConnection.Open()
-                                                newCommand.ExecuteNonQuery()
-                                            Catch ex As Exception
-                                                MessageBox.Show("Error: " & ex.Message)
-                                            End Try
-                                        End Using
-                                    End Using
+                                    Dim authForm As New auth()
+                                    Dim random As New Random()
+                                    Dim randomNumber As Integer = random.Next(100000, 999999)
+                                    Dim code As Integer
+                                    sendEmail(randomNumber, "OTP for Book Renewal", "It seems you are trying to renew a book with book ID " + entry.BookID.ToString)
+                                    If authForm.ShowDialog() = DialogResult.OK Then
+                                        If Integer.TryParse(authForm.InputValue, code) Then
+                                            If code = randomNumber Then
+                                                Using newConnection As New MySqlConnection(connectionString)
+                                                    Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)
+                                                        Try
+                                                            newConnection.Open()
+                                                            newCommand.ExecuteNonQuery()
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
+                                                Using newConnection As New MySqlConnection(connectionString)
+                                                    Using newCommand As New MySqlCommand(updateQueryInBorrowed_Books, newConnection)
+                                                        Try
+                                                            newConnection.Open()
+                                                            newCommand.ExecuteNonQuery()
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
+                                                Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " renewed the book with book ID " & entry.BookID & " till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                                                Using newConnection As New MySqlConnection(connectionString)
+                                                    Using newCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
+                                                        Try
+                                                            newConnection.Open()
+                                                            newCommand.ExecuteNonQuery()
+                                                        Catch ex As Exception
+                                                            MessageBox.Show("Error: " & ex.Message)
+                                                        End Try
+                                                    End Using
+                                                End Using
+                                                MessageBox.Show("You have successfully renewed the book with book ID " + entry.BookID.ToString + " till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss"))
+                                            Else
+                                                MessageBox.Show("Wrong OTP")
+                                            End If
+                                        Else
+                                            MessageBox.Show("Please enter valid OTP")
+                                        End If
+                                    End If
                                 End If
                             End While
                         Catch ex As Exception
@@ -828,7 +843,7 @@ Public Class studentPage
 
         Dim message As New MailMessage("lms-cs346@outlook.com", ID)
         message.Subject = subject
-        message.Body = body + "\nYour OTP is " + randomNumber.ToString
+        message.Body = body & vbCrLf & "Your OTP is " + randomNumber.ToString
 
         Dim smtpClient As New SmtpClient(smtpServer)
         smtpClient.Port = port
