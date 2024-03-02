@@ -85,3 +85,21 @@ C:\Users\Gautam\Desktop\CS346\Assignment-2\Library_Management_System\Library_Man
 F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
 F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.auth.resources
 F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.exe
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.pdb
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.xml
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminLoginForm.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminPage.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.auth.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.facultyPage.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.registerPage.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.loginPage.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.landingPage.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.Resources.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.studentPage.resources
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbproj.GenerateResource.Cache
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.exe
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.xml
+D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb
