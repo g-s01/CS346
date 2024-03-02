@@ -31,7 +31,7 @@ Use MS- Access or MySQL for your database requirements.
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
   - [ ] Registration Page
     - [X] Taking input from the user and storing it in the database (@`Gautam Juneja`) 
-    - [ ] Password Strength Checker (@`Gautam Juneja`)
+    - [X] Password Strength Checker (@`Gautam Juneja`)
     - [X] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
     - [X] Checking whether an account is already made or not (@`Gautam Juneja`) 
     - [X] OTP (@`Gautam Juneja`) 
