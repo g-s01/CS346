@@ -1,4 +1,6 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports System.Text
+Imports MySql.Data.MySqlClient
 Imports System.Net.Mail
 Imports System.Text.RegularExpressions
 Imports System
@@ -58,10 +60,19 @@ Public Class registerPage
     End Sub
 
     Private Sub Password_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Password.TextChanged
+        ' Check if the text of the Password TextBox is not equal to "Password"
         If Password.Text <> "Password" Then
+            ' Set UseSystemPasswordChar property to true to hide the password characters
             Password.UseSystemPasswordChar = True
         End If
+
+        ' Get the password from the Password TextBox
+        Dim passwordText As String = Password.Text
+
+        ' Check the password strength
+        CheckPasswordStrength(passwordText)
     End Sub
+
 
     Private Sub Password_GotFocus(ByVal sender As Object, ByVal e As EventArgs) Handles Password.GotFocus
         ' When the textbox gains focus, clear the placeholder text if it's present
@@ -131,7 +142,7 @@ Public Class registerPage
         End If
         ' Creating a SQL connection
         MySQLConn = New MySqlConnection
-        MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
+        MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=hello;"
         ' This query is to see if the user has already registered into the system or not
         Dim selectQuery As String
         If isStudent = True Then
@@ -246,5 +257,124 @@ Public Class registerPage
         Else
             MessageBox.Show("Incorrect OTP")
         End If
+    End Sub
+
+    ' Function to check password strength
+    Private Sub CheckPasswordStrength(ByVal password As String)
+
+        'Dim password As String = password.Text
+        Dim score As Integer
+
+        score = CalculateScore(password)
+
+        ' Convert password to lowercase for case-insensitive matching
+        'password = password.ToLower()
+
+        ' Check for common sequences using the CheckCommonSequences function
+        If CheckCommonSequences(password) Then
+            score -= 2
+
+        End If
+
+        
+
+        'Ensure the score is within the range [0, 10]
+        score = Math.Min(10, Math.Max(0, score))
+
+        Dim strength As String = CategorizeStrength(score)
+
+        
+
+        ' Display the password strength
+        Label1.Text = "Password Strength: " & strength
+
+
+    End Sub
+
+    ' Function to check if the password is present in the Common-Password File
+    Private Function CheckCommonSequences(ByVal password As String) As Boolean
+
+        Dim commonPasswordsFilePath As String = "D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\Common-Password.txt"
+        'Dim commonPasswordsFilePath As String = "Common-Password.txt"
+
+        Try
+            Using commonPasswordsFile As New StreamReader(commonPasswordsFilePath)
+                'Dim commonPassword As String
+                Dim commonPassword As String = String.Empty
+                While (InlineAssignHelper(commonPassword, commonPasswordsFile.ReadLine())) IsNot Nothing
+                    If password = commonPassword Then
+                        ' Password matches exactly with a common password
+                        Return True
+                    End If
+                End While
+            End Using
+        Catch ex As IOException
+            ' Handle file IO exception
+            Console.WriteLine("Error: Common Password File cannot be read.")
+        End Try
+
+        ' Password does not match any common password
+        Return False
+
+    End Function
+
+    ' Helper function to simulate C++ inline assignment
+    Private Shared Function InlineAssignHelper(Of T)(ByRef target As T, ByVal value As T) As T
+        target = value
+        Return value
+    End Function
+
+    ' Function to categorize the password based on score
+    Private Function CategorizeStrength(ByVal score As Integer) As String
+        If score <= 2 Then
+            Return "Very weak"
+        ElseIf score <= 4 Then
+            Return "Weak"
+        ElseIf score <= 6 Then
+            Return "Moderate"
+        ElseIf score <= 8 Then
+            Return "Strong"
+        Else
+            Return "Very strong"
+        End If
+    End Function
+
+
+    'Function to calculate score of the password
+    Private Function CalculateScore(ByVal password As String) As Integer
+        Dim score As Integer = 0
+        Dim uniqueChars As New HashSet(Of Char)()
+        Dim has_upper As Integer = 0
+        Dim has_specialchar As Integer = 0
+        Dim has_num As Integer = 0
+
+        ' Check length
+        Dim length As Integer = password.Length
+        score += (length - 1) \ 3
+
+        ' Check for special characters, capital letters, numeric digits
+        For Each ch As Char In password
+            If Char.IsPunctuation(ch) AndAlso Not uniqueChars.Contains(ch) Then
+                has_specialchar += 1
+                uniqueChars.Add(ch)
+            ElseIf Char.IsUpper(ch) AndAlso Not uniqueChars.Contains(ch) Then
+                has_upper += 1
+                uniqueChars.Add(ch)
+            ElseIf Char.IsDigit(ch) AndAlso Not uniqueChars.Contains(ch) Then
+                has_num += 1
+                uniqueChars.Add(ch)
+            End If
+        Next
+
+        ' Additional scoring based on the count of special characters, capital letters, and numeric digits
+        score += Math.Min(3, has_specialchar)
+        score += Math.Min(3, has_num)
+        score += Math.Min(3, has_upper)
+
+        Return score
+    End Function
+
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
+
     End Sub
 End Class
