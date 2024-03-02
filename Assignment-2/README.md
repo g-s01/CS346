@@ -35,12 +35,12 @@ Use MS- Access or MySQL for your database requirements.
     - [X] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
     - [X] Checking whether an account is already made or not (@`Gautam Juneja`) 
     - [X] OTP (@`Gautam Juneja`) 
-  - [ ] Admin Login (@`Sarvesh`)
-    - [ ] Check the admin password and then only open the admin dashboard
+  - [X] Admin Login (@`Sarvesh`)
+    - [X] Check the admin password and then only open the admin dashboard
   - [ ] Admin
     - [ ] Admin Dashboard (@`Ajay`)
     - [ ] Admin Search (@`Faizan Amir`)
-    - [ ] Manual Transactions (@`Sarvesh`)
+    - [X] Manual Transactions (@`Sarvesh`)
     - [ ] Book Management (@`Ajay`)
   - [ ] Student & Faculty Page
     - [X] Showing borrowed book list (@`g-s01`)
@@ -86,6 +86,7 @@ Use MS- Access or MySQL for your database requirements.
      
      | Column Name   | Data-Type   | Work                                                  |
      |---------------|-------------|-------------------------------------------------------|
+     | username      | VARCHAR(50) | Stores the username for admin login                   |
      | Password      | VARCHAR(50) | Stores the password for admin login                   |
      | fineCollected | INT(11)     | Stores the total fine collected by the admin          |
 
@@ -172,4 +173,4 @@ Use MS- Access or MySQL for your database requirements.
 * Gaurav
 * Gautam Juneja
 * [Gautam Sharma](https://g-s01.github.io/)
-* Gholap Sarvesh Sarjerao
+* [Gholap Sarvesh Sarjerao](https://github.com/sarg19)
