@@ -29,7 +29,7 @@ Use MS- Access or MySQL for your database requirements.
 - [ ] Backend
   - [X] Login Page
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
-  - [ ] Registration Page
+  - [X] Registration Page
     - [X] Taking input from the user and storing it in the database (@`Gautam Juneja`) 
     - [X] Password Strength Checker (@`Gautam Juneja`)
     - [X] Regex for only emails ending with `@iitg.ac.in` (@`Gautam Juneja`) 
