@@ -171,6 +171,6 @@ Use MS- Access or MySQL for your database requirements.
 * Durgesam Ajay
 * Faizan Amir
 * Gaurav
-* Gautam Juneja
+* [Gautam Juneja](https://github.com/HarmlessCoder)
 * [Gautam Sharma](https://g-s01.github.io/)
 * [Gholap Sarvesh Sarjerao](https://github.com/sarg19)
