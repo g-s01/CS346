@@ -82,3 +82,6 @@ D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\ob
 D:\LMS\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
 C:\Users\Gautam\Desktop\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
 C:\Users\Gautam\Desktop\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.auth.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.auth.resources
+F:\CS346\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources

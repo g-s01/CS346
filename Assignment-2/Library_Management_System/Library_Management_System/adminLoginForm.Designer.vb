@@ -24,7 +24,9 @@ Partial Class adminLoginForm
     Private Sub InitializeComponent()
         Me.SubminButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Password = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,12 +47,24 @@ Partial Class adminLoginForm
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Password)
         Me.Panel1.Location = New System.Drawing.Point(91, 78)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(371, 52)
         Me.Panel1.TabIndex = 1
+        '
+        'Password
+        '
+        Me.Password.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Password.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Password.Location = New System.Drawing.Point(7, 14)
+        Me.Password.Margin = New System.Windows.Forms.Padding(7, 2, 3, 2)
+        Me.Password.Name = "Password"
+        Me.Password.Size = New System.Drawing.Size(349, 23)
+        Me.Password.TabIndex = 2
+        Me.Password.Text = "Enter admin password here"
         '
         'TextBox1
         '
@@ -64,12 +78,23 @@ Partial Class adminLoginForm
         Me.TextBox1.TabIndex = 2
         Me.TextBox1.Text = "Enter admin password here"
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(39, 42)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "⬅"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'adminLoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(581, 251)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.SubminButton)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -84,5 +109,7 @@ Partial Class adminLoginForm
     End Sub
     Friend WithEvents SubminButton As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Password As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
