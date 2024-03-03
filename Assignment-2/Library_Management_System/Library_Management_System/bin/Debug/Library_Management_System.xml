@@ -19,6 +19,10 @@ Library_Management_System
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Library_Management_System.My.Resources.Resources.adminDashboardBGimg">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Library_Management_System.My.Resources.Resources.dashboardBg">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

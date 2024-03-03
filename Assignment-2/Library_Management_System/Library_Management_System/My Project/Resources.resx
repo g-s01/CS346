@@ -124,19 +124,22 @@
   <data name="loginBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="landingBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\landingBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dashboardBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboardBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="registerBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\registerBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="facultyBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\facultyBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="landingBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\landingBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adminBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dashboardBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dashboardBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="facultyBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facultyBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminDashboardBGimg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminDashboardBGimg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
