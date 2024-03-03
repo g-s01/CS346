@@ -38,10 +38,10 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Admin Login (@`Sarvesh`)
     - [X] Check the admin password and then only open the admin dashboard
   - [ ] Admin
-    - [ ] Admin Dashboard (@`Ajay`)
+    - [X] Admin Dashboard (@`Ajay`)
     - [ ] Admin Search (@`Faizan Amir`)
     - [X] Manual Transactions (@`Sarvesh`)
-    - [ ] Book Management (@`Ajay`)
+    - [X] Book Management (@`Ajay`)
   - [ ] Student & Faculty Page
     - [X] Showing borrowed book list (@`g-s01`)
     - [X] Showing overdue book list (@`g-s01`)
