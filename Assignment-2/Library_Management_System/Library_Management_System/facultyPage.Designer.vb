@@ -84,8 +84,12 @@ Partial Class facultyPage
         Me.Label23 = New System.Windows.Forms.Label()
         Me.RenewButton = New System.Windows.Forms.Button()
         Me.ReturnButton = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.borrowedBooksTablePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.IssueButton = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Dashboard_panel.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -109,6 +113,7 @@ Partial Class facultyPage
         Me.Panel14.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel20.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'DashboardButton
@@ -179,6 +184,7 @@ Partial Class facultyPage
         'Dashboard_panel
         '
         Me.Dashboard_panel.BackColor = System.Drawing.Color.White
+        Me.Dashboard_panel.Controls.Add(Me.Panel3)
         Me.Dashboard_panel.Controls.Add(Me.btnAddBalance)
         Me.Dashboard_panel.Controls.Add(Me.Label1)
         Me.Dashboard_panel.Controls.Add(Me.Label7)
@@ -189,10 +195,6 @@ Partial Class facultyPage
         Me.Dashboard_panel.Controls.Add(Me.Button2)
         Me.Dashboard_panel.Controls.Add(Me.overdueBooksTablePanel)
         Me.Dashboard_panel.Controls.Add(Me.Label12)
-<<<<<<< HEAD
-        Me.Dashboard_panel.Controls.Add(Me.Panel3)
-=======
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Dashboard_panel.Location = New System.Drawing.Point(255, 107)
         Me.Dashboard_panel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Dashboard_panel.Name = "Dashboard_panel"
@@ -741,13 +743,11 @@ Partial Class facultyPage
         Me.BookManagement_panel.Controls.Add(Me.borrowedBooksTitleTable)
         Me.BookManagement_panel.Controls.Add(Me.RenewButton)
         Me.BookManagement_panel.Controls.Add(Me.ReturnButton)
+        Me.BookManagement_panel.Controls.Add(Me.Panel2)
         Me.BookManagement_panel.Controls.Add(Me.borrowedBooksTablePanel)
         Me.BookManagement_panel.Controls.Add(Me.Label2)
-<<<<<<< HEAD
-=======
         Me.BookManagement_panel.Controls.Add(Me.IssueButton)
         Me.BookManagement_panel.Controls.Add(Me.Button6)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.BookManagement_panel.Location = New System.Drawing.Point(255, 107)
         Me.BookManagement_panel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BookManagement_panel.Name = "BookManagement_panel"
@@ -770,11 +770,7 @@ Partial Class facultyPage
         Me.borrowedBooksTitleTable.Controls.Add(Me.Panel14, 1, 0)
         Me.borrowedBooksTitleTable.Controls.Add(Me.Panel15, 0, 0)
         Me.borrowedBooksTitleTable.Controls.Add(Me.Panel20, 3, 0)
-<<<<<<< HEAD
-        Me.borrowedBooksTitleTable.Location = New System.Drawing.Point(28, 92)
-=======
         Me.borrowedBooksTitleTable.Location = New System.Drawing.Point(27, 135)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.borrowedBooksTitleTable.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.borrowedBooksTitleTable.Name = "borrowedBooksTitleTable"
         Me.borrowedBooksTitleTable.RowCount = 1
@@ -788,17 +784,10 @@ Partial Class facultyPage
         Me.Panel12.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel12.Controls.Add(Me.Label6)
-<<<<<<< HEAD
-        Me.Panel12.Location = New System.Drawing.Point(272, 1)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(323, 58)
-=======
         Me.Panel12.Location = New System.Drawing.Point(272, 5)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(323, 49)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Panel12.TabIndex = 14
         '
         'Label6
@@ -806,11 +795,7 @@ Partial Class facultyPage
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.Label6.Location = New System.Drawing.Point(137, 20)
-=======
         Me.Label6.Location = New System.Drawing.Point(137, 15)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(49, 25)
         Me.Label6.TabIndex = 1
@@ -821,17 +806,10 @@ Partial Class facultyPage
         Me.Panel13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel13.Controls.Add(Me.Label8)
-<<<<<<< HEAD
-        Me.Panel13.Location = New System.Drawing.Point(739, 1)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(119, 58)
-=======
         Me.Panel13.Location = New System.Drawing.Point(739, 5)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(119, 49)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Panel13.TabIndex = 16
         '
         'Label8
@@ -839,11 +817,7 @@ Partial Class facultyPage
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.Label8.Location = New System.Drawing.Point(27, 20)
-=======
         Me.Label8.Location = New System.Drawing.Point(27, 15)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 25)
         Me.Label8.TabIndex = 18
@@ -854,17 +828,10 @@ Partial Class facultyPage
         Me.Panel14.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label17)
-<<<<<<< HEAD
-        Me.Panel14.Location = New System.Drawing.Point(122, 1)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(149, 58)
-=======
         Me.Panel14.Location = New System.Drawing.Point(122, 5)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(149, 49)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Panel14.TabIndex = 13
         '
         'Label17
@@ -872,11 +839,7 @@ Partial Class facultyPage
         Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.Label17.Location = New System.Drawing.Point(43, 20)
-=======
         Me.Label17.Location = New System.Drawing.Point(43, 15)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(70, 25)
         Me.Label17.TabIndex = 1
@@ -887,17 +850,10 @@ Partial Class facultyPage
         Me.Panel15.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel15.Controls.Add(Me.Label18)
-<<<<<<< HEAD
-        Me.Panel15.Location = New System.Drawing.Point(1, 1)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(120, 58)
-=======
         Me.Panel15.Location = New System.Drawing.Point(1, 5)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(120, 49)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Panel15.TabIndex = 0
         '
         'Label18
@@ -905,11 +861,7 @@ Partial Class facultyPage
         Me.Label18.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.Label18.Location = New System.Drawing.Point(19, 20)
-=======
         Me.Label18.Location = New System.Drawing.Point(19, 15)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(81, 25)
         Me.Label18.TabIndex = 0
@@ -920,17 +872,10 @@ Partial Class facultyPage
         Me.Panel20.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel20.Controls.Add(Me.Label23)
-<<<<<<< HEAD
-        Me.Panel20.Location = New System.Drawing.Point(596, 1)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(137, 58)
-=======
         Me.Panel20.Location = New System.Drawing.Point(596, 5)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(137, 49)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Panel20.TabIndex = 15
         '
         'Label23
@@ -938,11 +883,7 @@ Partial Class facultyPage
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.Label23.Location = New System.Drawing.Point(21, 20)
-=======
         Me.Label23.Location = New System.Drawing.Point(21, 15)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(94, 25)
         Me.Label23.TabIndex = 17
@@ -953,11 +894,7 @@ Partial Class facultyPage
         Me.RenewButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.RenewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RenewButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.RenewButton.Location = New System.Drawing.Point(300, 484)
-=======
         Me.RenewButton.Location = New System.Drawing.Point(299, 511)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.RenewButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.RenewButton.Name = "RenewButton"
         Me.RenewButton.Size = New System.Drawing.Size(152, 47)
@@ -970,11 +907,7 @@ Partial Class facultyPage
         Me.ReturnButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.ReturnButton.Location = New System.Drawing.Point(496, 484)
-=======
         Me.ReturnButton.Location = New System.Drawing.Point(499, 511)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(152, 47)
@@ -982,8 +915,6 @@ Partial Class facultyPage
         Me.ReturnButton.Text = "Return"
         Me.ReturnButton.UseVisualStyleBackColor = False
         '
-<<<<<<< HEAD
-=======
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
@@ -1007,7 +938,6 @@ Partial Class facultyPage
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "Enter book ID here"
         '
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         'borrowedBooksTablePanel
         '
         Me.borrowedBooksTablePanel.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -1018,21 +948,12 @@ Partial Class facultyPage
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 323.0!))
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137.0!))
-<<<<<<< HEAD
-        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130.0!))
-        Me.borrowedBooksTablePanel.Location = New System.Drawing.Point(28, 142)
-=======
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.borrowedBooksTablePanel.Location = New System.Drawing.Point(27, 185)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.borrowedBooksTablePanel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.borrowedBooksTablePanel.Name = "borrowedBooksTablePanel"
         Me.borrowedBooksTablePanel.RowCount = 1
         Me.borrowedBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-<<<<<<< HEAD
-        Me.borrowedBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 294.0!))
-=======
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.borrowedBooksTablePanel.Size = New System.Drawing.Size(855, 295)
         Me.borrowedBooksTablePanel.TabIndex = 18
         '
@@ -1041,18 +962,12 @@ Partial Class facultyPage
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-<<<<<<< HEAD
-        Me.Label2.Location = New System.Drawing.Point(23, 36)
-=======
         Me.Label2.Location = New System.Drawing.Point(35, 96)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(193, 29)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Borrowed Books"
         '
-<<<<<<< HEAD
-=======
         'IssueButton
         '
         Me.IssueButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -1081,18 +996,13 @@ Partial Class facultyPage
         Me.Button6.Text = "Book ID"
         Me.Button6.UseVisualStyleBackColor = False
         '
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         'facultyPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.facultyBg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-<<<<<<< HEAD
-        Me.ClientSize = New System.Drawing.Size(1182, 703)
-=======
         Me.ClientSize = New System.Drawing.Size(1180, 688)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Controls.Add(Me.DashboardButton)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.BookMgmtButton)
@@ -1102,13 +1012,8 @@ Partial Class facultyPage
         Me.Controls.Add(Me.BookManagement_panel)
         Me.DoubleBuffered = True
         Me.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-<<<<<<< HEAD
-        Me.MaximumSize = New System.Drawing.Size(1200, 750)
-        Me.MinimumSize = New System.Drawing.Size(1200, 750)
-=======
         Me.MaximumSize = New System.Drawing.Size(1198, 742)
         Me.MinimumSize = New System.Drawing.Size(1198, 685)
->>>>>>> d4e7f53ae6cea514709f059000003d42c34fdccf
         Me.Name = "facultyPage"
         Me.Text = "test"
         Me.Dashboard_panel.ResumeLayout(False)
@@ -1152,6 +1057,8 @@ Partial Class facultyPage
         Me.Panel15.PerformLayout()
         Me.Panel20.ResumeLayout(False)
         Me.Panel20.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1170,8 +1077,12 @@ Partial Class facultyPage
     Friend WithEvents BookManagement_panel As System.Windows.Forms.Panel
     Friend WithEvents RenewButton As System.Windows.Forms.Button
     Friend WithEvents ReturnButton As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents borrowedBooksTablePanel As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents IssueButton As System.Windows.Forms.Button
     Friend WithEvents searchBar As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents queryBook As System.Windows.Forms.TextBox

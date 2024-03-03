@@ -90,7 +90,7 @@ Partial Class registerPage
         Me.Username.Name = "Username"
         Me.Username.Size = New System.Drawing.Size(264, 23)
         Me.Username.TabIndex = 3
-        Me.Username.Text = "Email"
+        Me.Username.Text = "Username"
         '
         'Password
         '
@@ -209,7 +209,7 @@ Partial Class registerPage
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(409, 176)
+        Me.Panel1.Location = New System.Drawing.Point(409, 169)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(365, 453)
         Me.Panel1.TabIndex = 12
@@ -277,7 +277,7 @@ Partial Class registerPage
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.registerBg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1182, 703)
+        Me.ClientSize = New System.Drawing.Size(1181, 702)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Login)
@@ -290,8 +290,8 @@ Partial Class registerPage
         Me.Controls.Add(Me.Student)
         Me.DoubleBuffered = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MaximumSize = New System.Drawing.Size(1200, 750)
-        Me.MinimumSize = New System.Drawing.Size(1200, 750)
+        Me.MaximumSize = New System.Drawing.Size(1199, 749)
+        Me.MinimumSize = New System.Drawing.Size(1199, 749)
         Me.Name = "registerPage"
         Me.Text = "registerPage"
         Me.Panel1.ResumeLayout(False)
