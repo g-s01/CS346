@@ -126,10 +126,10 @@ Partial Class studentPage
         Me.DashboardButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DashboardButton.Font = New System.Drawing.Font("Mongolian Baiti", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DashboardButton.Location = New System.Drawing.Point(53, 121)
+        Me.DashboardButton.Location = New System.Drawing.Point(60, 151)
         Me.DashboardButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.DashboardButton.Name = "DashboardButton"
-        Me.DashboardButton.Size = New System.Drawing.Size(149, 38)
+        Me.DashboardButton.Size = New System.Drawing.Size(168, 48)
         Me.DashboardButton.TabIndex = 18
         Me.DashboardButton.Text = "Dashboard"
         Me.DashboardButton.UseVisualStyleBackColor = False
@@ -142,10 +142,10 @@ Partial Class studentPage
         Me.LogoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LogoutButton.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogoutButton.Location = New System.Drawing.Point(80, 639)
+        Me.LogoutButton.Location = New System.Drawing.Point(90, 799)
         Me.LogoutButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.LogoutButton.Name = "LogoutButton"
-        Me.LogoutButton.Size = New System.Drawing.Size(99, 38)
+        Me.LogoutButton.Size = New System.Drawing.Size(111, 48)
         Me.LogoutButton.TabIndex = 21
         Me.LogoutButton.Text = "Logout"
         Me.LogoutButton.UseVisualStyleBackColor = False
@@ -158,10 +158,10 @@ Partial Class studentPage
         Me.BookMgmtButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BookMgmtButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BookMgmtButton.Font = New System.Drawing.Font("Mongolian Baiti", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BookMgmtButton.Location = New System.Drawing.Point(35, 245)
+        Me.BookMgmtButton.Location = New System.Drawing.Point(39, 306)
         Me.BookMgmtButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BookMgmtButton.Name = "BookMgmtButton"
-        Me.BookMgmtButton.Size = New System.Drawing.Size(193, 38)
+        Me.BookMgmtButton.Size = New System.Drawing.Size(217, 48)
         Me.BookMgmtButton.TabIndex = 20
         Me.BookMgmtButton.Text = "Book Management"
         Me.BookMgmtButton.UseVisualStyleBackColor = False
@@ -174,10 +174,10 @@ Partial Class studentPage
         Me.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Font = New System.Drawing.Font("Mongolian Baiti", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchButton.Location = New System.Drawing.Point(53, 185)
+        Me.SearchButton.Location = New System.Drawing.Point(60, 231)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(149, 38)
+        Me.SearchButton.Size = New System.Drawing.Size(168, 48)
         Me.SearchButton.TabIndex = 19
         Me.SearchButton.Text = "Search"
         Me.SearchButton.UseVisualStyleBackColor = False
@@ -197,10 +197,10 @@ Partial Class studentPage
         Me.Dashboard_panel.Controls.Add(Me.Label12)
         Me.Dashboard_panel.Controls.Add(Me.Button2)
         Me.Dashboard_panel.Controls.Add(Me.overdueBooksTablePanel)
-        Me.Dashboard_panel.Location = New System.Drawing.Point(255, 107)
+        Me.Dashboard_panel.Location = New System.Drawing.Point(287, 134)
         Me.Dashboard_panel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Dashboard_panel.Name = "Dashboard_panel"
-        Me.Dashboard_panel.Size = New System.Drawing.Size(915, 583)
+        Me.Dashboard_panel.Size = New System.Drawing.Size(1029, 729)
         Me.Dashboard_panel.TabIndex = 28
         '
         'Panel6
@@ -212,9 +212,10 @@ Partial Class studentPage
         Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Controls.Add(Me.TextBox2)
         Me.Panel6.Controls.Add(Me.Button3)
-        Me.Panel6.Location = New System.Drawing.Point(229, 57)
+        Me.Panel6.Location = New System.Drawing.Point(258, 71)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(365, 453)
+        Me.Panel6.Size = New System.Drawing.Size(411, 566)
         Me.Panel6.TabIndex = 39
         '
         'Label14
@@ -222,9 +223,9 @@ Partial Class studentPage
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 13.8!)
         Me.Label14.ForeColor = System.Drawing.Color.Red
-        Me.Label14.Location = New System.Drawing.Point(88, 307)
+        Me.Label14.Location = New System.Drawing.Point(99, 384)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(179, 32)
+        Me.Label14.Size = New System.Drawing.Size(209, 38)
         Me.Label14.TabIndex = 14
         Me.Label14.Text = "Incorrect OTP!!!"
         '
@@ -232,9 +233,9 @@ Partial Class studentPage
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 13.8!)
-        Me.Label15.Location = New System.Drawing.Point(72, 181)
+        Me.Label15.Location = New System.Drawing.Point(81, 226)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(238, 32)
+        Me.Label15.Size = New System.Drawing.Size(276, 38)
         Me.Label15.TabIndex = 13
         Me.Label15.Text = "for OTP confirmation"
         '
@@ -242,9 +243,9 @@ Partial Class studentPage
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 13.8!)
-        Me.Label16.Location = New System.Drawing.Point(88, 149)
+        Me.Label16.Location = New System.Drawing.Point(99, 186)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(201, 32)
+        Me.Label16.Size = New System.Drawing.Size(232, 38)
         Me.Label16.TabIndex = 12
         Me.Label16.Text = "Check your inbox"
         '
@@ -253,8 +254,9 @@ Partial Class studentPage
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Panel7.Controls.Add(Me.LinkLabel1)
         Me.Panel7.Location = New System.Drawing.Point(0, 2)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(364, 95)
+        Me.Panel7.Size = New System.Drawing.Size(410, 119)
         Me.Panel7.TabIndex = 11
         '
         'LinkLabel1
@@ -266,9 +268,9 @@ Partial Class studentPage
         Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.Location = New System.Drawing.Point(38, 25)
+        Me.LinkLabel1.Location = New System.Drawing.Point(43, 31)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(270, 45)
+        Me.LinkLabel1.Size = New System.Drawing.Size(325, 54)
         Me.LinkLabel1.TabIndex = 10
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "OTP Verification"
@@ -279,10 +281,10 @@ Partial Class studentPage
         Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.DimGray
-        Me.TextBox2.Location = New System.Drawing.Point(54, 265)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Location = New System.Drawing.Point(61, 331)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(264, 38)
+        Me.TextBox2.Size = New System.Drawing.Size(296, 44)
         Me.TextBox2.TabIndex = 9
         Me.TextBox2.Text = "Enter your OTP"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -292,10 +294,10 @@ Partial Class studentPage
         Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(94, 358)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Location = New System.Drawing.Point(106, 448)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(166, 45)
+        Me.Button3.Size = New System.Drawing.Size(187, 56)
         Me.Button3.TabIndex = 10
         Me.Button3.Text = "Check OTP"
         Me.Button3.UseVisualStyleBackColor = False
@@ -306,10 +308,10 @@ Partial Class studentPage
         Me.btnAddBalance.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnAddBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddBalance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddBalance.Location = New System.Drawing.Point(708, 516)
+        Me.btnAddBalance.Location = New System.Drawing.Point(796, 645)
         Me.btnAddBalance.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAddBalance.Name = "btnAddBalance"
-        Me.btnAddBalance.Size = New System.Drawing.Size(161, 37)
+        Me.btnAddBalance.Size = New System.Drawing.Size(181, 46)
         Me.btnAddBalance.TabIndex = 38
         Me.btnAddBalance.Text = "Add Balance"
         Me.btnAddBalance.UseVisualStyleBackColor = False
@@ -319,9 +321,9 @@ Partial Class studentPage
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Mongolian Baiti", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(167, 519)
+        Me.Label13.Location = New System.Drawing.Point(188, 649)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(85, 25)
+        Me.Label13.Size = New System.Drawing.Size(99, 30)
         Me.Label13.TabIndex = 37
         Me.Label13.Text = "Rs. 200"
         '
@@ -330,9 +332,9 @@ Partial Class studentPage
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Mongolian Baiti", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(49, 519)
+        Me.Label7.Location = New System.Drawing.Point(55, 649)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(114, 25)
+        Me.Label7.Size = New System.Drawing.Size(131, 30)
         Me.Label7.TabIndex = 36
         Me.Label7.Text = "Balance   :"
         '
@@ -342,20 +344,20 @@ Partial Class studentPage
         Me.overdueBooksTitleTable.BackColor = System.Drawing.Color.Transparent
         Me.overdueBooksTitleTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.overdueBooksTitleTable.ColumnCount = 4
-        Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
-        Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384.0!))
+        Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 432.0!))
         Me.overdueBooksTitleTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.overdueBooksTitleTable.Controls.Add(Me.Panel3, 3, 0)
         Me.overdueBooksTitleTable.Controls.Add(Me.Panel4, 2, 0)
         Me.overdueBooksTitleTable.Controls.Add(Me.Panel5, 1, 0)
         Me.overdueBooksTitleTable.Controls.Add(Me.Panel10, 0, 0)
-        Me.overdueBooksTitleTable.Location = New System.Drawing.Point(51, 175)
+        Me.overdueBooksTitleTable.Location = New System.Drawing.Point(57, 219)
         Me.overdueBooksTitleTable.Margin = New System.Windows.Forms.Padding(0)
         Me.overdueBooksTitleTable.Name = "overdueBooksTitleTable"
         Me.overdueBooksTitleTable.RowCount = 1
-        Me.overdueBooksTitleTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
-        Me.overdueBooksTitleTable.Size = New System.Drawing.Size(819, 49)
+        Me.overdueBooksTitleTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
+        Me.overdueBooksTitleTable.Size = New System.Drawing.Size(921, 61)
         Me.overdueBooksTitleTable.TabIndex = 35
         '
         'Panel3
@@ -363,10 +365,10 @@ Partial Class studentPage
         Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Location = New System.Drawing.Point(657, 9)
+        Me.Panel3.Location = New System.Drawing.Point(739, 11)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(160, 49)
+        Me.Panel3.Size = New System.Drawing.Size(180, 61)
         Me.Panel3.TabIndex = 15
         '
         'Label1
@@ -374,9 +376,9 @@ Partial Class studentPage
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(35, 15)
+        Me.Label1.Location = New System.Drawing.Point(39, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 25)
+        Me.Label1.Size = New System.Drawing.Size(113, 29)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Due Date"
         '
@@ -385,10 +387,10 @@ Partial Class studentPage
         Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(272, 9)
+        Me.Panel4.Location = New System.Drawing.Point(306, 11)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(384, 49)
+        Me.Panel4.Size = New System.Drawing.Size(432, 61)
         Me.Panel4.TabIndex = 14
         '
         'Label3
@@ -396,9 +398,9 @@ Partial Class studentPage
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(168, 15)
+        Me.Label3.Location = New System.Drawing.Point(189, 19)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 25)
+        Me.Label3.Size = New System.Drawing.Size(61, 29)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Title"
         '
@@ -407,10 +409,10 @@ Partial Class studentPage
         Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label4)
-        Me.Panel5.Location = New System.Drawing.Point(122, 9)
+        Me.Panel5.Location = New System.Drawing.Point(137, 11)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(149, 49)
+        Me.Panel5.Size = New System.Drawing.Size(168, 61)
         Me.Panel5.TabIndex = 13
         '
         'Label4
@@ -418,9 +420,9 @@ Partial Class studentPage
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(43, 15)
+        Me.Label4.Location = New System.Drawing.Point(48, 19)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 25)
+        Me.Label4.Size = New System.Drawing.Size(82, 29)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Author"
         '
@@ -429,10 +431,10 @@ Partial Class studentPage
         Me.Panel10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel10.Controls.Add(Me.Label5)
-        Me.Panel10.Location = New System.Drawing.Point(1, 9)
+        Me.Panel10.Location = New System.Drawing.Point(1, 11)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(120, 49)
+        Me.Panel10.Size = New System.Drawing.Size(135, 61)
         Me.Panel10.TabIndex = 0
         '
         'Label5
@@ -440,19 +442,19 @@ Partial Class studentPage
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(19, 15)
+        Me.Label5.Location = New System.Drawing.Point(21, 19)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 25)
+        Me.Label5.Size = New System.Drawing.Size(98, 29)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Book ID"
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(-288, -160)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView1.Location = New System.Drawing.Point(-324, -200)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(320, 185)
+        Me.DataGridView1.Size = New System.Drawing.Size(360, 231)
         Me.DataGridView1.TabIndex = 34
         '
         'Label9
@@ -460,9 +462,9 @@ Partial Class studentPage
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Mongolian Baiti", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(167, 484)
+        Me.Label9.Location = New System.Drawing.Point(188, 605)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(85, 25)
+        Me.Label9.Size = New System.Drawing.Size(99, 30)
         Me.Label9.TabIndex = 32
         Me.Label9.Text = "Rs. 150"
         '
@@ -471,9 +473,9 @@ Partial Class studentPage
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Mongolian Baiti", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(45, 484)
+        Me.Label10.Location = New System.Drawing.Point(51, 605)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(119, 25)
+        Me.Label10.Size = New System.Drawing.Size(137, 30)
         Me.Label10.TabIndex = 31
         Me.Label10.Text = "Total fine :"
         '
@@ -482,9 +484,9 @@ Partial Class studentPage
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(45, 129)
+        Me.Label11.Location = New System.Drawing.Point(51, 161)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(180, 29)
+        Me.Label11.Size = New System.Drawing.Size(210, 32)
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Overdue Books"
         '
@@ -493,9 +495,9 @@ Partial Class studentPage
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Palatino Linotype", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(45, 65)
+        Me.Label12.Location = New System.Drawing.Point(51, 81)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(205, 32)
+        Me.Label12.Size = New System.Drawing.Size(235, 37)
         Me.Label12.TabIndex = 29
         Me.Label12.Text = "WELCOME, User"
         '
@@ -504,10 +506,10 @@ Partial Class studentPage
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(729, 465)
+        Me.Button2.Location = New System.Drawing.Point(820, 581)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(123, 39)
+        Me.Button2.Size = New System.Drawing.Size(138, 49)
         Me.Button2.TabIndex = 33
         Me.Button2.Text = "Pay Now"
         Me.Button2.UseVisualStyleBackColor = False
@@ -519,16 +521,16 @@ Partial Class studentPage
         Me.overdueBooksTablePanel.BackColor = System.Drawing.Color.Transparent
         Me.overdueBooksTablePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.overdueBooksTablePanel.ColumnCount = 4
-        Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
-        Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384.0!))
+        Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 432.0!))
         Me.overdueBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.overdueBooksTablePanel.Location = New System.Drawing.Point(51, 225)
+        Me.overdueBooksTablePanel.Location = New System.Drawing.Point(57, 281)
         Me.overdueBooksTablePanel.Margin = New System.Windows.Forms.Padding(0)
         Me.overdueBooksTablePanel.Name = "overdueBooksTablePanel"
         Me.overdueBooksTablePanel.RowCount = 1
         Me.overdueBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.overdueBooksTablePanel.Size = New System.Drawing.Size(819, 219)
+        Me.overdueBooksTablePanel.Size = New System.Drawing.Size(921, 274)
         Me.overdueBooksTablePanel.TabIndex = 28
         '
         'Search_panel
@@ -538,10 +540,10 @@ Partial Class studentPage
         Me.Search_panel.Controls.Add(Me.allBooksTablePanel)
         Me.Search_panel.Controls.Add(Me.serchTitleTableLayout)
         Me.Search_panel.Controls.Add(Me.searchBar)
-        Me.Search_panel.Location = New System.Drawing.Point(255, 107)
+        Me.Search_panel.Location = New System.Drawing.Point(287, 134)
         Me.Search_panel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Search_panel.Name = "Search_panel"
-        Me.Search_panel.Size = New System.Drawing.Size(915, 583)
+        Me.Search_panel.Size = New System.Drawing.Size(1029, 729)
         Me.Search_panel.TabIndex = 35
         '
         'Button1
@@ -549,10 +551,10 @@ Partial Class studentPage
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(369, 529)
+        Me.Button1.Location = New System.Drawing.Point(415, 661)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(152, 41)
+        Me.Button1.Size = New System.Drawing.Size(171, 51)
         Me.Button1.TabIndex = 35
         Me.Button1.Text = "Issue"
         Me.Button1.UseVisualStyleBackColor = False
@@ -563,16 +565,16 @@ Partial Class studentPage
         Me.allBooksTablePanel.BackColor = System.Drawing.Color.White
         Me.allBooksTablePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.allBooksTablePanel.ColumnCount = 4
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 422.0!))
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.allBooksTablePanel.Location = New System.Drawing.Point(51, 193)
+        Me.allBooksTablePanel.Location = New System.Drawing.Point(57, 241)
         Me.allBooksTablePanel.Margin = New System.Windows.Forms.Padding(0)
         Me.allBooksTablePanel.Name = "allBooksTablePanel"
         Me.allBooksTablePanel.RowCount = 1
         Me.allBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.allBooksTablePanel.Size = New System.Drawing.Size(829, 311)
+        Me.allBooksTablePanel.Size = New System.Drawing.Size(933, 389)
         Me.allBooksTablePanel.TabIndex = 34
         '
         'serchTitleTableLayout
@@ -580,20 +582,20 @@ Partial Class studentPage
         Me.serchTitleTableLayout.BackColor = System.Drawing.Color.White
         Me.serchTitleTableLayout.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.serchTitleTableLayout.ColumnCount = 4
-        Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
-        Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375.0!))
+        Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 422.0!))
         Me.serchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.serchTitleTableLayout.Controls.Add(Me.Panel16, 0, 0)
         Me.serchTitleTableLayout.Controls.Add(Me.Panel17, 1, 0)
         Me.serchTitleTableLayout.Controls.Add(Me.Panel18, 2, 0)
         Me.serchTitleTableLayout.Controls.Add(Me.Panel19, 3, 0)
-        Me.serchTitleTableLayout.Location = New System.Drawing.Point(51, 138)
+        Me.serchTitleTableLayout.Location = New System.Drawing.Point(57, 172)
         Me.serchTitleTableLayout.Margin = New System.Windows.Forms.Padding(0)
         Me.serchTitleTableLayout.Name = "serchTitleTableLayout"
         Me.serchTitleTableLayout.RowCount = 1
-        Me.serchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
-        Me.serchTitleTableLayout.Size = New System.Drawing.Size(831, 55)
+        Me.serchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84.0!))
+        Me.serchTitleTableLayout.Size = New System.Drawing.Size(935, 69)
         Me.serchTitleTableLayout.TabIndex = 36
         '
         'Panel16
@@ -603,16 +605,16 @@ Partial Class studentPage
         Me.Panel16.Location = New System.Drawing.Point(1, 1)
         Me.Panel16.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(120, 49)
+        Me.Panel16.Size = New System.Drawing.Size(135, 61)
         Me.Panel16.TabIndex = 32
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(21, 15)
+        Me.Label19.Location = New System.Drawing.Point(24, 19)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(77, 20)
+        Me.Label19.Size = New System.Drawing.Size(86, 24)
         Me.Label19.TabIndex = 0
         Me.Label19.Text = "Book ID"
         '
@@ -620,19 +622,19 @@ Partial Class studentPage
         '
         Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel17.Controls.Add(Me.Label20)
-        Me.Panel17.Location = New System.Drawing.Point(122, 1)
+        Me.Panel17.Location = New System.Drawing.Point(137, 1)
         Me.Panel17.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(149, 49)
+        Me.Panel17.Size = New System.Drawing.Size(168, 61)
         Me.Panel17.TabIndex = 33
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(43, 15)
+        Me.Label20.Location = New System.Drawing.Point(48, 19)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(64, 20)
+        Me.Label20.Size = New System.Drawing.Size(72, 24)
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Author"
         '
@@ -640,19 +642,19 @@ Partial Class studentPage
         '
         Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel18.Controls.Add(Me.Label21)
-        Me.Panel18.Location = New System.Drawing.Point(272, 1)
+        Me.Panel18.Location = New System.Drawing.Point(306, 1)
         Me.Panel18.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(375, 49)
+        Me.Panel18.Size = New System.Drawing.Size(422, 61)
         Me.Panel18.TabIndex = 34
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(149, 15)
+        Me.Label21.Location = New System.Drawing.Point(168, 19)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(44, 20)
+        Me.Label21.Size = New System.Drawing.Size(51, 24)
         Me.Label21.TabIndex = 0
         Me.Label21.Text = "Title"
         '
@@ -660,19 +662,19 @@ Partial Class studentPage
         '
         Me.Panel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel19.Controls.Add(Me.Label22)
-        Me.Panel19.Location = New System.Drawing.Point(648, 1)
+        Me.Panel19.Location = New System.Drawing.Point(729, 1)
         Me.Panel19.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(181, 49)
+        Me.Panel19.Size = New System.Drawing.Size(204, 61)
         Me.Panel19.TabIndex = 35
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Mongolian Baiti", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(55, 17)
+        Me.Label22.Location = New System.Drawing.Point(62, 21)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(54, 20)
+        Me.Label22.Size = New System.Drawing.Size(64, 24)
         Me.Label22.TabIndex = 0
         Me.Label22.Text = "Select"
         '
@@ -688,12 +690,12 @@ Partial Class studentPage
         Me.searchBar.Controls.Add(Me.btnSearch, 2, 0)
         Me.searchBar.Controls.Add(Me.queryBook, 1, 0)
         Me.searchBar.Controls.Add(Me.Panel1, 0, 0)
-        Me.searchBar.Location = New System.Drawing.Point(51, 54)
+        Me.searchBar.Location = New System.Drawing.Point(57, 68)
         Me.searchBar.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.searchBar.Name = "searchBar"
         Me.searchBar.RowCount = 1
         Me.searchBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.searchBar.Size = New System.Drawing.Size(819, 43)
+        Me.searchBar.Size = New System.Drawing.Size(921, 54)
         Me.searchBar.TabIndex = 35
         '
         'btnSearch
@@ -701,10 +703,10 @@ Partial Class studentPage
         Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(662, 1)
+        Me.btnSearch.Location = New System.Drawing.Point(745, 1)
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(156, 41)
+        Me.btnSearch.Size = New System.Drawing.Size(175, 51)
         Me.btnSearch.TabIndex = 8
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
@@ -714,10 +716,10 @@ Partial Class studentPage
         Me.queryBook.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.queryBook.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.queryBook.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.queryBook.Location = New System.Drawing.Point(209, 9)
+        Me.queryBook.Location = New System.Drawing.Point(235, 13)
         Me.queryBook.Margin = New System.Windows.Forms.Padding(0)
         Me.queryBook.Name = "queryBook"
-        Me.queryBook.Size = New System.Drawing.Size(423, 24)
+        Me.queryBook.Size = New System.Drawing.Size(476, 28)
         Me.queryBook.TabIndex = 8
         '
         'Panel1
@@ -728,7 +730,7 @@ Partial Class studentPage
         Me.Panel1.Location = New System.Drawing.Point(1, 1)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(178, 40)
+        Me.Panel1.Size = New System.Drawing.Size(200, 50)
         Me.Panel1.TabIndex = 9
         '
         'srchSelect
@@ -739,10 +741,10 @@ Partial Class studentPage
         Me.srchSelect.Font = New System.Drawing.Font("Mongolian Baiti", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.srchSelect.FormattingEnabled = True
         Me.srchSelect.Items.AddRange(New Object() {"Book ID", "Author", "Title", "Category"})
-        Me.srchSelect.Location = New System.Drawing.Point(8, 1)
+        Me.srchSelect.Location = New System.Drawing.Point(9, 1)
         Me.srchSelect.Margin = New System.Windows.Forms.Padding(0)
         Me.srchSelect.Name = "srchSelect"
-        Me.srchSelect.Size = New System.Drawing.Size(165, 29)
+        Me.srchSelect.Size = New System.Drawing.Size(185, 33)
         Me.srchSelect.TabIndex = 9
         Me.srchSelect.Text = "Select"
         '
@@ -757,10 +759,10 @@ Partial Class studentPage
         Me.BookManagement_panel.Controls.Add(Me.Label2)
         Me.BookManagement_panel.Controls.Add(Me.Button6)
         Me.BookManagement_panel.Controls.Add(Me.IssueButton)
-        Me.BookManagement_panel.Location = New System.Drawing.Point(255, 107)
+        Me.BookManagement_panel.Location = New System.Drawing.Point(287, 134)
         Me.BookManagement_panel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.BookManagement_panel.Name = "BookManagement_panel"
-        Me.BookManagement_panel.Size = New System.Drawing.Size(915, 583)
+        Me.BookManagement_panel.Size = New System.Drawing.Size(1029, 729)
         Me.BookManagement_panel.TabIndex = 34
         '
         'borrowedTableLayout
@@ -769,22 +771,22 @@ Partial Class studentPage
         Me.borrowedTableLayout.BackColor = System.Drawing.Color.Transparent
         Me.borrowedTableLayout.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.borrowedTableLayout.ColumnCount = 5
-        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
-        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320.0!))
-        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
+        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360.0!))
+        Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
         Me.borrowedTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.borrowedTableLayout.Controls.Add(Me.Panel12, 2, 0)
         Me.borrowedTableLayout.Controls.Add(Me.Panel13, 4, 0)
         Me.borrowedTableLayout.Controls.Add(Me.Panel14, 1, 0)
         Me.borrowedTableLayout.Controls.Add(Me.Panel15, 0, 0)
         Me.borrowedTableLayout.Controls.Add(Me.Panel20, 3, 0)
-        Me.borrowedTableLayout.Location = New System.Drawing.Point(27, 138)
+        Me.borrowedTableLayout.Location = New System.Drawing.Point(30, 172)
         Me.borrowedTableLayout.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.borrowedTableLayout.Name = "borrowedTableLayout"
         Me.borrowedTableLayout.RowCount = 1
-        Me.borrowedTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
-        Me.borrowedTableLayout.Size = New System.Drawing.Size(853, 49)
+        Me.borrowedTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
+        Me.borrowedTableLayout.Size = New System.Drawing.Size(960, 61)
         Me.borrowedTableLayout.TabIndex = 22
         '
         'Panel12
@@ -792,10 +794,10 @@ Partial Class studentPage
         Me.Panel12.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel12.Controls.Add(Me.Label6)
-        Me.Panel12.Location = New System.Drawing.Point(272, 9)
+        Me.Panel12.Location = New System.Drawing.Point(306, 11)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(320, 49)
+        Me.Panel12.Size = New System.Drawing.Size(360, 61)
         Me.Panel12.TabIndex = 14
         '
         'Label6
@@ -803,9 +805,9 @@ Partial Class studentPage
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(136, 15)
+        Me.Label6.Location = New System.Drawing.Point(153, 19)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 25)
+        Me.Label6.Size = New System.Drawing.Size(61, 29)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Title"
         '
@@ -814,10 +816,10 @@ Partial Class studentPage
         Me.Panel13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel13.Controls.Add(Me.Label8)
-        Me.Panel13.Location = New System.Drawing.Point(715, 9)
+        Me.Panel13.Location = New System.Drawing.Point(805, 11)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(135, 49)
+        Me.Panel13.Size = New System.Drawing.Size(152, 61)
         Me.Panel13.TabIndex = 16
         '
         'Label8
@@ -825,9 +827,9 @@ Partial Class studentPage
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(29, 15)
+        Me.Label8.Location = New System.Drawing.Point(33, 19)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 25)
+        Me.Label8.Size = New System.Drawing.Size(81, 29)
         Me.Label8.TabIndex = 18
         Me.Label8.Text = "Select"
         '
@@ -836,10 +838,10 @@ Partial Class studentPage
         Me.Panel14.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label17)
-        Me.Panel14.Location = New System.Drawing.Point(122, 9)
+        Me.Panel14.Location = New System.Drawing.Point(137, 11)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(149, 49)
+        Me.Panel14.Size = New System.Drawing.Size(168, 61)
         Me.Panel14.TabIndex = 13
         '
         'Label17
@@ -847,9 +849,9 @@ Partial Class studentPage
         Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(43, 15)
+        Me.Label17.Location = New System.Drawing.Point(48, 19)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(70, 25)
+        Me.Label17.Size = New System.Drawing.Size(82, 29)
         Me.Label17.TabIndex = 1
         Me.Label17.Text = "Author"
         '
@@ -858,10 +860,10 @@ Partial Class studentPage
         Me.Panel15.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel15.Controls.Add(Me.Label18)
-        Me.Panel15.Location = New System.Drawing.Point(1, 9)
+        Me.Panel15.Location = New System.Drawing.Point(1, 11)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(120, 49)
+        Me.Panel15.Size = New System.Drawing.Size(135, 61)
         Me.Panel15.TabIndex = 0
         '
         'Label18
@@ -869,9 +871,9 @@ Partial Class studentPage
         Me.Label18.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(19, 15)
+        Me.Label18.Location = New System.Drawing.Point(21, 19)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(81, 25)
+        Me.Label18.Size = New System.Drawing.Size(98, 29)
         Me.Label18.TabIndex = 0
         Me.Label18.Text = "Book ID"
         '
@@ -880,10 +882,10 @@ Partial Class studentPage
         Me.Panel20.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel20.Controls.Add(Me.Label23)
-        Me.Panel20.Location = New System.Drawing.Point(593, 9)
+        Me.Panel20.Location = New System.Drawing.Point(667, 11)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(120, 49)
+        Me.Panel20.Size = New System.Drawing.Size(135, 61)
         Me.Panel20.TabIndex = 15
         '
         'Label23
@@ -891,9 +893,9 @@ Partial Class studentPage
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(13, 15)
+        Me.Label23.Location = New System.Drawing.Point(15, 19)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(94, 25)
+        Me.Label23.Size = New System.Drawing.Size(113, 29)
         Me.Label23.TabIndex = 17
         Me.Label23.Text = "Due Date"
         '
@@ -903,17 +905,17 @@ Partial Class studentPage
         Me.borrowedBooksTablePanel.BackColor = System.Drawing.Color.Transparent
         Me.borrowedBooksTablePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.borrowedBooksTablePanel.ColumnCount = 5
-        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
-        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320.0!))
-        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
+        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360.0!))
+        Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
         Me.borrowedBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.borrowedBooksTablePanel.Location = New System.Drawing.Point(27, 193)
+        Me.borrowedBooksTablePanel.Location = New System.Drawing.Point(30, 241)
         Me.borrowedBooksTablePanel.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.borrowedBooksTablePanel.Name = "borrowedBooksTablePanel"
         Me.borrowedBooksTablePanel.RowCount = 1
         Me.borrowedBooksTablePanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.borrowedBooksTablePanel.Size = New System.Drawing.Size(853, 289)
+        Me.borrowedBooksTablePanel.Size = New System.Drawing.Size(960, 361)
         Me.borrowedBooksTablePanel.TabIndex = 18
         '
         'RenewButton
@@ -921,10 +923,10 @@ Partial Class studentPage
         Me.RenewButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.RenewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RenewButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RenewButton.Location = New System.Drawing.Point(299, 511)
+        Me.RenewButton.Location = New System.Drawing.Point(336, 639)
         Me.RenewButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.RenewButton.Name = "RenewButton"
-        Me.RenewButton.Size = New System.Drawing.Size(152, 47)
+        Me.RenewButton.Size = New System.Drawing.Size(171, 59)
         Me.RenewButton.TabIndex = 21
         Me.RenewButton.Text = "Renew"
         Me.RenewButton.UseVisualStyleBackColor = False
@@ -934,10 +936,10 @@ Partial Class studentPage
         Me.ReturnButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReturnButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReturnButton.Location = New System.Drawing.Point(499, 511)
+        Me.ReturnButton.Location = New System.Drawing.Point(561, 639)
         Me.ReturnButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(152, 47)
+        Me.ReturnButton.Size = New System.Drawing.Size(171, 59)
         Me.ReturnButton.TabIndex = 20
         Me.ReturnButton.Text = "Return"
         Me.ReturnButton.UseVisualStyleBackColor = False
@@ -947,10 +949,10 @@ Partial Class studentPage
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Location = New System.Drawing.Point(187, 31)
+        Me.Panel2.Location = New System.Drawing.Point(210, 39)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(545, 45)
+        Me.Panel2.Size = New System.Drawing.Size(613, 56)
         Me.Panel2.TabIndex = 19
         '
         'TextBox1
@@ -958,10 +960,10 @@ Partial Class studentPage
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.TextBox1.Location = New System.Drawing.Point(9, 7)
+        Me.TextBox1.Location = New System.Drawing.Point(10, 9)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(527, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(593, 28)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "Enter book ID here"
         '
@@ -970,9 +972,9 @@ Partial Class studentPage
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(35, 96)
+        Me.Label2.Location = New System.Drawing.Point(39, 120)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(193, 29)
+        Me.Label2.Size = New System.Drawing.Size(222, 32)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Borrowed Books"
         '
@@ -983,10 +985,10 @@ Partial Class studentPage
         Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(27, 31)
+        Me.Button6.Location = New System.Drawing.Point(30, 39)
         Me.Button6.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(164, 47)
+        Me.Button6.Size = New System.Drawing.Size(184, 59)
         Me.Button6.TabIndex = 16
         Me.Button6.Text = "Book ID"
         Me.Button6.UseVisualStyleBackColor = False
@@ -996,32 +998,32 @@ Partial Class studentPage
         Me.IssueButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.IssueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IssueButton.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IssueButton.Location = New System.Drawing.Point(729, 31)
+        Me.IssueButton.Location = New System.Drawing.Point(820, 39)
         Me.IssueButton.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.IssueButton.Name = "IssueButton"
-        Me.IssueButton.Size = New System.Drawing.Size(152, 47)
+        Me.IssueButton.Size = New System.Drawing.Size(171, 59)
         Me.IssueButton.TabIndex = 15
         Me.IssueButton.Text = "Issue"
         Me.IssueButton.UseVisualStyleBackColor = False
         '
         'studentPage
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.studentBg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1177, 689)
+        Me.ClientSize = New System.Drawing.Size(1320, 855)
         Me.Controls.Add(Me.DashboardButton)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.BookMgmtButton)
         Me.Controls.Add(Me.SearchButton)
-        Me.Controls.Add(Me.Dashboard_panel)
         Me.Controls.Add(Me.Search_panel)
         Me.Controls.Add(Me.BookManagement_panel)
+        Me.Controls.Add(Me.Dashboard_panel)
         Me.DoubleBuffered = True
         Me.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
-        Me.MaximumSize = New System.Drawing.Size(1195, 740)
-        Me.MinimumSize = New System.Drawing.Size(1195, 686)
+        Me.MaximumSize = New System.Drawing.Size(1342, 911)
+        Me.MinimumSize = New System.Drawing.Size(1342, 844)
         Me.Name = "studentPage"
         Me.Text = "test"
         Me.Dashboard_panel.ResumeLayout(False)

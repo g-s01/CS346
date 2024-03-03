@@ -782,7 +782,7 @@ Public Class facultyPage
                 Else
                     Dim currentDate As DateTime = DateTime.Now.Date
                     Dim futureDate As DateTime = DateAdd("d", 7, currentDate)
-                    Dim updateQueryInBooks = "UPDATE books SET isIssued = '1', dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "', issuedTo = '" & ID & "', lastIssue = '" & currentDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE ID = '" & entry.BookID & "'"
+                    Dim updateQueryInBooks = "UPDATE books SET isIssued = '1', dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "', issuedTo = '" & ID & "' WHERE ID = '" & entry.BookID & "'"
                     Dim updateQueryInBorrowed_Books = "INSERT INTO borrowed_books (BookID, issuedToID, issueDate, dueDate) VALUES ('" & entry.BookID & "', '" & ID & "', '" & currentDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "','" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
                     Using newConnection As New MySqlConnection(connectionString)
                         Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)

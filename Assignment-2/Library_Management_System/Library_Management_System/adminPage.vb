@@ -10,11 +10,14 @@ Public Class adminPage
     Dim allBooks As New List(Of Entry)
     Dim recentTransactions As New List(Of String)
 
+    Dim selectedSearchMode As String = "Empty"
+
     ' Define a structure to hold book details
     Structure Entry
         Public BookID As Integer
         Public Author As String
         Public Title As String
+        Public IssueStatus As String
     End Structure
 
     Private Sub Dashboard_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Dashboard.Click
@@ -308,8 +311,10 @@ Public Class adminPage
                     End Using
                 End Using
 
-                ' After adding into tables, clear the inputs and show the msg box that it is saved...
+                LoadAllBooks()
+                PopulateTable()
 
+                ' After adding into tables, clear the inputs and show the msg box that it is saved...
 
             End If
         End If
@@ -362,6 +367,8 @@ Public Class adminPage
 
             ' After adding new values into tables, clear the inputs and show the msg box that it is saved...
             ' MsgBox("Book Updated Successfully")
+            LoadAllBooks()
+            PopulateTable()
 
         End If
 
@@ -418,6 +425,9 @@ Public Class adminPage
             End Using
 
         End If
+        LoadAllBooks()
+        PopulateTable()
+
         ' after loading the data , clear the bookid input in update details label....
         Update_BookID_tb.Text = ""
 
@@ -476,6 +486,8 @@ Public Class adminPage
 
             End If
 
+            LoadAllBooks()
+            PopulateTable()
 
             'After removing in from the database , clear the BookID input and also show the msgbox popup.
 
@@ -656,7 +668,7 @@ Public Class adminPage
                 'Dim currentDate As DateTime = DateTime.Now.Date
                 Dim currentDate As DateTime = DateTimePicker3.Value
                 Dim futureDate As DateTime = DateAdd("d", 7, currentDate)
-                Dim updateQueryInBooks = "UPDATE books SET isIssued = '1', dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "', issuedTo = '" & StudentID_tb.Text & "', lastIssue = '" & currentDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "' WHERE ID = '" & BookID_tb2.Text & "'"
+                Dim updateQueryInBooks = "UPDATE books SET isIssued = '1', dueDate = '" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "', issuedTo = '" & StudentID_tb.Text & "' WHERE ID = '" & BookID_tb2.Text & "'"
                 Dim updateQueryInBorrowed_Books = "INSERT INTO borrowed_books (BookID, issuedToID, issueDate, dueDate) VALUES ('" & BookID_tb2.Text & "', '" & StudentID_tb.Text & "', '" & currentDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "','" & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
                 Using newConnection As New MySqlConnection(connectionString)
                     Using newCommand As New MySqlCommand(updateQueryInBooks, newConnection)
@@ -691,8 +703,10 @@ Public Class adminPage
                     End Using
                 End Using
                 ' Populate the table with the borrowedBooks
+                LoadAllBooks()
                 PopulateTable()
                 MsgBox("Book Issued Successfully")
+
             End If
 
             ' After issuing the book, clear the inputs and show the msg box that it is issued....
@@ -888,11 +902,14 @@ Public Class adminPage
                     End Try
                 End Using
             End Using
-            ' Populate the table with the borrowedBooks
+
+            ' Populate the table with all Books
+            LoadAllBooks()
             PopulateTable()
 
             ' After returning the book, clear the inputs and show the msg box that it is Returned....
             MsgBox("Book Returned Successfully")
+            LoadAllBooks()
             BookID_tb2.Text = ""
             addBalance_tb.Text = ""
             StudentID_tb.Text = ""
@@ -1315,21 +1332,42 @@ Public Class adminPage
         End Using
         PopulateTransactionTable()
 
-
-
-        allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1"})
-        allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-        allBooks.Add(New Entry With {.BookID = 3, .Author = "Author3", .Title = "Title3"})
-
-        ' Populate the table with the borrowedBooks
+        LoadAllBooks()
+        ' Populate the table with all Books
         PopulateTable()
+
+    End Sub
+
+    ' Backend function for loading the all books in the system 
+    ' Author: faizanamir01
+    Private Sub LoadAllBooks()
+        allBooks.Clear()
+        Dim bookQuery = "SELECT * FROM books"
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    'allBooks = New List(Of Entry)
+                    While newReader.Read()
+                        Dim stat As String
+                        If newReader("isIssued").ToString = "True" Then
+                            stat = "Issued"
+                        Else
+                            stat = "Available"
+                        End If
+                        allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .IssueStatus = stat})
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
     End Sub
 
     Private Sub PopulateTable()
+
+        allBooksTablePanel.Controls.Clear()
 
         ' Add allBooks to the table
         For rowIndex As Integer = 0 To allBooks.Count - 1
@@ -1355,7 +1393,7 @@ Public Class adminPage
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
             Dim issueStatusLabel As New Label()
-            issueStatusLabel.Text = entry.Title
+            issueStatusLabel.Text = entry.IssueStatus
             allBooksTablePanel.Controls.Add(issueStatusLabel, 3, rowIndex)
             issueStatusLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             issueStatusLabel.Anchor = AnchorStyles.None ' Set Anchor to None
@@ -1366,6 +1404,134 @@ Public Class adminPage
         adjustLabel3.Text = ""
         allBooksTablePanel.Controls.Add(adjustLabel3, 1, allBooks.Count)
 
+    End Sub
+
+    ' Backend function for selecting the search mode
+    ' Author: faizanamir01
+    Private Sub srchSelect_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles srchSelect.SelectedIndexChanged
+        selectedSearchMode = srchSelect.SelectedItem.ToString()
+    End Sub
+
+    ' Backend function for searching for a book
+    ' Author: faizanamir01
+    Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSearch.Click
+        If selectedSearchMode = "Empty" Then
+            MessageBox.Show("Select a search mode first")
+            Return
+        ElseIf selectedSearchMode = "Book ID" Then
+            Dim bookQuery = "SELECT * FROM books WHERE ID like '%" & queryBook.Text & "%'"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        'allBooks = New List(Of Entry)
+                        allBooks.Clear()
+
+                        While newReader.Read()
+                            Dim stat As String
+                            If newReader("isIssued").ToString = "True" Then
+                                stat = "Issued"
+                            Else
+                                stat = "Available"
+                            End If
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .IssueStatus = stat})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Author" Then
+            Dim bookQuery = "SELECT * FROM books WHERE authorName like '%" & queryBook.Text & "%'"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks.Clear()
+                        While newReader.Read()
+                            Dim stat As String
+                            If newReader("isIssued").ToString = "True" Then
+                                stat = "Issued"
+                            Else
+                                stat = "Available"
+                            End If
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .IssueStatus = stat})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Title" Then
+            Dim bookQuery = "SELECT * FROM books WHERE Title like '%" & queryBook.Text & "%'"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks.Clear()
+                        While newReader.Read()
+                            Dim stat As String
+                            If newReader("isIssued").ToString = "True" Then
+                                stat = "Issued"
+                            Else
+                                stat = "Available"
+                            End If
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .IssueStatus = stat})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Category" Then
+            Dim bookQuery = "SELECT * FROM books WHERE Subject like '%" & queryBook.Text & "%'"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks.Clear()
+                        While newReader.Read()
+                            Dim stat As String
+                            If newReader("isIssued").ToString = "True" Then
+                                stat = "Issued"
+                            Else
+                                stat = "Available"
+                            End If
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .IssueStatus = stat})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        ElseIf selectedSearchMode = "Status" Then
+            Dim bookQuery = "SELECT * FROM books WHERE isIssued = '" & queryBook.Text & "'"
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(bookQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        allBooks.Clear()
+                        While newReader.Read()
+                            Dim stat As String
+                            If newReader("isIssued").ToString = "True" Then
+                                stat = "Issued"
+                            Else
+                                stat = "Available"
+                            End If
+                            allBooks.Add(New Entry With {.BookID = newReader("ID").ToString(), .Author = newReader("authorName").ToString, .Title = newReader("Title").ToString, .IssueStatus = stat})
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+        End If
+        PopulateTable()
     End Sub
 
     Private Sub loadFineButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles loadFineButton.Click
