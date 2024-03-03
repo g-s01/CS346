@@ -557,8 +557,6 @@ Public Class studentPage
     Dim otp As Integer
     Private Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
         Dim iFine As Integer
-        Dim successful As Boolean
-        successful = False
 
         ' Create and show the input prompt form
         Dim inputPromptForm As New InputPromptForm()
@@ -614,48 +612,47 @@ Public Class studentPage
                         fine = fine - iFine
                         balance = balance - iFine
                         fineCollected = fineCollected + iFine
-                        successful = True
+
+                        Dim fineUpdateQuery = "UPDATE students SET Fine = '" & fine & "' WHERE ID = '" & ID & "'"
+                        Dim balanceUpdateQuery = "UPDATE students SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
+                        Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has paid a fine of Rs. " & iFine.ToString & "')"
+                        Dim updateFineCollected = "UPDATE admin SET fineCollected = '" & fineCollected & "' WHERE username = 'admin'"
+
+                        ' Execute the UPDATE queries
+                        Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
+                            fineUpdateCommand.ExecuteNonQuery()
+                        End Using
+
+                        Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
+                            balanceUpdateCommand.ExecuteNonQuery()
+                        End Using
+
+                        Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
+                            addTransactionToAdminCommand.ExecuteNonQuery()
+                        End Using
+
+                        Using updateFineCollectedCommand As New MySqlCommand(updateFineCollected, newConnection)
+                            updateFineCollectedCommand.ExecuteNonQuery()
+                        End Using
+                        Dim random As New Random()
+                        Dim randomNumber As Integer = random.Next(100000, 999999)
+                        otp = randomNumber
+                        sendOTPEmail(otp)
+                        Panel6.Visible = True
+                        Panel7.Visible = True
+                        LinkLabel1.Visible = True
+                        Label15.Visible = True
+                        Label16.Visible = True
+                        TextBox2.Visible = True
+                        Button3.Visible = True
                     End If
-                    
 
-                    Dim fineUpdateQuery = "UPDATE students SET Fine = '" & fine & "' WHERE ID = '" & ID & "'"
-                    Dim balanceUpdateQuery = "UPDATE students SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
-                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has paid a fine of Rs. " & iFine.ToString & "')"
-                    Dim updateFineCollected = "UPDATE admin SET fineCollected = '" & fineCollected & "' WHERE username = 'admin'"
-                    
-                    ' Execute the UPDATE queries
-                    Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
-                        fineUpdateCommand.ExecuteNonQuery()
-                    End Using
-
-                    Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
-                        balanceUpdateCommand.ExecuteNonQuery()
-                    End Using
-
-                    Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
-                        addTransactionToAdminCommand.ExecuteNonQuery()
-                    End Using
-
-                    Using updateFineCollectedCommand As New MySqlCommand(updateFineCollected, newConnection)
-                        updateFineCollectedCommand.ExecuteNonQuery()
-                    End Using
-                    
                 Catch ex As Exception
                     MessageBox.Show("Error: " & ex.Message)
                 End Try
             End Using
         End Using
-        Dim random As New Random()
-        Dim randomNumber As Integer = random.Next(100000, 999999)
-        otp = randomNumber
-        sendOTPEmail(otp)
-        Panel6.Visible = True
-        Panel7.Visible = True
-        LinkLabel1.Visible = True
-        Label15.Visible = True
-        Label16.Visible = True
-        TextBox2.Visible = True
-        Button3.Visible = True
+        
 
         'If successful Then
         '    MessageBox.Show("Fine payment of Rs." + iFine.ToString + " successful!")
