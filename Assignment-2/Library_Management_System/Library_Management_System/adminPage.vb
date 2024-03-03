@@ -166,6 +166,8 @@ Public Class adminPage
             End Using
         End Using
         PopulateTransactionTable()
+        LoadAllBooks()
+        PopulateTable()
 
 
     End Sub
