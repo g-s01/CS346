@@ -40,6 +40,14 @@ Public Class facultyPage
         LoadAllBooks()
         ' Populate the table with the borrowedBooks
         PopulateTable()
+        Panel3.Visible = False
+        Panel4.Visible = False
+        LinkLabel1.Visible = False
+        Label15.Visible = False
+        Label14.Visible = False
+        Label13.Visible = False
+        TextBox2.Visible = False
+        Button3.Visible = False
     End Sub
 
     Private Sub PopulateTable()
@@ -531,6 +539,7 @@ Public Class facultyPage
 
     ' Backend function for paying fine
     ' Author: g-s01
+    Dim otp As Integer
     Private Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
         Dim iFine As Integer
         Dim successful As Boolean
@@ -599,11 +608,46 @@ Public Class facultyPage
                 End Try
             End Using
         End Using
-        If successful Then
-            MessageBox.Show("Fine payment of Rs." + iFine.ToString + " successful!")
-        End If
+        Dim random As New Random()
+        Dim randomNumber As Integer = random.Next(100000, 999999)
+        otp = randomNumber
+        sendOTPEmail(otp)
+        Panel3.Visible = True
+        Panel4.Visible = True
+        LinkLabel1.Visible = True
+        Label15.Visible = True
+        Label14.Visible = True
+        TextBox2.Visible = True
+        Button3.Visible = True
+        'If successful Then
+        '    MessageBox.Show("Fine payment of Rs." + iFine.ToString + " successful!")
+        'End If
         UpdateBalance()
         UpdateFine()
+    End Sub
+
+    Private Sub sendOTPEmail(ByVal randomNumber As Integer)
+        Dim smtpServer As String = "smtp-mail.outlook.com"
+        Dim port As Integer = 587
+
+        Dim message As New MailMessage("lms-cs346@outlook.com", ID)
+        message.Subject = "Fine Payment confirmation"
+        message.Body = "Welcome to the LMS-CS346! Your OTP is " + randomNumber.ToString
+
+        Dim smtpClient As New SmtpClient(smtpServer)
+        smtpClient.Port = port
+        smtpClient.Credentials = New System.Net.NetworkCredential("lms-cs346@outlook.com", "SaviourSarvesh")
+        smtpClient.EnableSsl = True
+
+        Try
+            smtpClient.Send(message)
+        Catch ex As SmtpException
+            ' Handle specific SMTP exceptions
+            MessageBox.Show("SMTP error: " & ex.Message)
+        Catch ex As Exception
+            ' Handle other exceptions
+            MessageBox.Show("Error sending email: " & ex.Message)
+        End Try
     End Sub
 
     ' Backend function for selecting the search mode
@@ -844,4 +888,36 @@ Public Class facultyPage
             MessageBox.Show("Error sending email: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        If TextBox2.Text = otp.ToString Then
+            Panel6.Visible = False
+            Panel7.Visible = False
+            LinkLabel1.Visible = False
+            Label15.Visible = False
+            Label16.Visible = False
+            Label14.Visible = False
+            TextBox2.Visible = False
+            Button3.Visible = False
+            MessageBox.Show("Fine payment successful!")
+        Else
+            Label13.Visible = True
+        End If
+    End Sub
+    Private Sub TextBox2_GotFocus(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox2.GotFocus
+        ' When the textbox gains focus, clear the placeholder text if it's present
+        If TextBox2.Text = "Enter your OTP" Then
+            TextBox2.Text = ""
+            TextBox2.ForeColor = Color.Black ' Set text color back to black
+        End If
+    End Sub
+
+    Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox2.LostFocus
+        ' When the textbox loses focus and it's empty, display the placeholder text
+        If TextBox2.Text = "" Then
+            TextBox2.Text = "Enter your OTP"
+            TextBox2.ForeColor = Color.Gray ' Set text color to gray for placeholder text
+        End If
+    End Sub
+
 End Class

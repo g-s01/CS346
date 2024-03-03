@@ -27,6 +27,14 @@ Partial Class studentPage
         Me.BookMgmtButton = New System.Windows.Forms.Button()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.Dashboard_panel = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.btnAddBalance = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -84,6 +92,8 @@ Partial Class studentPage
         Me.Button6 = New System.Windows.Forms.Button()
         Me.IssueButton = New System.Windows.Forms.Button()
         Me.Dashboard_panel.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.overdueBooksTitleTable.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -175,6 +185,7 @@ Partial Class studentPage
         'Dashboard_panel
         '
         Me.Dashboard_panel.BackColor = System.Drawing.Color.White
+        Me.Dashboard_panel.Controls.Add(Me.Panel6)
         Me.Dashboard_panel.Controls.Add(Me.btnAddBalance)
         Me.Dashboard_panel.Controls.Add(Me.Label13)
         Me.Dashboard_panel.Controls.Add(Me.Label7)
@@ -191,6 +202,103 @@ Partial Class studentPage
         Me.Dashboard_panel.Name = "Dashboard_panel"
         Me.Dashboard_panel.Size = New System.Drawing.Size(915, 583)
         Me.Dashboard_panel.TabIndex = 28
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.Label14)
+        Me.Panel6.Controls.Add(Me.Label15)
+        Me.Panel6.Controls.Add(Me.Label16)
+        Me.Panel6.Controls.Add(Me.Panel7)
+        Me.Panel6.Controls.Add(Me.TextBox2)
+        Me.Panel6.Controls.Add(Me.Button3)
+        Me.Panel6.Location = New System.Drawing.Point(229, 57)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(365, 453)
+        Me.Panel6.TabIndex = 39
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 13.8!)
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(88, 307)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(179, 32)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "Incorrect OTP!!!"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 13.8!)
+        Me.Label15.Location = New System.Drawing.Point(72, 181)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(238, 32)
+        Me.Label15.TabIndex = 13
+        Me.Label15.Text = "for OTP confirmation"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 13.8!)
+        Me.Label16.Location = New System.Drawing.Point(88, 149)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(201, 32)
+        Me.Label16.TabIndex = 12
+        Me.Label16.Text = "Check your inbox"
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Panel7.Controls.Add(Me.LinkLabel1)
+        Me.Panel7.Location = New System.Drawing.Point(0, 2)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(364, 95)
+        Me.Panel7.TabIndex = 11
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.Purple
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.DisabledLinkColor = System.Drawing.Color.Black
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
+        Me.LinkLabel1.Location = New System.Drawing.Point(38, 25)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(270, 45)
+        Me.LinkLabel1.TabIndex = 10
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "OTP Verification"
+        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.DimGray
+        Me.TextBox2.Location = New System.Drawing.Point(54, 265)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(264, 38)
+        Me.TextBox2.TabIndex = 9
+        Me.TextBox2.Text = "Enter your OTP"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(94, 358)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(166, 45)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Check OTP"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'btnAddBalance
         '
@@ -246,7 +354,7 @@ Partial Class studentPage
         Me.overdueBooksTitleTable.Margin = New System.Windows.Forms.Padding(0)
         Me.overdueBooksTitleTable.Name = "overdueBooksTitleTable"
         Me.overdueBooksTitleTable.RowCount = 1
-        Me.overdueBooksTitleTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
+        Me.overdueBooksTitleTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
         Me.overdueBooksTitleTable.Size = New System.Drawing.Size(819, 49)
         Me.overdueBooksTitleTable.TabIndex = 35
         '
@@ -255,7 +363,7 @@ Partial Class studentPage
         Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Location = New System.Drawing.Point(657, 8)
+        Me.Panel3.Location = New System.Drawing.Point(657, 9)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(160, 49)
@@ -277,7 +385,7 @@ Partial Class studentPage
         Me.Panel4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(272, 8)
+        Me.Panel4.Location = New System.Drawing.Point(272, 9)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(384, 49)
@@ -299,7 +407,7 @@ Partial Class studentPage
         Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label4)
-        Me.Panel5.Location = New System.Drawing.Point(122, 8)
+        Me.Panel5.Location = New System.Drawing.Point(122, 9)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(149, 49)
@@ -321,7 +429,7 @@ Partial Class studentPage
         Me.Panel10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel10.Controls.Add(Me.Label5)
-        Me.Panel10.Location = New System.Drawing.Point(1, 8)
+        Me.Panel10.Location = New System.Drawing.Point(1, 9)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(120, 49)
@@ -342,7 +450,7 @@ Partial Class studentPage
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(-288, -160)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(320, 185)
         Me.DataGridView1.TabIndex = 34
@@ -484,7 +592,7 @@ Partial Class studentPage
         Me.serchTitleTableLayout.Margin = New System.Windows.Forms.Padding(0)
         Me.serchTitleTableLayout.Name = "serchTitleTableLayout"
         Me.serchTitleTableLayout.RowCount = 1
-        Me.serchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
+        Me.serchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
         Me.serchTitleTableLayout.Size = New System.Drawing.Size(831, 55)
         Me.serchTitleTableLayout.TabIndex = 36
         '
@@ -675,7 +783,7 @@ Partial Class studentPage
         Me.borrowedTableLayout.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.borrowedTableLayout.Name = "borrowedTableLayout"
         Me.borrowedTableLayout.RowCount = 1
-        Me.borrowedTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
+        Me.borrowedTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
         Me.borrowedTableLayout.Size = New System.Drawing.Size(853, 49)
         Me.borrowedTableLayout.TabIndex = 22
         '
@@ -684,7 +792,7 @@ Partial Class studentPage
         Me.Panel12.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel12.Controls.Add(Me.Label6)
-        Me.Panel12.Location = New System.Drawing.Point(272, 8)
+        Me.Panel12.Location = New System.Drawing.Point(272, 9)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(320, 49)
@@ -706,7 +814,7 @@ Partial Class studentPage
         Me.Panel13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel13.Controls.Add(Me.Label8)
-        Me.Panel13.Location = New System.Drawing.Point(715, 8)
+        Me.Panel13.Location = New System.Drawing.Point(715, 9)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(135, 49)
@@ -728,7 +836,7 @@ Partial Class studentPage
         Me.Panel14.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel14.Controls.Add(Me.Label17)
-        Me.Panel14.Location = New System.Drawing.Point(122, 8)
+        Me.Panel14.Location = New System.Drawing.Point(122, 9)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(149, 49)
@@ -750,7 +858,7 @@ Partial Class studentPage
         Me.Panel15.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel15.Controls.Add(Me.Label18)
-        Me.Panel15.Location = New System.Drawing.Point(1, 8)
+        Me.Panel15.Location = New System.Drawing.Point(1, 9)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(120, 49)
@@ -772,7 +880,7 @@ Partial Class studentPage
         Me.Panel20.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel20.Controls.Add(Me.Label23)
-        Me.Panel20.Location = New System.Drawing.Point(593, 8)
+        Me.Panel20.Location = New System.Drawing.Point(593, 9)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(120, 49)
@@ -918,6 +1026,10 @@ Partial Class studentPage
         Me.Text = "test"
         Me.Dashboard_panel.ResumeLayout(False)
         Me.Dashboard_panel.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.overdueBooksTitleTable.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -1020,4 +1132,12 @@ Partial Class studentPage
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents btnAddBalance As System.Windows.Forms.Button
+    Friend WithEvents Panel6 As System.Windows.Forms.Panel
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Panel7 As System.Windows.Forms.Panel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class
