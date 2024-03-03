@@ -75,7 +75,7 @@ Partial Class loginPage
         Me.Username.Name = "Username"
         Me.Username.Size = New System.Drawing.Size(264, 23)
         Me.Username.TabIndex = 2
-        Me.Username.Text = "Username"
+        Me.Username.Text = "Email"
         '
         'Password
         '
