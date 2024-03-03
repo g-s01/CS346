@@ -166,6 +166,8 @@ Public Class adminPage
             End Using
         End Using
         PopulateTransactionTable()
+        LoadAllBooks()
+        PopulateTable()
 
 
     End Sub
@@ -1390,6 +1392,7 @@ Public Class adminPage
             titleLabel.Text = entry.Title
             titleLabel.AutoSize = True
             allBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
+
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 

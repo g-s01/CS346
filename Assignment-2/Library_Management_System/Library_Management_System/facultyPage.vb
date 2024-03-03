@@ -76,6 +76,7 @@ Public Class facultyPage
 
             Dim titleLabel As New Label()
             titleLabel.Text = entry.Title
+            titleLabel.AutoSize = True
             borrowedBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
