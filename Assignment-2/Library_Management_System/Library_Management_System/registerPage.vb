@@ -45,7 +45,7 @@ Public Class registerPage
 
     Private Sub Username_GotFocus(ByVal sender As Object, ByVal e As EventArgs) Handles Username.GotFocus
         ' When the textbox gains focus, clear the placeholder text if it's present
-        If Username.Text = "Username" Then
+        If Username.Text = "Email" Then
             Username.Text = ""
             Username.ForeColor = Color.Black ' Set text color back to black
         End If
@@ -54,7 +54,7 @@ Public Class registerPage
     Private Sub Username_LostFocus(ByVal sender As Object, ByVal e As EventArgs) Handles Username.LostFocus
         ' When the textbox loses focus and it's empty, display the placeholder text
         If Username.Text = "" Then
-            Username.Text = "Username"
+            Username.Text = "Email"
             Username.ForeColor = Color.Gray ' Set text color to gray for placeholder text
         End If
     End Sub

@@ -45,7 +45,7 @@ Public Class facultyPage
         LinkLabel1.Visible = False
         Label15.Visible = False
         Label14.Visible = False
-        Label13.Visible = False
+        Label3.Visible = False
         TextBox2.Visible = False
         Button3.Visible = False
     End Sub
@@ -841,7 +841,7 @@ Public Class facultyPage
             ' Retrieve the input value
             If Integer.TryParse(addBlcForm.InputValue, addBlc) Then
                 ' Input value is valid
-                Dim searchQuery = "SELECT * FROM students WHERE ID = '" & ID & "'"
+                Dim searchQuery = "SELECT * FROM faculty WHERE ID = '" & ID & "'"
                 Using newConnection As New MySqlConnection(connectionString)
                     Using newCommand As New MySqlCommand(searchQuery, newConnection)
                         Try
@@ -926,7 +926,7 @@ Public Class facultyPage
             UpdateBalance()
             UpdateFine()
         Else
-            Label13.Visible = True
+            Label3.Visible = True
         End If
     End Sub
     Private Sub TextBox2_GotFocus(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox2.GotFocus

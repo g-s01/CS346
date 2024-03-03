@@ -90,7 +90,7 @@ Partial Class registerPage
         Me.Username.Name = "Username"
         Me.Username.Size = New System.Drawing.Size(264, 23)
         Me.Username.TabIndex = 3
-        Me.Username.Text = "Username"
+        Me.Username.Text = "Email"
         '
         'Password
         '
@@ -209,7 +209,7 @@ Partial Class registerPage
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Location = New System.Drawing.Point(409, 169)
+        Me.Panel1.Location = New System.Drawing.Point(409, 176)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(365, 453)
         Me.Panel1.TabIndex = 12
