@@ -245,7 +245,7 @@ Public Class registerPage
             MySQLConn = New MySqlConnection
             MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
             MySQLConn.Open()
-            insertQuery = "INSERT INTO " + db + " (ID, Password, Name, Fine, Balance, Code) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0', '0', '')"
+            insertQuery = "INSERT INTO " + db + " (ID, Password, Name, Fine, Balance) VALUES ('" & Username.Text & "', '" & Password.Text & "', '" & Uname.Text & "', '0', '0')"
             COMMAND = New MySqlCommand(insertQuery, MySQLConn)
             READER = COMMAND.ExecuteReader
             MessageBox.Show("Data Saved with:" + vbCrLf +

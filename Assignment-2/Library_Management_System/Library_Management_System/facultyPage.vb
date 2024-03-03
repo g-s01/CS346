@@ -622,8 +622,7 @@ Public Class facultyPage
         'If successful Then
         '    MessageBox.Show("Fine payment of Rs." + iFine.ToString + " successful!")
         'End If
-        UpdateBalance()
-        UpdateFine()
+
     End Sub
 
     Private Sub sendOTPEmail(ByVal randomNumber As Integer)
@@ -900,6 +899,8 @@ Public Class facultyPage
             TextBox2.Visible = False
             Button3.Visible = False
             MessageBox.Show("Fine payment successful!")
+            UpdateBalance()
+            UpdateFine()
         Else
             Label13.Visible = True
         End If
