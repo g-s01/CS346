@@ -142,7 +142,7 @@ Public Class registerPage
         End If
         ' Creating a SQL connection
         MySQLConn = New MySqlConnection
-        MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=hello;"
+        MySQLConn.ConnectionString = "server=127.0.0.1;userid=root;database=LMS;pwd=;"
         ' This query is to see if the user has already registered into the system or not
         Dim selectQuery As String
         If isStudent = True Then
@@ -169,7 +169,13 @@ Public Class registerPage
                 Dim randomNumber As Integer = random.Next(100000, 999999)
                 code = randomNumber
                 sendEmail(randomNumber)
-                MessageBox.Show("Check your inbox, enter OTP on the right hand textbox for confirmation")
+                Panel1.Visible = True
+                Panel2.Visible = True
+                LinkLabel1.Visible = True
+                Label2.Visible = True
+                Label3.Visible = True
+                TextBox1.Visible = True
+                Button1.Visible = True
             End If
             MySQLConn.Close()
         Else
@@ -196,7 +202,6 @@ Public Class registerPage
                 Dim randomNumber As Integer = random.Next(100000, 999999)
                 code = randomNumber
                 sendEmail(randomNumber)
-                MessageBox.Show("Check your inbox, enter OTP on the right hand textbox for confirmation")
             End If
             MySQLConn.Close()
         End If
@@ -255,7 +260,7 @@ Public Class registerPage
             Me.BackgroundImage.Dispose()
             Me.Dispose()
         Else
-            MessageBox.Show("Incorrect OTP")
+            Label4.Visible = True
         End If
     End Sub
 
@@ -374,7 +379,30 @@ Public Class registerPage
         Return score
     End Function
 
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
+    Private Sub registerPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Panel1.Visible = False
+        Panel2.Visible = False
+        LinkLabel1.Visible = False
+        Label2.Visible = False
+        Label3.Visible = False
+        Label4.Visible = False
+        TextBox1.Visible = False
+        Button1.Visible = False
+    End Sub
 
+    Private Sub TextBox1_GotFocus(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox1.GotFocus
+        ' When the textbox gains focus, clear the placeholder text if it's present
+        If TextBox1.Text = "Enter your OTP" Then
+            TextBox1.Text = ""
+            TextBox1.ForeColor = Color.Black ' Set text color back to black
+        End If
+    End Sub
+
+    Private Sub TextBox1_LostFocus(ByVal sender As Object, ByVal e As EventArgs) Handles TextBox1.LostFocus
+        ' When the textbox loses focus and it's empty, display the placeholder text
+        If TextBox1.Text = "" Then
+            TextBox1.Text = "Enter your OTP"
+            TextBox1.ForeColor = Color.Gray ' Set text color to gray for placeholder text
+        End If
     End Sub
 End Class
