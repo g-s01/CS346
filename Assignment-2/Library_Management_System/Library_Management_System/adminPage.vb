@@ -8,6 +8,7 @@ Public Class adminPage
     Dim COMMAND As MySqlCommand
 
     Dim allBooks As New List(Of Entry)
+    Dim recentTransactions As New List(Of String)
 
     ' Define a structure to hold book details
     Structure Entry
@@ -141,6 +142,50 @@ Public Class adminPage
             End Using
         End Using
 
+        'Recent Transactions
+        recentTransactions.Clear()
+        Dim transactionsQuery As String = "SELECT transaction FROM(transactions) ORDER BY dateTime DESC LIMIT 5"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using COMMAND As New MySqlCommand(transactionsQuery, connection)
+                Try
+                    connection.Open()
+                    Dim reader As MySqlDataReader = COMMAND.ExecuteReader()
+
+                    While reader.Read()
+                        recentTransactions.Add(reader("transaction"))
+                        'Label23.Text = reader("transaction")
+
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+        PopulateTransactionTable()
+
+
+    End Sub
+
+    Private Sub PopulateTransactionTable()
+        transactionsTable.Controls.Clear()
+
+        ' Add allBooks to the table
+        For rowIndex As Integer = 0 To recentTransactions.Count - 1
+            Dim transaction As String = recentTransactions(rowIndex)
+            ' Add transaction details
+            Dim transactionLabel As New Label()
+            transactionLabel.AutoSize = True
+            transactionLabel.Text = transaction
+            transactionsTable.Controls.Add(transactionLabel, 0, rowIndex)
+            'transactionLabel.TextAlign = ContentAlignment.MiddleLeft ' Center the label
+            'transactionLabel.Anchor = AnchorStyles.None ' Set Anchor to None
+
+        Next
+
+        Dim adjustLabel3 As New Label()
+        adjustLabel3.Text = ""
+        allBooksTablePanel.Controls.Add(adjustLabel3, 0, recentTransactions.Count)
 
     End Sub
 
@@ -634,7 +679,7 @@ Public Class adminPage
                         End Try
                     End Using
                 End Using
-                Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & StudentID_tb.Text & " as issued the book with book ID " & BookID_tb2.Text & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & StudentID_tb.Text & " has issued the book with book ID " & BookID_tb2.Text & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
                 Using newNewConnection As New MySqlConnection(connectionString)
                     Using newNewCommand As New MySqlCommand(addTransactionToAdmin, newNewConnection)
                         Try
@@ -926,6 +971,23 @@ Public Class adminPage
                 End If
             End If
 
+            Dim fineCollected As Integer
+            Dim fineQuery = "SELECT * FROM admin WHERE username = 'admin'"
+
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(fineQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                        While newReader.Read()
+                            fineCollected = newReader("fineCollected")
+                        End While
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+
             Dim searchQuery As String
             If isStudent = True Then
                 searchQuery = "SELECT * FROM students WHERE ID = '" & StudentID_tb.Text & "'"
@@ -955,6 +1017,7 @@ Public Class adminPage
                         Else
                             fine = fine - iFine
                             balance = balance - iFine
+                            fineCollected = fineCollected + iFine
                             successful = True
                         End If
 
@@ -968,7 +1031,8 @@ Public Class adminPage
                             balanceUpdateQuery = "UPDATE faculty SET Balance = '" & balance & "' WHERE ID = '" & StudentID_tb.Text & "'"
                         End If
 
-                        Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & StudentID_tb.Text & " as paid a fine of Rs. " & iFine.ToString & "')"
+                        Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & StudentID_tb.Text & " has paid a fine of Rs. " & iFine.ToString & "')"
+                        Dim updateFineCollected = "UPDATE admin SET fineCollected = '" & fineCollected & "' WHERE username = 'admin'"
 
                         ' Execute the UPDATE queries
                         Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
@@ -981,6 +1045,10 @@ Public Class adminPage
 
                         Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
                             addTransactionToAdminCommand.ExecuteNonQuery()
+                        End Using
+
+                        Using updateFineCollectedCommand As New MySqlCommand(updateFineCollected, newConnection)
+                            updateFineCollectedCommand.ExecuteNonQuery()
                         End Using
 
 
@@ -1225,6 +1293,28 @@ Public Class adminPage
             End Using
         End Using
 
+        'Recent Transactions
+        recentTransactions.Clear()
+        Dim transactionsQuery As String = "SELECT transaction FROM(transactions) ORDER BY dateTime DESC LIMIT 5"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using COMMAND As New MySqlCommand(transactionsQuery, connection)
+                Try
+                    connection.Open()
+                    Dim reader As MySqlDataReader = COMMAND.ExecuteReader()
+
+                    While reader.Read()
+                        recentTransactions.Add(reader("transaction"))
+                        'Label23.Text = reader("transaction")
+
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+        PopulateTransactionTable()
+
 
 
         allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1"})
@@ -1452,7 +1542,7 @@ Public Class adminPage
                             balanceUpdateQuery = "UPDATE faculty SET Balance = '" & balance & "' WHERE ID = '" & StudentID_tb.Text & "'"
                         End If
 
-                        Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & StudentID_tb.Text & " as updated is balance to Rs. " & balance.ToString & "')"
+                        Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & StudentID_tb.Text & " has updated is balance to Rs. " & balance.ToString & "')"
 
                         Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
                             balanceUpdateCommand.ExecuteNonQuery()

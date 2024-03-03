@@ -557,6 +557,23 @@ Public Class facultyPage
             End If
         End If
 
+        Dim fineCollected As Integer
+        Dim fineQuery = "SELECT * FROM admin WHERE username = 'admin'"
+
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(fineQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    While newReader.Read()
+                        fineCollected = newReader("fineCollected")
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
         Dim searchQuery = "SELECT * FROM faculty WHERE ID = '" & ID & "'"
         Using newConnection As New MySqlConnection(connectionString)
             Using newCommand As New MySqlCommand(searchQuery, newConnection)
@@ -581,13 +598,15 @@ Public Class facultyPage
                     Else
                         fine = fine - iFine
                         balance = balance - iFine
+                        fineCollected = fineCollected + iFine
                         successful = True
 
 
                     End If
                     Dim fineUpdateQuery = "UPDATE faculty SET Fine = '" & fine & "' WHERE ID = '" & ID & "'"
                     Dim balanceUpdateQuery = "UPDATE faculty SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
-                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as paid a fine of Rs. " & iFine.ToString & "')"
+                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has paid a fine of Rs. " & iFine.ToString & "')"
+                    Dim updateFineCollected = "UPDATE admin SET fineCollected = '" & fineCollected & "' WHERE username = 'admin'"
 
                     ' Execute the UPDATE queries
                     Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
@@ -600,6 +619,10 @@ Public Class facultyPage
 
                     Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
                         addTransactionToAdminCommand.ExecuteNonQuery()
+                    End Using
+
+                    Using updateFineCollectedCommand As New MySqlCommand(updateFineCollected, newConnection)
+                        updateFineCollectedCommand.ExecuteNonQuery()
                     End Using
 
 
@@ -651,13 +674,13 @@ Public Class facultyPage
 
     ' Backend function for selecting the search mode
     ' Author: g-s01
-    Private Sub srchSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles srchSelect.SelectedIndexChanged
+    Private Sub srchSelect_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles srchSelect.SelectedIndexChanged
         selectedSearchMode = srchSelect.SelectedItem.ToString()
     End Sub
 
     ' Backend function for searching for a book
     ' Author: g-s01
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSearch.Click
         If selectedSearchMode = "Empty" Then
             MessageBox.Show("Select a search mode first")
             Return
@@ -731,7 +754,7 @@ Public Class facultyPage
 
     ' backend function to issue a book
     ' author: g-s01
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
         For Each entry As Entry In allBooks
             If entry.RadioButton.Checked Then
                 Dim quotaExceed As Integer = 0
@@ -782,7 +805,7 @@ Public Class facultyPage
                             End Try
                         End Using
                     End Using
-                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as issued the book with book ID " & entry.BookID & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has issued the book with book ID " & entry.BookID & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
                     Using newNewConnection As New MySqlConnection(connectionString)
                         Using newNewCommand As New MySqlCommand(addTransactionToAdmin, newNewConnection)
                             Try
@@ -839,7 +862,7 @@ Public Class facultyPage
                             End If
 
                             Dim balanceUpdateQuery = "UPDATE faculty SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
-                            Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as updated is balance to Rs. " & balance.ToString & "')"
+                            Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has updated is balance to Rs. " & balance.ToString & "')"
 
                             Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
                                 balanceUpdateCommand.ExecuteNonQuery()
@@ -864,7 +887,7 @@ Public Class facultyPage
         End If
     End Sub
 
-    Private Sub sendEmail(randomNumber As Integer, subject As String, body As String)
+    Private Sub sendEmail(ByVal randomNumber As Integer, ByVal subject As String, ByVal body As String)
         Dim smtpServer As String = "smtp-mail.outlook.com"
         Dim port As Integer = 587
 

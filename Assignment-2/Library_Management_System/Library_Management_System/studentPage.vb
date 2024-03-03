@@ -572,6 +572,23 @@ Public Class studentPage
             End If
         End If
 
+        Dim fineCollected As Integer
+        Dim fineQuery = "SELECT * FROM admin WHERE username = 'admin'"
+
+        Using newConnection As New MySqlConnection(connectionString)
+            Using newCommand As New MySqlCommand(fineQuery, newConnection)
+                Try
+                    newConnection.Open()
+                    Dim newReader As MySqlDataReader = newCommand.ExecuteReader
+                    While newReader.Read()
+                        fineCollected = newReader("fineCollected")
+                    End While
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
         Dim searchQuery = "SELECT * FROM students WHERE ID = '" & ID & "'"
         Using newConnection As New MySqlConnection(connectionString)
             Using newCommand As New MySqlCommand(searchQuery, newConnection)
@@ -596,13 +613,15 @@ Public Class studentPage
                     Else
                         fine = fine - iFine
                         balance = balance - iFine
+                        fineCollected = fineCollected + iFine
                         successful = True
                     End If
                     
 
                     Dim fineUpdateQuery = "UPDATE students SET Fine = '" & fine & "' WHERE ID = '" & ID & "'"
                     Dim balanceUpdateQuery = "UPDATE students SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
-                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as paid a fine of Rs. " & iFine.ToString & "')"
+                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has paid a fine of Rs. " & iFine.ToString & "')"
+                    Dim updateFineCollected = "UPDATE admin SET fineCollected = '" & fineCollected & "' WHERE username = 'admin'"
                     
                     ' Execute the UPDATE queries
                     Using fineUpdateCommand As New MySqlCommand(fineUpdateQuery, newConnection)
@@ -615,6 +634,10 @@ Public Class studentPage
 
                     Using addTransactionToAdminCommand As New MySqlCommand(addTransactionToAdmin, newConnection)
                         addTransactionToAdminCommand.ExecuteNonQuery()
+                    End Using
+
+                    Using updateFineCollectedCommand As New MySqlCommand(updateFineCollected, newConnection)
+                        updateFineCollectedCommand.ExecuteNonQuery()
                     End Using
                     
                 Catch ex As Exception
@@ -796,7 +819,7 @@ Public Class studentPage
                             End Try
                         End Using
                     End Using
-                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as issued the book with book ID " & entry.BookID & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
+                    Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has issued the book with book ID " & entry.BookID & ", till " & futureDate.Date.ToString("yyyy-MM-dd HH:mm:ss") & "')"
                     Using newNewConnection As New MySqlConnection(connectionString)
                         Using newNewCommand As New MySqlCommand(addTransactionToAdmin, newNewConnection)
                             Try
@@ -853,7 +876,7 @@ Public Class studentPage
                             End If
 
                             Dim balanceUpdateQuery = "UPDATE students SET Balance = '" & balance & "' WHERE ID = '" & ID & "'"
-                            Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " as updated is balance to Rs. " & balance.ToString & "')"
+                            Dim addTransactionToAdmin = "INSERT INTO transactions (transaction) VALUES (' " & ID & " has updated is balance to Rs. " & balance.ToString & "')"
 
                             Using balanceUpdateCommand As New MySqlCommand(balanceUpdateQuery, newConnection)
                                 balanceUpdateCommand.ExecuteNonQuery()
