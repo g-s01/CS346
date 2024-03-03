@@ -1388,7 +1388,9 @@ Public Class adminPage
 
             Dim titleLabel As New Label()
             titleLabel.Text = entry.Title
+            titleLabel.AutoSize = True
             allBooksTablePanel.Controls.Add(titleLabel, 2, rowIndex)
+
             titleLabel.TextAlign = ContentAlignment.MiddleCenter ' Center the label
             titleLabel.Anchor = AnchorStyles.None ' Set Anchor to None
 
