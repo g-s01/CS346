@@ -106,6 +106,8 @@ Partial Class adminPage
         Me.Fine_collected = New System.Windows.Forms.TextBox()
         Me.Borrowed_books = New System.Windows.Forms.TextBox()
         Me.Current_date = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.transactionsTable = New System.Windows.Forms.TableLayoutPanel()
         Me.ManualTransactions_panel.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -880,7 +882,7 @@ Partial Class adminPage
         Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
         Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375.0!))
-        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174.0!))
+        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175.0!))
         Me.searchTitleTableLayout.Controls.Add(Me.Panel9, 0, 0)
         Me.searchTitleTableLayout.Controls.Add(Me.Panel10, 1, 0)
         Me.searchTitleTableLayout.Controls.Add(Me.Panel11, 2, 0)
@@ -889,7 +891,7 @@ Partial Class adminPage
         Me.searchTitleTableLayout.Margin = New System.Windows.Forms.Padding(0)
         Me.searchTitleTableLayout.Name = "searchTitleTableLayout"
         Me.searchTitleTableLayout.RowCount = 1
-        Me.searchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56.0!))
+        Me.searchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57.0!))
         Me.searchTitleTableLayout.Size = New System.Drawing.Size(819, 52)
         Me.searchTitleTableLayout.TabIndex = 49
         '
@@ -1052,7 +1054,7 @@ Partial Class adminPage
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173.0!))
         Me.allBooksTablePanel.Location = New System.Drawing.Point(45, 191)
         Me.allBooksTablePanel.Margin = New System.Windows.Forms.Padding(0)
         Me.allBooksTablePanel.Name = "allBooksTablePanel"
@@ -1066,6 +1068,8 @@ Partial Class adminPage
         Me.Dashboard_panel.BackColor = System.Drawing.Color.White
         Me.Dashboard_panel.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.adminDashboardBGimg
         Me.Dashboard_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Dashboard_panel.Controls.Add(Me.Label15)
+        Me.Dashboard_panel.Controls.Add(Me.transactionsTable)
         Me.Dashboard_panel.Controls.Add(Me.Total_users)
         Me.Dashboard_panel.Controls.Add(Me.Total_books)
         Me.Dashboard_panel.Controls.Add(Me.Fine_due)
@@ -1178,13 +1182,38 @@ Partial Class adminPage
         Me.Current_date.TabIndex = 24
         Me.Current_date.Text = "Date:"
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(47, 270)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(207, 27)
+        Me.Label15.TabIndex = 34
+        Me.Label15.Text = "Recent Transactions"
+        '
+        'transactionsTable
+        '
+        Me.transactionsTable.ColumnCount = 1
+        Me.transactionsTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.transactionsTable.Location = New System.Drawing.Point(52, 313)
+        Me.transactionsTable.Name = "transactionsTable"
+        Me.transactionsTable.RowCount = 5
+        Me.transactionsTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.transactionsTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.transactionsTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.transactionsTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.transactionsTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.transactionsTable.Size = New System.Drawing.Size(789, 200)
+        Me.transactionsTable.TabIndex = 33
+        '
         'adminPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.adminBg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1177, 698)
+        Me.ClientSize = New System.Drawing.Size(1181, 702)
         Me.Controls.Add(Me.Logout)
         Me.Controls.Add(Me.Manual_transactions)
         Me.Controls.Add(Me.Book_management)
@@ -1319,4 +1348,6 @@ Partial Class adminPage
     Friend WithEvents loadFineButton As System.Windows.Forms.Button
     Friend WithEvents addBalanceButton As System.Windows.Forms.Button
     Friend WithEvents clear_button As System.Windows.Forms.Button
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents transactionsTable As System.Windows.Forms.TableLayoutPanel
 End Class
