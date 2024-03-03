@@ -503,7 +503,7 @@ Public Class adminPage
 
     ' Additionally added for clearing inputs......
 
-    Private Sub clear_button_Click(sender As System.Object, e As System.EventArgs) Handles clear_button.Click
+    Private Sub clear_button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles clear_button.Click
         BookID_tb.Text = ""
         BookName_tb.Text = ""
         Author_tb.Text = ""
@@ -1273,7 +1273,7 @@ Public Class adminPage
         End Using
 
         'Total fine collected
-        
+
         Dim fineQuery As String = "SELECT fineCollected FROM admin"
 
         Using connection As New MySqlConnection(connectionString)
