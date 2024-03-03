@@ -103,3 +103,21 @@ D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_Sy
 D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.exe
 D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.xml
 D:\College\Sem 6\Cs-346 SWE Lab\Assign2\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.exe
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.pdb
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\bin\Debug\Library_Management_System.xml
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.AddBalanceForm.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminLoginForm.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.adminPage.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.auth.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.facultyPage.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.InputPromptForm.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.registerPage.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.loginPage.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.landingPage.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.Resources.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.studentPage.resources
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.vbproj.GenerateResource.Cache
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.exe
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.xml
+C:\Users\AJAY\OneDrive - Indian Institute of Technology Guwahati\Desktop\SE_final\CS346\Assignment-2\Library_Management_System\Library_Management_System\obj\x86\Debug\Library_Management_System.pdb

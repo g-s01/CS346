@@ -29,6 +29,8 @@ Partial Class adminPage
         Me.Dashboard = New System.Windows.Forms.Label()
         Me.ManualTransactions_panel = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.addBalanceButton = New System.Windows.Forms.Button()
+        Me.loadFineButton = New System.Windows.Forms.Button()
         Me.Pay_button = New System.Windows.Forms.Button()
         Me.Fine_tb = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -56,6 +58,7 @@ Partial Class adminPage
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BookManagement_panel = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.clear_button = New System.Windows.Forms.Button()
         Me.BookName_tb = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Update_button = New System.Windows.Forms.Button()
@@ -98,13 +101,11 @@ Partial Class adminPage
         Me.Dashboard_panel = New System.Windows.Forms.Panel()
         Me.Total_users = New System.Windows.Forms.TextBox()
         Me.Total_books = New System.Windows.Forms.TextBox()
-        Me.New_users = New System.Windows.Forms.TextBox()
+        Me.Fine_due = New System.Windows.Forms.TextBox()
         Me.Overdue_books = New System.Windows.Forms.TextBox()
-        Me.Returned_books = New System.Windows.Forms.TextBox()
+        Me.Fine_collected = New System.Windows.Forms.TextBox()
         Me.Borrowed_books = New System.Windows.Forms.TextBox()
         Me.Current_date = New System.Windows.Forms.TextBox()
-        Me.loadFineButton = New System.Windows.Forms.Button()
-        Me.addBalanceButton = New System.Windows.Forms.Button()
         Me.ManualTransactions_panel.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -223,6 +224,32 @@ Partial Class adminPage
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(886, 210)
         Me.Panel8.TabIndex = 47
+        '
+        'addBalanceButton
+        '
+        Me.addBalanceButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.addBalanceButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addBalanceButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addBalanceButton.Location = New System.Drawing.Point(492, 157)
+        Me.addBalanceButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.addBalanceButton.Name = "addBalanceButton"
+        Me.addBalanceButton.Size = New System.Drawing.Size(82, 38)
+        Me.addBalanceButton.TabIndex = 47
+        Me.addBalanceButton.Text = "Add"
+        Me.addBalanceButton.UseVisualStyleBackColor = False
+        '
+        'loadFineButton
+        '
+        Me.loadFineButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.loadFineButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.loadFineButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.loadFineButton.Location = New System.Drawing.Point(652, 157)
+        Me.loadFineButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.loadFineButton.Name = "loadFineButton"
+        Me.loadFineButton.Size = New System.Drawing.Size(82, 38)
+        Me.loadFineButton.TabIndex = 46
+        Me.loadFineButton.Text = "Load"
+        Me.loadFineButton.UseVisualStyleBackColor = False
         '
         'Pay_button
         '
@@ -532,6 +559,7 @@ Partial Class adminPage
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.clear_button)
         Me.Panel4.Controls.Add(Me.BookName_tb)
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Controls.Add(Me.Update_button)
@@ -550,6 +578,19 @@ Partial Class adminPage
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(886, 331)
         Me.Panel4.TabIndex = 26
+        '
+        'clear_button
+        '
+        Me.clear_button.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.clear_button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.clear_button.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.clear_button.Location = New System.Drawing.Point(785, 281)
+        Me.clear_button.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.clear_button.Name = "clear_button"
+        Me.clear_button.Size = New System.Drawing.Size(67, 28)
+        Me.clear_button.TabIndex = 49
+        Me.clear_button.Text = "Clear"
+        Me.clear_button.UseVisualStyleBackColor = False
         '
         'BookName_tb
         '
@@ -839,7 +880,7 @@ Partial Class adminPage
         Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
         Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375.0!))
-        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171.0!))
+        Me.searchTitleTableLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174.0!))
         Me.searchTitleTableLayout.Controls.Add(Me.Panel9, 0, 0)
         Me.searchTitleTableLayout.Controls.Add(Me.Panel10, 1, 0)
         Me.searchTitleTableLayout.Controls.Add(Me.Panel11, 2, 0)
@@ -848,7 +889,7 @@ Partial Class adminPage
         Me.searchTitleTableLayout.Margin = New System.Windows.Forms.Padding(0)
         Me.searchTitleTableLayout.Name = "searchTitleTableLayout"
         Me.searchTitleTableLayout.RowCount = 1
-        Me.searchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
+        Me.searchTitleTableLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56.0!))
         Me.searchTitleTableLayout.Size = New System.Drawing.Size(819, 52)
         Me.searchTitleTableLayout.TabIndex = 49
         '
@@ -1011,7 +1052,7 @@ Partial Class adminPage
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149.0!))
         Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 375.0!))
-        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169.0!))
+        Me.allBooksTablePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172.0!))
         Me.allBooksTablePanel.Location = New System.Drawing.Point(45, 191)
         Me.allBooksTablePanel.Margin = New System.Windows.Forms.Padding(0)
         Me.allBooksTablePanel.Name = "allBooksTablePanel"
@@ -1023,19 +1064,19 @@ Partial Class adminPage
         'Dashboard_panel
         '
         Me.Dashboard_panel.BackColor = System.Drawing.Color.White
-        Me.Dashboard_panel.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.dashboardBg
+        Me.Dashboard_panel.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.adminDashboardBGimg
         Me.Dashboard_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Dashboard_panel.Controls.Add(Me.Total_users)
         Me.Dashboard_panel.Controls.Add(Me.Total_books)
-        Me.Dashboard_panel.Controls.Add(Me.New_users)
+        Me.Dashboard_panel.Controls.Add(Me.Fine_due)
         Me.Dashboard_panel.Controls.Add(Me.Overdue_books)
-        Me.Dashboard_panel.Controls.Add(Me.Returned_books)
+        Me.Dashboard_panel.Controls.Add(Me.Fine_collected)
         Me.Dashboard_panel.Controls.Add(Me.Borrowed_books)
         Me.Dashboard_panel.Controls.Add(Me.Current_date)
         Me.Dashboard_panel.Location = New System.Drawing.Point(260, 118)
         Me.Dashboard_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Dashboard_panel.Name = "Dashboard_panel"
-        Me.Dashboard_panel.Size = New System.Drawing.Size(907, 322)
+        Me.Dashboard_panel.Size = New System.Drawing.Size(907, 567)
         Me.Dashboard_panel.TabIndex = 0
         '
         'Total_users
@@ -1044,7 +1085,7 @@ Partial Class adminPage
         Me.Total_users.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Total_users.Enabled = False
         Me.Total_users.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Total_users.Location = New System.Drawing.Point(280, 249)
+        Me.Total_users.Location = New System.Drawing.Point(292, 190)
         Me.Total_users.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Total_users.Name = "Total_users"
         Me.Total_users.ReadOnly = True
@@ -1058,7 +1099,7 @@ Partial Class adminPage
         Me.Total_books.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Total_books.Enabled = False
         Me.Total_books.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Total_books.Location = New System.Drawing.Point(60, 249)
+        Me.Total_books.Location = New System.Drawing.Point(63, 192)
         Me.Total_books.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Total_books.Name = "Total_books"
         Me.Total_books.ReadOnly = True
@@ -1066,19 +1107,19 @@ Partial Class adminPage
         Me.Total_books.TabIndex = 29
         Me.Total_books.Text = "12"
         '
-        'New_users
+        'Fine_due
         '
-        Me.New_users.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.New_users.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.New_users.Enabled = False
-        Me.New_users.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.New_users.Location = New System.Drawing.Point(731, 249)
-        Me.New_users.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.New_users.Name = "New_users"
-        Me.New_users.ReadOnly = True
-        Me.New_users.Size = New System.Drawing.Size(100, 23)
-        Me.New_users.TabIndex = 28
-        Me.New_users.Text = "12"
+        Me.Fine_due.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Fine_due.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Fine_due.Enabled = False
+        Me.Fine_due.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Fine_due.Location = New System.Drawing.Point(508, 191)
+        Me.Fine_due.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Fine_due.Name = "Fine_due"
+        Me.Fine_due.ReadOnly = True
+        Me.Fine_due.Size = New System.Drawing.Size(100, 23)
+        Me.Fine_due.TabIndex = 28
+        Me.Fine_due.Text = "12"
         '
         'Overdue_books
         '
@@ -1086,7 +1127,7 @@ Partial Class adminPage
         Me.Overdue_books.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Overdue_books.Enabled = False
         Me.Overdue_books.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Overdue_books.Location = New System.Drawing.Point(501, 249)
+        Me.Overdue_books.Location = New System.Drawing.Point(729, 89)
         Me.Overdue_books.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Overdue_books.Name = "Overdue_books"
         Me.Overdue_books.ReadOnly = True
@@ -1094,19 +1135,19 @@ Partial Class adminPage
         Me.Overdue_books.TabIndex = 27
         Me.Overdue_books.Text = "12"
         '
-        'Returned_books
+        'Fine_collected
         '
-        Me.Returned_books.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Returned_books.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Returned_books.Enabled = False
-        Me.Returned_books.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Returned_books.Location = New System.Drawing.Point(731, 114)
-        Me.Returned_books.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Returned_books.Name = "Returned_books"
-        Me.Returned_books.ReadOnly = True
-        Me.Returned_books.Size = New System.Drawing.Size(100, 23)
-        Me.Returned_books.TabIndex = 26
-        Me.Returned_books.Text = "12"
+        Me.Fine_collected.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Fine_collected.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Fine_collected.Enabled = False
+        Me.Fine_collected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Fine_collected.Location = New System.Drawing.Point(729, 189)
+        Me.Fine_collected.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Fine_collected.Name = "Fine_collected"
+        Me.Fine_collected.ReadOnly = True
+        Me.Fine_collected.Size = New System.Drawing.Size(100, 23)
+        Me.Fine_collected.TabIndex = 26
+        Me.Fine_collected.Text = "12"
         '
         'Borrowed_books
         '
@@ -1114,7 +1155,7 @@ Partial Class adminPage
         Me.Borrowed_books.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Borrowed_books.Enabled = False
         Me.Borrowed_books.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Borrowed_books.Location = New System.Drawing.Point(508, 117)
+        Me.Borrowed_books.Location = New System.Drawing.Point(508, 91)
         Me.Borrowed_books.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Borrowed_books.Name = "Borrowed_books"
         Me.Borrowed_books.ReadOnly = True
@@ -1137,46 +1178,20 @@ Partial Class adminPage
         Me.Current_date.TabIndex = 24
         Me.Current_date.Text = "Date:"
         '
-        'loadFineButton
-        '
-        Me.loadFineButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.loadFineButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.loadFineButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.loadFineButton.Location = New System.Drawing.Point(652, 157)
-        Me.loadFineButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.loadFineButton.Name = "loadFineButton"
-        Me.loadFineButton.Size = New System.Drawing.Size(82, 38)
-        Me.loadFineButton.TabIndex = 46
-        Me.loadFineButton.Text = "Load"
-        Me.loadFineButton.UseVisualStyleBackColor = False
-        '
-        'addBalanceButton
-        '
-        Me.addBalanceButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.addBalanceButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.addBalanceButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addBalanceButton.Location = New System.Drawing.Point(492, 157)
-        Me.addBalanceButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.addBalanceButton.Name = "addBalanceButton"
-        Me.addBalanceButton.Size = New System.Drawing.Size(82, 38)
-        Me.addBalanceButton.TabIndex = 47
-        Me.addBalanceButton.Text = "Add"
-        Me.addBalanceButton.UseVisualStyleBackColor = False
-        '
         'adminPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Library_Management_System.My.Resources.Resources.adminBg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1181, 702)
+        Me.ClientSize = New System.Drawing.Size(1177, 698)
         Me.Controls.Add(Me.Logout)
         Me.Controls.Add(Me.Manual_transactions)
         Me.Controls.Add(Me.Book_management)
         Me.Controls.Add(Me.Search)
         Me.Controls.Add(Me.Dashboard)
-        Me.Controls.Add(Me.ManualTransactions_panel)
         Me.Controls.Add(Me.Dashboard_panel)
+        Me.Controls.Add(Me.ManualTransactions_panel)
         Me.Controls.Add(Me.Search_panel)
         Me.Controls.Add(Me.BookManagement_panel)
         Me.DoubleBuffered = True
@@ -1281,9 +1296,9 @@ Partial Class adminPage
     Friend WithEvents Dashboard_panel As System.Windows.Forms.Panel
     Friend WithEvents Total_users As System.Windows.Forms.TextBox
     Friend WithEvents Total_books As System.Windows.Forms.TextBox
-    Friend WithEvents New_users As System.Windows.Forms.TextBox
+    Friend WithEvents Fine_due As System.Windows.Forms.TextBox
     Friend WithEvents Overdue_books As System.Windows.Forms.TextBox
-    Friend WithEvents Returned_books As System.Windows.Forms.TextBox
+    Friend WithEvents Fine_collected As System.Windows.Forms.TextBox
     Friend WithEvents Borrowed_books As System.Windows.Forms.TextBox
     Friend WithEvents Current_date As System.Windows.Forms.TextBox
     Friend WithEvents searchBar As System.Windows.Forms.TableLayoutPanel
@@ -1303,4 +1318,5 @@ Partial Class adminPage
     Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents loadFineButton As System.Windows.Forms.Button
     Friend WithEvents addBalanceButton As System.Windows.Forms.Button
+    Friend WithEvents clear_button As System.Windows.Forms.Button
 End Class

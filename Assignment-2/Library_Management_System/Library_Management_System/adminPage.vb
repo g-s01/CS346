@@ -27,6 +27,121 @@ Public Class adminPage
         Book_management.Font = New Font(Book_management.Font, FontStyle.Regular)
         Manual_transactions.Font = New Font(Manual_transactions.Font, FontStyle.Regular)
 
+        'Total books-stats
+        Dim countQuery As String = "SELECT COUNT(*) FROM books"
+        Dim bookCount As Integer
+        Using countConnection As New MySqlConnection(connectionString)
+            Using countCommand As New MySqlCommand(countQuery, countConnection)
+                Try
+                    countConnection.Open()
+                    bookCount = Convert.ToInt32(countCommand.ExecuteScalar())
+
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        Total_books.Text = bookCount
+
+        'total users stats
+        Dim userCountQuery As String = " SELECT 'faculty' AS TableName, COUNT(*) AS TotalRecords FROM faculty " & "UNION ALL " & " SELECT 'students' AS TableName, COUNT(*) AS TotalRecords FROM students"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(userCountQuery, connection)
+                Try
+                    Dim totalRecords As Integer = 0
+                    Dim userCount As Integer
+                    'Dim facultyCount As Integer
+                    connection.Open()
+                    Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                    While reader.Read()
+                        Dim tableName As String = reader("TableName").ToString()
+                        userCount = Convert.ToInt32(reader("TotalRecords"))
+                        totalRecords = totalRecords + userCount
+
+                    End While
+                    Total_users.Text = totalRecords
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Borrowed books- today stats
+        Dim borrowedBookCountQuery As String = "SELECT COUNT(*) AS TotalBorrowedBooks FROM borrowed_books"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(borrowedBookCountQuery, connection)
+                Try
+                    connection.Open()
+                    Dim totalBorrowedBooks As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+                    Borrowed_books.Text = totalBorrowedBooks
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Overdue books - today stats
+        Dim overdueBookCountQuery As String = "SELECT COUNT(*) AS TotalOverdueBooks FROM borrowed_books WHERE dueDate < CURDATE();"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(overdueBookCountQuery, connection)
+                Try
+                    connection.Open()
+                    Dim totalOverdueBooks As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+                    Overdue_books.Text = totalOverdueBooks
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Total fine collected
+
+        Dim fineQuery As String = "SELECT fineCollected FROM admin"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(fineQuery, connection)
+                Try
+                    connection.Open()
+
+                    Dim fineCollected As Object = command.ExecuteScalar()
+
+                    If fineCollected IsNot Nothing AndAlso Not DBNull.Value.Equals(fineCollected) Then
+                        Fine_collected.Text = fineCollected.ToString()
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Fine Due
+        Dim totalFineDueQuery As String = "SELECT SUM(Fine) AS TotalFineDue FROM (SELECT Fine FROM faculty UNION ALL SELECT Fine FROM students) AS TotalFineDueQuery"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(totalFineDueQuery, connection)
+                Try
+                    connection.Open()
+
+                    Dim totalFineDue As Object = command.ExecuteScalar()
+
+
+                    If totalFineDue IsNot Nothing AndAlso Not DBNull.Value.Equals(totalFineDue) Then
+                        Fine_due.Text = totalFineDue.ToString()
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+
     End Sub
 
     Private Sub Search_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Search.Click
@@ -89,16 +204,76 @@ Public Class adminPage
             '
             '
 
-            ' After adding into tables, clear the inputs and show the msg box that it is saved...
-            MsgBox("Book Added Successfully")
-            BookID_tb.Text = ""
-            BookName_tb.Text = ""
-            Author_tb.Text = ""
-            Publisher_tb.Text = ""
-            Reserved_tb.Text = ""
+            Dim Book_ID As Integer
+            Integer.TryParse(BookID_tb.Text, Book_ID)
+
+            Dim BookName As String = BookName_tb.Text
+            Dim Author As String = Author_tb.Text
+            Dim Subject As String = Publisher_tb.Text
+            Dim isReserved As String
+            If Reserved_tb.Text = "" Then
+                isReserved = "0"
+            Else
+                isReserved = Reserved_tb.Text
+            End If
+
+            Dim isIssued As Integer = 0
 
 
+            ' Check if the book with the given Book_ID already exists in the table
+            Dim checkQuery As String = "SELECT * FROM books WHERE BINARY ID='" & BookID_tb.Text & "'"
+            Dim bookExists As Boolean = False
+
+
+
+            Using connection As New MySqlConnection(connectionString)
+                Using command As New MySqlCommand(checkQuery, connection)
+                    Try
+                        connection.Open()
+                        Dim reader As MySqlDataReader = command.ExecuteReader()
+                        Dim count As Integer = 0
+                        While reader.Read
+                            count = count + 1
+                        End While
+                        If count > 0 Then
+                            bookExists = True
+                        End If
+                    Catch ex As Exception
+                        MessageBox.Show("Error checking book existence: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+
+            If bookExists Then
+                ' Book with the given Book_ID already exists
+                MsgBox("The book with the given Book_ID: " + Book_ID.ToString + "  is already present. Please try a different Book_ID.")
+
+            Else
+                Dim addQuery = "INSERT INTO books (ID, isIssued, isReserved, authorName, Title, Subject) VALUES ('" & Book_ID & "','" & isIssued & "'," & isReserved & ",'" & Author & "','" & BookName & "','" & Subject & "')"
+                Using newNewConnection As New MySqlConnection(connectionString)
+                    Using newNewCommand As New MySqlCommand(addQuery, newNewConnection)
+                        Try
+                            newNewConnection.Open()
+                            newNewCommand.ExecuteNonQuery()
+                            Dim multilineMessage As String = "Book with following details Added Successfully" & Environment.NewLine & "BookID : " + Book_ID.ToString & Environment.NewLine & "BookName : " + BookName & Environment.NewLine & "Author : " + Author & Environment.NewLine & "Subject : " + Subject & Environment.NewLine & "isReserved : " + isReserved
+                            MsgBox(multilineMessage)
+                        Catch ex As Exception
+                            MessageBox.Show("Error: " & ex.Message)
+                        End Try
+                    End Using
+                End Using
+
+                ' After adding into tables, clear the inputs and show the msg box that it is saved...
+
+
+            End If
         End If
+
+        BookID_tb.Text = ""
+        BookName_tb.Text = ""
+        Author_tb.Text = ""
+        Publisher_tb.Text = ""
+        Reserved_tb.Text = ""
     End Sub
 
 
@@ -111,17 +286,45 @@ Public Class adminPage
             ' Insert new values in table
             '
             '
+            Dim Book_ID As Integer
+            Integer.TryParse(BookID_tb.Text, Book_ID)
+
+            Dim BookName As String = BookName_tb.Text
+            Dim Author As String = Author_tb.Text
+            Dim Subject As String = Publisher_tb.Text
+            Dim isReserved As String
+            If Reserved_tb.Text = "" Then
+                isReserved = "0"
+            Else
+                isReserved = Reserved_tb.Text
+            End If
+
+            Dim isIssued As Integer = 0
+
+            Dim updateQuery = "UPDATE books SET ID = '" & Book_ID & "',isReserved=" & isReserved & ",authorName='" & Author & "',Title='" & BookName & "',Subject='" & Subject & "' WHERE BINARY ID='" & BookID_tb.Text & "'"
+
+            Using newConnection As New MySqlConnection(connectionString)
+                Using newCommand As New MySqlCommand(updateQuery, newConnection)
+                    Try
+                        newConnection.Open()
+                        newCommand.ExecuteNonQuery()
+                        MessageBox.Show("Your book with BookID: " + BookID_tb.Text.ToString + " updated Successfully")
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
 
             ' After adding new values into tables, clear the inputs and show the msg box that it is saved...
-            MsgBox("Book Updated Successfully")
-            BookID_tb.Text = ""
-            BookName_tb.Text = ""
-            Author_tb.Text = ""
-            Publisher_tb.Text = ""
-            Reserved_tb.Text = ""
-
+            ' MsgBox("Book Updated Successfully")
 
         End If
+
+        BookID_tb.Text = ""
+        BookName_tb.Text = ""
+        Author_tb.Text = ""
+        Publisher_tb.Text = ""
+        Reserved_tb.Text = ""
     End Sub
 
     Private Sub Update_load_button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Update_load_button.Click
@@ -132,10 +335,47 @@ Public Class adminPage
             '
             ' Load the book info into the book_details label
             '
-            ' after loading the data , clear the bookid input in update details label....
-            Update_BookID_tb.Text = ""
+
+            ' Check whether book ID is valid
+
+            ' Check whether book ID is valid
+            Dim loadQuery As String = "SELECT ID, authorName, Title, Subject, isReserved FROM books WHERE BINARY ID='" & Update_BookID_tb.Text & "'"
+            Using connection As New MySqlConnection(connectionString)
+                Using command As New MySqlCommand(loadQuery, connection)
+                    Try
+                        connection.Open()
+                        Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                        If reader.Read() Then
+                            ' If the book with the given ID exists, retrieve and display the data
+                            Dim bookID As String = reader("ID").ToString()
+                            Dim authorName As String = reader("authorName").ToString()
+                            Dim title As String = reader("Title").ToString()
+                            Dim subject As String = reader("Subject").ToString()
+                            Dim isReserved As Integer = reader("isReserved")
+                            If isReserved = -1 Then
+                                isReserved = 1
+                            End If
+
+                            ' Set the retrieved values to the corresponding textboxes
+                            BookID_tb.Text = bookID
+                            Author_tb.Text = authorName
+                            BookName_tb.Text = title
+                            Publisher_tb.Text = subject
+                            Reserved_tb.Text = isReserved
+                        Else
+                            MessageBox.Show("Book with given ID " + Update_BookID_tb.Text + " does not exist.")
+                        End If
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
 
         End If
+        ' after loading the data , clear the bookid input in update details label....
+        Update_BookID_tb.Text = ""
+
     End Sub
 
     Private Sub Remove_button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Remove_button.Click
@@ -149,15 +389,68 @@ Public Class adminPage
             '
             '
             '
+
+            ' Check whether book ID is valid
+            Dim deleteCheckQuery As String = "SELECT * FROM books where BINARY ID='" & Remove_BookID_tb.Text & "'"
+            Dim count As Integer
+            Using connection As New MySqlConnection(connectionString)
+                Using command As New MySqlCommand(deleteCheckQuery, connection)
+                    Try
+                        connection.Open()
+                        Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                        count = 0
+                        While reader.Read
+                            count = count + 1
+                        End While
+                        If count = 0 Then
+                            MessageBox.Show("Book with given ID: " + Remove_BookID_tb.Text + " does not exist.")
+                            Return
+                        End If
+                    Catch ex As Exception
+                        MessageBox.Show("Error: " & ex.Message)
+                    End Try
+                End Using
+            End Using
+
+            If Not count = 0 Then
+
+                Dim deleteQuery = "DELETE FROM books WHERE BINARY ID = '" & Remove_BookID_tb.Text & "' "
+
+                Using newConnection As New MySqlConnection(connectionString)
+                    Using newCommand As New MySqlCommand(deleteQuery, newConnection)
+                        Try
+                            newConnection.Open()
+                            newCommand.ExecuteNonQuery()
+                            MessageBox.Show("Your book with BookID: " + Remove_BookID_tb.Text + " Deleted Successfully")
+                        Catch ex As Exception
+                            MessageBox.Show("Error: " & ex.Message)
+                        End Try
+                    End Using
+                End Using
+
+            End If
+
+
             'After removing in from the database , clear the BookID input and also show the msgbox popup.
-            Remove_BookID_tb.Text = ""
-            MsgBox("Book Removed Successfully")
+
+            'MsgBox("Book Removed Successfully")
         End If
 
+        Remove_BookID_tb.Text = ""
 
 
     End Sub
 
+    ' Additionally added for clearing inputs......
+
+    Private Sub clear_button_Click(sender As System.Object, e As System.EventArgs) Handles clear_button.Click
+        BookID_tb.Text = ""
+        BookName_tb.Text = ""
+        Author_tb.Text = ""
+        Publisher_tb.Text = ""
+        Reserved_tb.Text = ""
+    End Sub
 
 
 
@@ -817,6 +1110,122 @@ Public Class adminPage
         Search_panel.Visible = False
         BookManagement_panel.Visible = False
         ManualTransactions_panel.Visible = False
+
+        'Total books-stats
+        Dim bookCountQuery As String = "SELECT COUNT(*) FROM books"
+        Dim bookCount As Integer
+        Using countConnection As New MySqlConnection(connectionString)
+            Using countCommand As New MySqlCommand(bookCountQuery, countConnection)
+                Try
+                    countConnection.Open()
+                    bookCount = Convert.ToInt32(countCommand.ExecuteScalar())
+                    Total_books.Text = bookCount
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+
+        'total users stats
+
+        Dim userCountQuery As String = " SELECT 'faculty' AS TableName, COUNT(*) AS TotalRecords FROM faculty " & "UNION ALL " & " SELECT 'students' AS TableName, COUNT(*) AS TotalRecords FROM students"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(userCountQuery, connection)
+                Try
+                    Dim totalRecords As Integer = 0
+                    Dim userCount As Integer
+                    'Dim facultyCount As Integer
+                    connection.Open()
+                    Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                    While reader.Read()
+                        Dim tableName As String = reader("TableName").ToString()
+                        userCount = Convert.ToInt32(reader("TotalRecords"))
+                        totalRecords = totalRecords + userCount
+
+                    End While
+                    Total_users.Text = totalRecords
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Borrowed books- today stats
+        Dim borrowedBookCountQuery As String = "SELECT COUNT(*) AS TotalBorrowedBooks FROM borrowed_books"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(borrowedBookCountQuery, connection)
+                Try
+                    connection.Open()
+                    Dim totalBorrowedBooks As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+                    Borrowed_books.Text = totalBorrowedBooks
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Overdue books - today stats
+        Dim overdueBookCountQuery As String = "SELECT COUNT(*) AS TotalOverdueBooks FROM borrowed_books WHERE dueDate < CURDATE();"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(overdueBookCountQuery, connection)
+                Try
+                    connection.Open()
+                    Dim totalOverdueBooks As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+                    Overdue_books.Text = totalOverdueBooks
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Total fine collected
+        
+        Dim fineQuery As String = "SELECT fineCollected FROM admin"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(fineQuery, connection)
+                Try
+                    connection.Open()
+
+                    Dim fineCollected As Object = command.ExecuteScalar()
+
+                    If fineCollected IsNot Nothing AndAlso Not DBNull.Value.Equals(fineCollected) Then
+                        Fine_collected.Text = fineCollected.ToString()
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        'Fine Due
+        Dim totalFineDueQuery As String = "SELECT SUM(Fine) AS TotalFineDue FROM (SELECT Fine FROM faculty UNION ALL SELECT Fine FROM students) AS TotalFineDueQuery"
+
+        Using connection As New MySqlConnection(connectionString)
+            Using command As New MySqlCommand(totalFineDueQuery, connection)
+                Try
+                    connection.Open()
+
+                    Dim totalFineDue As Object = command.ExecuteScalar()
+
+
+                    If totalFineDue IsNot Nothing AndAlso Not DBNull.Value.Equals(totalFineDue) Then
+                        Fine_due.Text = totalFineDue.ToString()
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+
 
         allBooks.Add(New Entry With {.BookID = 1, .Author = "Author1", .Title = "Title1"})
         allBooks.Add(New Entry With {.BookID = 2, .Author = "Author2", .Title = "Title2"})
