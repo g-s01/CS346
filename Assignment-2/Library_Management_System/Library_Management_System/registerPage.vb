@@ -202,6 +202,13 @@ Public Class registerPage
                 Dim randomNumber As Integer = random.Next(100000, 999999)
                 code = randomNumber
                 sendEmail(randomNumber)
+                Panel1.Visible = True
+                Panel2.Visible = True
+                LinkLabel1.Visible = True
+                Label2.Visible = True
+                Label3.Visible = True
+                TextBox1.Visible = True
+                Button1.Visible = True
             End If
             MySQLConn.Close()
         End If
