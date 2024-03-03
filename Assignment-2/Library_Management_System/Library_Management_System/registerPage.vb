@@ -147,7 +147,7 @@ Public Class registerPage
         Dim selectQuery As String
         If isStudent = True Then
             MySQLConn.Open()
-            selectQuery = "SELECT * FROM students WHERE EXISTS (SELECT * FROM students WHERE ID = '" & Username.Text & "')"
+            selectQuery = "SELECT * FROM students WHERE ID = '" & Username.Text & "'"
             COMMAND = New MySqlCommand(selectQuery, MySQLConn)
             READER = COMMAND.ExecuteReader
             Dim count As Integer
@@ -155,7 +155,19 @@ Public Class registerPage
             While READER.Read
                 count = count + 1
             End While
-            If count = 1 Then
+
+            READER.Close()
+
+            selectQuery = "SELECT * FROM faculty WHERE ID = '" & Username.Text & "'"
+            COMMAND = New MySqlCommand(selectQuery, MySQLConn)
+            READER = COMMAND.ExecuteReader
+            Dim count1 As Integer
+            count1 = 0
+            While READER.Read
+                count1 = count1 + 1
+            End While
+            'MessageBox.Show(count)
+            If count = 1 Or count1 = 1 Then
                 MessageBox.Show("You have already registered into the system!")
                 READER.Close()
             Else
@@ -180,7 +192,7 @@ Public Class registerPage
             MySQLConn.Close()
         Else
             MySQLConn.Open()
-            selectQuery = "SELECT * FROM faculty WHERE EXISTS (SELECT * FROM faculty WHERE ID = '" & Username.Text & "')"
+            selectQuery = "SELECT * FROM faculty WHERE ID = '" & Username.Text & "'"
             COMMAND = New MySqlCommand(selectQuery, MySQLConn)
             READER = COMMAND.ExecuteReader
             Dim count As Integer
@@ -188,9 +200,23 @@ Public Class registerPage
             While READER.Read
                 count = count + 1
             End While
+            READER.Close()
+            selectQuery = "SELECT * FROM students WHERE ID = '" & Username.Text & "'"
+            COMMAND = New MySqlCommand(selectQuery, MySQLConn)
+            READER = COMMAND.ExecuteReader
+            Dim count1 As Integer
+            count1 = 0
+            While READER.Read
+                count1 = count1 + 1
+            End While
+
             If count = 1 Then
                 MessageBox.Show("You have already registered into the system!")
                 READER.Close()
+            ElseIf count1 = 1 Then
+                MessageBox.Show("You have already registered into the system!")
+                READER.Close()
+
             Else
                 READER.Close()
                 Dim pattern As String = "^[a-zA-Z0-9._%+-]+@iitg\.ac\.in$"
