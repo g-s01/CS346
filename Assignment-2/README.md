@@ -51,8 +51,8 @@ Use MS- Access or MySQL for your database requirements.
         - [X] Taking a fine amount as input
         - [X] Maintaining the balance of user
         - [X] Checking that the user has enough balance to pay input amount
-        - [ ] Send email to user a random code for 2fa
-        - [ ] Send confirmation for email
+        - [X] Send email to user a random code for 2fa
+        - [X] Send confirmation for email
     - [X] Searching of books (@`g-s01` and @`Faizan Amir`)
     - [X] Renew of books (@`g-s01`)
     - [X] Return of books (@`g-s01`)
