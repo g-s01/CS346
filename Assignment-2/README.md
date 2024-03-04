@@ -173,4 +173,4 @@ Use MS- Access or MySQL for your database requirements.
 
 ![Group Photo](https://github.com/g-s01/CS346/assets/95131287/b7531183-a6e7-4ab1-8617-0e0cac2c825b)
 
-From left: Durgesam Ajay, Faizan Amir, Gautam Sharma, Gholap Sarvesh Sarjerao, Gautam Juneja (tired of work), Gaurav (missing)
+From left: Durgesam Ajay, Faizan Amir, Gautam Sharma, Gholap Sarvesh Sarjerao, Gautam Juneja (tired of work), Gaurav (left the room)
