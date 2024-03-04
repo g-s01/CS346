@@ -164,13 +164,13 @@ Use MS- Access or MySQL for your database requirements.
    <img width="903" alt="image" src="https://github.com/g-s01/CS346/assets/95131287/176bee4e-d5b2-4413-8a20-0914bee1b90e">
 
 # Credits
-* Durgesam Ajay
-* Faizan Amir
-* Gaurav
+* [Durgesam Ajay](https://github.com/Ajay-durgesam)
+* [Faizan Amir](https://github.com/faizanamir01)
+* [Gaurav](https://github.com/DeepSeaCreature0)
 * [Gautam Juneja](https://github.com/HarmlessCoder)
 * [Gautam Sharma](https://g-s01.github.io/)
 * [Gholap Sarvesh Sarjerao](https://github.com/sarg19)
 
 ![Group Photo](https://github.com/g-s01/CS346/assets/95131287/b7531183-a6e7-4ab1-8617-0e0cac2c825b)
 
-From left: Durgesam Ajay, Faizan Amir, Gautam Sharma, Gholap Sarvesh Sarjerao, Gautam Juneja (sleeping)
+From left: Durgesam Ajay, Faizan Amir, Gautam Sharma, Gholap Sarvesh Sarjerao, Gautam Juneja (tired of work), Gaurav (missing)
