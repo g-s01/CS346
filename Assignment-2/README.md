@@ -7,7 +7,7 @@ The application must keep records of the books present in the library, books bor
 It must also offer facilities to students and faculty to issue, return, and renew books. 
 Use MS- Access or MySQL for your database requirements.
 
-## UNDER-CONSTRUCTION
+## Features
 - [X] Design
   - [X] Admin side (@`Ajay`)
   - [X] Student and Faculty side (@`Sarvesh`)
@@ -26,7 +26,7 @@ Use MS- Access or MySQL for your database requirements.
   - [X] Routing (@`Sarvesh`)
   - [X] Stack usage (@`Ajay`)
   - [X] Increase balance button 
-- [ ] Backend
+- [X] Backend
   - [X] Login Page
     - [X] Checking whether the entry exists in the database or not (@`Gautam Juneja`) 
   - [X] Registration Page
@@ -37,9 +37,9 @@ Use MS- Access or MySQL for your database requirements.
     - [X] OTP (@`Gautam Juneja`) 
   - [X] Admin Login (@`Sarvesh`)
     - [X] Check the admin password and then only open the admin dashboard
-  - [ ] Admin
+  - [X] Admin
     - [X] Admin Dashboard (@`Ajay` & @`Sarvesh`)
-    - [ ] Admin Search (@`Faizan Amir`)
+    - [X] Admin Search (@`Faizan Amir`)
     - [X] Manual Transactions (@`Sarvesh`)
     - [X] Book Management (@`Ajay`)
   - [X] Student & Faculty Page
